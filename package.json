@@ -1,0 +1,30 @@
+{
+  "name": "tarotcuahalle",
+  "version": "1.0.0",
+  "description": "TarotcuaHalle - Luận Giải Vũ Trụ Cùng AI & AR 3D Experience",
+  "main": "scripts/server.js",
+  "homepage": "https://tarotcuahalle.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhao1601/tarotcuahalle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dhao1601/tarotcuahalle/issues"
+  },
+  "scripts": {
+    "start": "node scripts/server.js",
+    "test": "node scripts/test_ai_interpretation.js",
+    "build:images": "node scripts/generate_card_images.js",
+    "build:book": "node scripts/build_tarot_book.js"
+  },
+  "keywords": [
+    "tarot",
+    "tarotcuahalle",
+    "threejs",
+    "mediapipe",
+    "gemini-ai",
+    "augmented-reality"
+  ],
+  "author": "Halle",
+  "license": "ISC"
+}

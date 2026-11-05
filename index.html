@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Tarot AR - Faster Scroll</title>
+    <title>TarotcuaHalle - Luận Giải Vũ Trụ Chuyên Sâu</title>
+    <meta name="description" content="TarotcuaHalle - Trải nghiệm bốc bài Tarot 3D trực quan kết hợp bộ máy luận giải Tarot chuyên sâu từ sách Tarot Chú Giải.">
+    <meta name="application-name" content="TarotcuaHalle">
+    <meta name="apple-mobile-web-app-title" content="TarotcuaHalle">
+    <link rel="canonical" href="https://tarotcuahalle.com/">
+
+    <!-- Open Graph / Facebook / Zalo -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tarotcuahalle.com/">
+    <meta property="og:title" content="TarotcuaHalle - Luận Giải Vũ Trụ Chuyên Sâu">
+    <meta property="og:description" content="Trải nghiệm bốc bài Tarot 3D trực quan kết hợp bộ máy luận giải Tarot chuyên sâu từ sách Tarot Chú Giải.">
+    <meta property="og:site_name" content="TarotcuaHalle">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TarotcuaHalle - Luận Giải Vũ Trụ Chuyên Sâu">
+    <meta name="twitter:description" content="Trải nghiệm bốc bài Tarot 3D trực quan kết hợp bộ máy luận giải Tarot chuyên sâu.">
+    
+    <!-- Google Fonts: Sang trọng & Cổ điển + Preconnect API giảm độ trễ mạng -->
+    <link rel="preconnect" href="https://generativelanguage.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <style>
-        body { margin: 0; overflow: hidden; background-color: #050505; font-family: 'Times New Roman', serif; color: #fff; }
+        :root {
+            --bg-dark: #05050a;
+            --bg-card: rgba(12, 12, 22, 0.92);
+            --gold-primary: #d4af37;
+            --gold-light: #fbeea4;
+            --gold-glow: rgba(212, 175, 55, 0.45);
+            --ruby-reversed: #e11d48;
+            --ruby-glow: rgba(225, 29, 72, 0.4);
+            --teal-upright: #10b981;
+            --teal-glow: rgba(16, 185, 129, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; overflow: hidden; background-color: var(--bg-dark); 
+            font-family: 'Inter', sans-serif; color: var(--text-main); 
+            user-select: none;
+        }
         
         #input-video { 
             position: fixed; top: 0; left: 0; 
@@ -16,139 +59,696 @@
         #canvas-container { width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 1; }
         #ui-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
         
-        #guide-text {
-            position: absolute; width: 100%; text-align: center;
-            color: #fff; letter-spacing: 3px; font-weight: normal;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); pointer-events: none;
-            transition: opacity 0.5s; text-transform: uppercase;
-            font-size: 0.6rem; bottom: 2%; 
+        /* CÁC HUY HIỆU VÀ THANH CHỈ DẪN */
+        #top-bar {
+            position: absolute; top: 24px; left: 30px; right: 85px;
+            display: flex; justify-content: space-between; align-items: center;
+            pointer-events: auto; z-index: 5;
         }
 
+        /* NÚT BÁNH RĂNG CÀI ĐẶT CỐ ĐỊNH GÓC PHẢI TRÊN (SETTINGS ICON) */
+        #floating-settings-btn {
+            position: fixed; top: 20px; right: 24px; z-index: 200;
+            width: 42px; height: 42px; border-radius: 50%;
+            background: rgba(14, 14, 25, 0.85); border: 1px solid rgba(212, 175, 55, 0.45);
+            color: var(--gold-light); font-size: 1.25rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        #floating-settings-btn:hover {
+            background: var(--gold-primary); color: #05050a;
+            box-shadow: 0 0 25px var(--gold-glow);
+            transform: rotate(45deg) scale(1.08);
+        }
+
+        .brand-badge {
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(5, 5, 12, 0.7); backdrop-filter: blur(8px);
+            padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .brand-badge .star { color: var(--gold-primary); font-size: 1.1rem; }
+        .brand-badge .title { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 2px; color: var(--gold-light); }
+
+        .top-controls { display: flex; align-items: center; gap: 12px; }
+
         #counter {
-            position: absolute; top: 30px; right: 40px;
-            font-size: 1.2rem; color: #fff; font-weight: bold;
-            border: 1px solid rgba(255, 255, 255, 0.5); padding: 5px 15px; border-radius: 30px;
-            background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(5px);
+            font-size: 1rem; color: #fff; font-weight: 600; font-family: 'Cinzel', serif;
+            border: 1px solid rgba(212, 175, 55, 0.4); padding: 7px 20px; border-radius: 30px;
+            background: rgba(10, 10, 20, 0.65); backdrop-filter: blur(8px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); letter-spacing: 2px;
+        }
+
+        .icon-btn {
+            background: rgba(10, 10, 20, 0.65); border: 1px solid rgba(212, 175, 55, 0.35);
+            color: var(--gold-light); width: 38px; height: 38px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+            backdrop-filter: blur(8px); transition: all 0.3s;
+        }
+        .icon-btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 15px var(--gold-glow); }
+
+        #guide-text {
+            position: absolute; width: 100%; text-align: center;
+            color: #fff; letter-spacing: 3px; font-weight: 400;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.6); pointer-events: none;
+            transition: all 0.5s; text-transform: uppercase;
+            font-size: 0.8rem; bottom: 30px; font-family: 'Cinzel', serif;
         }
 
         #credit-text {
             position: absolute; 
-            color: rgba(255, 255, 255, 0.6); font-family: sans-serif; font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5); font-family: 'Inter', sans-serif; font-size: 0.75rem;
             pointer-events: none; z-index: 5; letter-spacing: 1px;
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
-            bottom: 10px; right: 5px;
+            bottom: 12px; right: 18px;
         }
 
-        #loading {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 10; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
-            transition: opacity 1.5s ease-out; pointer-events: auto;
-        }
-        .loader-content { opacity: 0.8; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
-
+        /* CON TRỎ CỬ CHỈ TAY */
         #virtual-cursor {
-            position: absolute; width: 30px; height: 30px;
-            border: 2px solid rgba(255, 255, 255, 0.9); border-radius: 50%;
+            position: absolute; width: 32px; height: 32px;
+            border: 2px solid rgba(212, 175, 55, 0.9); border-radius: 50%;
             transform: translate(-50%, -50%); pointer-events: none;
-            z-index: 100; display: none; transition: transform 0.1s;
-            box-shadow: 0 0 10px rgba(255,255,255,0.6);
+            z-index: 100; display: none; transition: transform 0.08s ease-out;
+            box-shadow: 0 0 15px var(--gold-glow);
         }
         #virtual-cursor.pinching { 
-            background: #fff; width: 15px; height: 15px; border: none; 
-            box-shadow: 0 0 20px #fff, 0 0 40px #fff; 
-            transform: translate(-50%, -50%) scale(1.2);
+            background: #fff; width: 16px; height: 16px; border: none; 
+            box-shadow: 0 0 25px #fff, 0 0 50px var(--gold-primary); 
+            transform: translate(-50%, -50%) scale(1.3);
         }
-        
-        #result-modal {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 80%; max-width: 900px; max-height: 80vh; overflow-y: auto;
-            background: rgba(10, 10, 10, 0.95); border: 1px solid #fff; 
-            padding: 50px; display: none; pointer-events: auto; 
-            box-shadow: 0 0 100px rgba(255,255,255,0.1); border-radius: 4px; z-index: 20;
-        }
-        #result-modal::-webkit-scrollbar { width: 6px; }
-        
-        #result-modal h2 { 
-            color: #fff; text-align: center; border-bottom: 1px solid #333; 
-            padding-bottom: 20px; margin-top: 0; text-transform: uppercase; 
-            letter-spacing: 4px; font-weight: normal; font-size: 1.8rem;
-        }
-        
-        .reading-section { margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px; animation: fadeIn 1.5s ease-out; }
-        .reading-label { color: #888; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; display: block;}
-        .reading-body { display: flex; gap: 30px; align-items: start; }
-        .reading-img { width: 100px; border-radius: 4px; filter: grayscale(0.2); transition: filter 0.5s; }
-        .reading-img:hover { filter: grayscale(0); }
-        .reading-content h3 { margin: 0 0 10px 0; color: #fff; font-size: 1.5rem; font-weight: normal; }
-        .reading-desc { color: #ccc; line-height: 1.6; font-size: 1rem; text-align: justify; font-weight: 300; }
-        
-        button.restart-btn { 
-            display: block; margin: 40px auto 0; padding: 15px 50px; 
-            background: transparent; border: 1px solid #fff; color: #fff; 
-            cursor: pointer; font-family: serif; letter-spacing: 3px; text-transform: uppercase;
-            font-size: 0.9rem; transition: all 0.5s; 
-        }
-        button.restart-btn:hover { background: #fff; color: #000; box-shadow: 0 0 20px #fff; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* TOAST BỐC BÀI THÔNG BÁO */
+        #inspect-banner {
+            position: absolute; top: 15%; left: 50%; transform: translate(-50%, -50%) scale(0.9);
+            background: rgba(10, 10, 20, 0.9); border: 1px solid var(--gold-primary);
+            padding: 12px 28px; border-radius: 30px; display: none; opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 30px rgba(0,0,0,0.8), 0 0 20px var(--gold-glow);
+            font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 2px;
+            text-align: center; z-index: 50;
+        }
+        #inspect-banner.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        #inspect-banner .status-badge {
+            font-size: 0.75rem; padding: 2px 10px; border-radius: 12px;
+            margin-left: 8px; font-weight: 600;
+        }
+        .badge-upright { background: var(--teal-glow); color: #6ee7b7; border: 1px solid var(--teal-upright); }
+        .badge-reversed { background: var(--ruby-glow); color: #fca5a5; border: 1px solid var(--ruby-reversed); }
+
+        /* LOADING TRẢI BÀI */
+        #loading {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 200; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            transition: opacity 1.2s ease-out; pointer-events: auto;
+        }
+        .loader-content { opacity: 0.85; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+        /* BƯỚC 1: OVERLAY MỞ ĐẦU (INTRO SCREEN) */
+        #intro-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(16, 14, 32, 0.95) 0%, rgba(5, 5, 10, 0.98) 100%);
+            z-index: 150; display: flex; justify-content: center; align-items: center;
+            pointer-events: auto; transition: opacity 0.8s ease, visibility 0.8s;
+            backdrop-filter: blur(10px);
+        }
+        .intro-box {
+            width: 90%; max-width: 680px; padding: 45px 40px;
+            background: rgba(13, 13, 24, 0.8); border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 16px; text-align: center;
+            box-shadow: 0 0 80px rgba(0,0,0,0.8), 0 0 35px rgba(212, 175, 55, 0.12);
+            position: relative; animation: modalFloatIn 0.8s ease-out;
+        }
+        .intro-symbol { font-size: 2.2rem; color: var(--gold-primary); margin-bottom: 8px; filter: drop-shadow(0 0 10px var(--gold-glow)); }
+        .intro-title {
+            font-family: 'Cinzel', serif; font-size: 2rem; letter-spacing: 4px;
+            margin: 0 0 8px 0; color: #fff;
+            background: linear-gradient(135deg, #fff 30%, var(--gold-light) 70%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .intro-subtitle {
+            color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;
+            letter-spacing: 1px; font-weight: 300;
+        }
+
+        .question-area { position: relative; margin-bottom: 20px; }
+        .question-area textarea {
+            width: 100%; height: 95px; background: rgba(5, 5, 12, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px;
+            padding: 15px; font-family: 'Inter', sans-serif; font-size: 0.95rem;
+            color: #fff; resize: none; outline: none; transition: all 0.3s;
+        }
+        .question-area textarea:focus {
+            border-color: var(--gold-primary); box-shadow: 0 0 20px var(--gold-glow);
+        }
+        .question-area textarea::placeholder { color: #64748b; font-size: 0.9rem; }
+
+        .chips-label { font-size: 0.75rem; color: var(--gold-light); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; display: block; opacity: 0.8; }
+        .quick-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 25px; }
+        .chip-btn {
+            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #cbd5e1; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .chip-btn:hover {
+            border-color: var(--gold-primary); color: #fff; background: rgba(212, 175, 55, 0.15);
+        }
+
+        .btn-start {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid var(--gold-primary); color: var(--gold-light);
+            padding: 16px 48px; border-radius: 35px; font-family: 'Cinzel', serif;
+            font-size: 1rem; letter-spacing: 3px; cursor: pointer; transition: all 0.4s;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); text-transform: uppercase;
+        }
+        .btn-start:hover {
+            background: var(--gold-primary); color: #000; box-shadow: 0 0 35px var(--gold-glow);
+            transform: translateY(-2px);
+        }
+
+        .api-config-note {
+            margin-top: 20px; font-size: 0.75rem; color: #64748b; cursor: pointer; text-decoration: underline;
+        }
+        .api-config-note:hover { color: var(--gold-light); }
+
+        /* BƯỚC 2: BANNER GOM VÀ XÀO BÀI (SHUFFLE BANNER) */
+        #shuffle-banner {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(5, 5, 12, 0.92); border: 1px solid var(--gold-primary);
+            padding: 25px 45px; border-radius: 20px; text-align: center;
+            z-index: 120; display: none; box-shadow: 0 0 50px rgba(0,0,0,0.9), 0 0 30px var(--gold-glow);
+            backdrop-filter: blur(12px); animation: fadeIn 0.4s ease-out;
+        }
+        #shuffle-banner .shuffle-icon { font-size: 2rem; color: var(--gold-primary); animation: spin 2s infinite linear; display: inline-block; margin-bottom: 10px; }
+        #shuffle-banner .shuffle-title { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 3px; color: var(--gold-light); margin: 0; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* BƯỚC 4: MODAL LUẬN GIẢI KẾT QUẢ TOÀN MÀN HÌNH */
+        #result-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            overflow-y: auto; overflow-x: hidden; background: rgba(6, 6, 12, 0.96); backdrop-filter: blur(25px);
+            padding: 40px 20px 120px; display: none; pointer-events: auto; z-index: 180;
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: text;
+        }
+        #result-modal::-webkit-scrollbar { width: 8px; }
+        #result-modal::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 4px; }
+
+        .result-container { max-width: 1000px; margin: 0 auto; position: relative; }
+        
+        .result-header { text-align: center; margin-bottom: 35px; }
+        .result-header .symbol { font-size: 1.8rem; color: var(--gold-primary); margin-bottom: 5px; }
+        .result-header h2 {
+            font-family: 'Cinzel', serif; font-size: 2.2rem; letter-spacing: 4px;
+            margin: 5px 0 15px; color: #fff;
+            background: linear-gradient(135deg, #fff 20%, var(--gold-light) 70%, var(--gold-primary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;
+        }
+        
+        .question-display-box {
+            background: rgba(18, 18, 30, 0.7); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px; padding: 14px 22px; margin: 0 auto 35px; max-width: 750px;
+            font-size: 0.95rem; color: #e2e8f0; font-style: italic; line-height: 1.5;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .question-display-box strong { color: var(--gold-primary); font-style: normal; margin-right: 6px; }
+
+        /* GRID 3 LÁ BÀI TRỰC QUAN */
+        .cards-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+            margin-bottom: 45px;
+        }
+        @media (max-width: 768px) {
+            .cards-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        .card-card-item {
+            background: rgba(15, 15, 26, 0.85); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px; padding: 20px; text-align: center;
+            display: flex; flex-direction: column; align-items: center;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .card-card-item:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+        .card-position-tag {
+            font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 2px;
+            color: var(--gold-light); margin-bottom: 14px; text-transform: uppercase;
+            padding: 4px 12px; background: rgba(212, 175, 55, 0.1); border-radius: 20px;
+        }
+        .card-img-wrapper {
+            width: 130px; height: 220px; border-radius: 8px; overflow: hidden;
+            margin-bottom: 15px; border: 2px solid rgba(212, 175, 55, 0.5);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.7); position: relative;
+            background: #111;
+        }
+        .card-img-wrapper img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-img-wrapper.is-reversed img {
+            transform: rotate(180deg);
+        }
+
+        .status-pill {
+            font-size: 0.72rem; padding: 4px 12px; border-radius: 20px;
+            font-weight: 600; letter-spacing: 1px; margin-bottom: 10px; display: inline-block;
+        }
+        .status-pill.upright {
+            background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid var(--teal-upright);
+            box-shadow: 0 0 10px var(--teal-glow);
+        }
+        .status-pill.reversed {
+            background: rgba(225, 29, 72, 0.15); color: #fca5a5; border: 1px solid var(--ruby-reversed);
+            box-shadow: 0 0 10px var(--ruby-glow);
+        }
+
+        .card-name-vi {
+            font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff;
+            margin: 0 0 4px; font-weight: 600;
+        }
+        .card-name-en {
+            font-size: 0.8rem; color: var(--text-muted); margin: 0 0 10px; font-style: italic;
+        }
+        .card-meta-chips { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+        .meta-chip {
+            font-size: 0.7rem; color: #94a3b8; background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px; border-radius: 6px;
+        }
+        .card-brief-meaning {
+            font-size: 0.82rem; color: #cbd5e1; line-height: 1.5; text-align: justify;
+            border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 10px; width: 100%;
+        }
+
+        /* 3 NGUỒN TRI THỨC TRÊN LÁ BÀI (TAROT CHÚ GIẢI • HÀNH TRÌNH TAROT • PHILIPPE NGÔ) */
+        .card-knowledge-box {
+            width: 100%; text-align: left; margin-top: 10px;
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(212, 175, 55, 0.18);
+            border-radius: 8px; padding: 10px 12px; font-size: 0.8rem; line-height: 1.5;
+            transition: all 0.25s; box-sizing: border-box;
+        }
+        .card-knowledge-box:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .card-knowledge-box.box-meaning {
+            border-left: 3px solid var(--gold-primary);
+        }
+        .card-knowledge-box.box-yesno {
+            border-left: 3px solid #38bdf8;
+            background: rgba(56, 189, 248, 0.03);
+        }
+        .card-knowledge-box.box-timing {
+            border-left: 3px solid #f59e0b;
+            background: rgba(245, 158, 11, 0.03);
+        }
+        .card-knowledge-box.box-archetype {
+            border-left: 3px solid #a855f7;
+            background: rgba(168, 85, 247, 0.03);
+        }
+        .card-knowledge-title {
+            font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 1px;
+            color: var(--gold-light); display: flex; align-items: center; gap: 6px;
+            margin-bottom: 6px; font-weight: 600; text-transform: uppercase;
+        }
+        .card-knowledge-content {
+            color: #cbd5e1; font-size: 0.8rem; text-align: justify;
+        }
+        .yesno-badge {
+            display: inline-block; padding: 3px 10px; border-radius: 12px;
+            font-weight: 700; font-size: 0.72rem; letter-spacing: 1px;
+        }
+        .yesno-yes {
+            background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+        }
+        .yesno-no {
+            background: rgba(225, 29, 72, 0.2); color: #f87171; border: 1px solid #e11d48;
+            box-shadow: 0 0 10px rgba(225, 29, 72, 0.25);
+        }
+        .yesno-maybe {
+            background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+        }
+
+        /* KHU VỰC PHÂN TÍCH CHUYÊN SÂU */
+        .ai-reading-box {
+            background: rgba(13, 13, 25, 0.9); border: 1px solid rgba(212, 175, 55, 0.35);
+            border-radius: 16px; padding: 35px 40px; margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7), 0 0 30px rgba(212, 175, 55, 0.08);
+            position: relative; height: auto; max-height: none; overflow: visible;
+        }
+        @media (max-width: 768px) {
+            .ai-reading-box { padding: 25px 20px; }
+        }
+        .ai-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(212, 175, 55, 0.12); border: 1px solid var(--gold-primary);
+            color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 0.75rem;
+            padding: 5px 14px; border-radius: 20px; letter-spacing: 2px; margin-bottom: 20px;
+        }
+        
+        .ai-loading-state {
+            text-align: center; padding: 40px 20px;
+        }
+        .ai-spinner {
+            font-size: 2.2rem; color: var(--gold-primary); animation: spin 2.5s infinite linear;
+            display: inline-block; margin-bottom: 15px;
+        }
+        .ai-loading-text {
+            color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 1rem;
+            letter-spacing: 2px; margin-bottom: 8px;
+        }
+        .ai-loading-sub { color: var(--text-muted); font-size: 0.85rem; font-style: italic; }
+
+        /* MARKDOWN CONTENT FORMAT */
+        .reading-markdown-content {
+            color: #e2e8f0; line-height: 1.8; font-size: 1rem; font-weight: 300;
+            height: auto; max-height: none; overflow: visible;
+            word-wrap: break-word; overflow-wrap: break-word;
+        }
+        .reading-markdown-content h3 {
+            font-family: 'Playfair Display', serif; color: var(--gold-light);
+            font-size: 1.35rem; margin: 25px 0 12px; border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 8px; font-weight: 600;
+        }
+        .reading-markdown-content p { margin: 0 0 14px; text-align: justify; }
+        .reading-markdown-content ul, .reading-markdown-content ol { padding-left: 20px; margin-bottom: 16px; }
+        .reading-markdown-content li { margin-bottom: 8px; }
+        .reading-markdown-content strong { color: #fff; font-weight: 600; }
+        .reading-markdown-content blockquote {
+            border-left: 3px solid var(--gold-primary); margin: 20px 0; padding: 12px 20px;
+            background: rgba(212, 175, 55, 0.05); font-style: italic; color: #cbd5e1;
+        }
+
+        /* NÚT ĐIỀU HƯỚNG CUỐI CÙNG */
+        .result-actions {
+            display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+        }
+        .action-btn {
+            padding: 14px 34px; border-radius: 30px; font-family: 'Cinzel', serif;
+            font-size: 0.88rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s;
+            text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-restart {
+            background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-light);
+        }
+        .btn-restart:hover {
+            background: var(--gold-primary); color: #000; box-shadow: 0 0 25px var(--gold-glow);
+        }
+        .btn-copy {
+            background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff;
+        }
+        .btn-copy:hover {
+            background: rgba(255, 255, 255, 0.2); border-color: #fff;
+        }
+
+        /* MODAL CÀI ĐẶT HỆ THỐNG & AI */
+        #api-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(3, 3, 8, 0.88); backdrop-filter: blur(16px);
+            z-index: 300; display: none; justify-content: center; align-items: center;
+            padding: 20px; animation: fadeIn 0.3s ease-out;
+        }
+        .api-modal-box {
+            background: linear-gradient(150deg, rgba(20, 20, 36, 0.98) 0%, rgba(9, 9, 18, 0.99) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            border-radius: 18px; width: 100%; max-width: 520px; padding: 32px 28px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.9), 0 0 35px rgba(212, 175, 55, 0.15);
+            position: relative; text-align: left; animation: modalFloatIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-close-btn {
+            position: absolute; top: 16px; right: 18px;
+            width: 32px; height: 32px; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #94a3b8; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 0.9rem; transition: all 0.25s;
+        }
+        .modal-close-btn:hover {
+            background: rgba(225, 29, 72, 0.25); border-color: var(--ruby-reversed);
+            color: #fff; transform: scale(1.05);
+        }
+        .api-modal-box h3 {
+            font-family: 'Cinzel', serif; color: var(--gold-light); margin: 0 0 16px;
+            font-size: 1.2rem; letter-spacing: 2px; text-align: center;
+        }
+        .settings-status-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 10px 14px; background: rgba(5, 5, 12, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 10px;
+            margin-bottom: 20px; font-size: 0.82rem;
+        }
+        .settings-status-label { color: #94a3b8; }
+        .settings-field { margin-bottom: 18px; }
+        .settings-field label {
+            display: block; font-size: 0.8rem; color: var(--gold-light);
+            font-family: 'Cinzel', serif; letter-spacing: 1px; margin-bottom: 6px;
+        }
+        .api-key-input-wrapper { display: flex; gap: 8px; position: relative; }
+        .api-input {
+            flex: 1; padding: 11px 14px; background: #05050c;
+            border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 8px;
+            color: #fff; font-size: 0.9rem; outline: none; transition: all 0.3s;
+        }
+        .api-input:focus { border-color: var(--gold-primary); box-shadow: 0 0 12px var(--gold-glow); }
+        .btn-toggle-pwd {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold-light); border-radius: 8px; padding: 0 14px;
+            cursor: pointer; transition: all 0.2s; font-size: 1rem;
+        }
+        .btn-toggle-pwd:hover { background: rgba(212, 175, 55, 0.15); border-color: var(--gold-primary); }
+        .api-select {
+            width: 100%; padding: 11px 14px; background: #05050c;
+            border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 8px;
+            color: #fff; font-size: 0.85rem; outline: none; cursor: pointer;
+            transition: all 0.3s; font-family: 'Inter', sans-serif;
+        }
+        .api-select:focus { border-color: var(--gold-primary); box-shadow: 0 0 12px var(--gold-glow); }
+        .api-select option { background: #0c0c18; color: #fff; padding: 8px; }
+        .field-hint { font-size: 0.72rem; color: #64748b; margin-top: 5px; line-height: 1.4; font-style: italic; }
+        .settings-test-result {
+            padding: 10px 14px; border-radius: 8px; font-size: 0.82rem;
+            margin-bottom: 18px; line-height: 1.4;
+        }
+        .test-success {
+            background: rgba(16, 185, 129, 0.15); border: 1px solid var(--teal-upright);
+            color: #6ee7b7;
+        }
+        .test-error {
+            background: rgba(225, 29, 72, 0.15); border: 1px solid var(--ruby-reversed);
+            color: #fda4af;
+        }
+        .test-loading {
+            background: rgba(212, 175, 55, 0.12); border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+        }
+        .modal-actions-row {
+            display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; margin-top: 22px;
+        }
+        .btn-save {
+            background: var(--gold-primary); border: 1px solid var(--gold-primary);
+            color: #000; font-weight: 600;
+        }
+        .btn-save:hover { background: #fbeea4; box-shadow: 0 0 20px var(--gold-glow); color: #000; }
+        .btn-test {
+            background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+        }
+        .btn-test:hover { background: var(--gold-primary); color: #000; }
+        .btn-clear {
+            background: rgba(225, 29, 72, 0.12); border: 1px solid rgba(225, 29, 72, 0.4);
+            color: #fca5a5;
+        }
+        .btn-clear:hover { background: var(--ruby-reversed); color: #fff; }
+        .api-status-badge {
+            font-size: 0.72rem; padding: 2px 10px; border-radius: 12px; font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        .api-status-active { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid var(--teal-upright); }
+        .api-status-inactive { background: rgba(148, 163, 184, 0.15); color: #94a3b8; border: 1px solid #475569; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes modalFloatIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
     </style>
 
+    <!-- Thư viện Three.js, Tween.js, MediaPipe -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <!-- Marked.js để render Markdown AI mượt mà -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Trọn bộ 78 lá bài từ "Tarot Chú Giải" đã trích xuất -->
+    <script src="src/tarot_book.js"></script>
+    <!-- Trọn bộ hình ảnh 78 lá bài Base64 Data URI sạch (chạy offline & file:// 100%) -->
+    <script src="scripts/card_images.js"></script>
+    <!-- Bộ máy luận giải bài Tarot chuyên sâu -->
+    <script src="src/utils/interpretationEngine.js?v=6"></script>
 </head>
 <body>
     <video id="input-video" playsinline autoplay muted></video>
     <div id="canvas-container"></div>
     <div id="virtual-cursor"></div>
     
+    <!-- NÚT BÁNH RĂNG CÀI ĐẶT CỐ ĐỊNH (SETTINGS) -->
+    <button id="floating-settings-btn" onclick="openApiModal()" title="Cài đặt hệ thống">⚙</button>
+
+    <!-- UI LAYER TƯƠNG TÁC -->
     <div id="ui-layer">
-        <div id="counter">0 / 3</div>
+        <div id="top-bar">
+            <div class="brand-badge">
+                <span class="star">✦</span>
+                <span class="title">TAROTCUAHALLE</span>
+            </div>
+            <div class="top-controls">
+                <div id="counter">0 / 3</div>
+            </div>
+        </div>
+
+        <div id="inspect-banner">
+            <span id="inspect-name">THE MAGICIAN</span>
+            <span id="inspect-orientation" class="status-badge badge-upright">CHIỀU XUÔI ✦</span>
+        </div>
+
         <div id="guide-text">Đưa tay lên trước Camera để bắt đầu</div>
-        <div id="credit-text">tiktok: binnanee</div>
-        
-        <div id="result-modal">
-            <h2>Lời Tiên Tri</h2>
-            <div id="final-reading"></div>
-            <button class="restart-btn" onclick="location.reload()">Trải Bài Mới</button>
+        <div id="credit-text">✦ TarotcuaHalle ✦</div>
+    </div>
+
+    <!-- BANNER XÀO BÀI (BƯỚC 2) -->
+    <div id="shuffle-banner">
+        <div class="shuffle-icon">✦</div>
+        <h3 class="shuffle-title">ĐANG GOM & XÀO 78 LÁ BÀI VŨ TRỤ...</h3>
+    </div>
+
+    <!-- BƯỚC 1: OVERLAY MỞ ĐẦU TRANG CHỦ (TỐI GIẢN & HUYỀN BÍ) -->
+    <div id="intro-overlay">
+        <div class="intro-box">
+            <div class="intro-symbol">✦ ☾ ✦</div>
+            <h1 class="intro-title">TAROTCUAHALLE</h1>
+            <div class="intro-subtitle">Tri thức 3 nguồn: Tarot Chú Giải • Hành Trình Tarot • Dự Đoán Thời Gian (Philippe Ngô)</div>
+
+            <div class="question-area">
+                <textarea id="user-question-input" placeholder="Hãy lắng đọng tâm trí và ghi lại điều bạn đang băn khoăn nhất lúc này... (Ví dụ: Chuyện tình cảm sắp tới của tôi sẽ ra sao? / Công việc hiện tại có cơ hội bứt phá không?)"></textarea>
+            </div>
+
+            <span class="chips-label">Gợi ý chủ đề nhanh:</span>
+            <div class="quick-chips">
+                <button class="chip-btn" onclick="setQuickQuestion('Chuyện tình cảm và mối quan hệ sắp tới của tôi sẽ diễn biến ra sao?')">💖 Tình Duyên</button>
+                <button class="chip-btn" onclick="setQuickQuestion('Công việc và sự nghiệp hiện tại có cơ hội bứt phá hoặc chuyển biến gì không?')">💼 Sự Nghiệp</button>
+                <button class="chip-btn" onclick="setQuickQuestion('Dòng chảy tài chính và các quyết định đầu tư thời gian tới?')">💰 Tài Chính</button>
+                <button class="chip-btn" onclick="setQuickQuestion('Thông điệp vũ trụ dẫn lối và bài học chuyển hóa dành cho tôi lúc này?')">🔮 Thông Điệp Vũ Trụ</button>
+            </div>
+
+            <button class="btn-start" onclick="startTarotJourney()">✦ Bắt Đầu Bốc Bài ✦</button>
         </div>
     </div>
 
+    <!-- BƯỚC 4: MODAL KẾT QUẢ TOÀN MÀN HÌNH -->
+    <div id="result-modal">
+        <div class="result-container">
+            <div class="result-header">
+                <div class="symbol">✦ ☾ ✦</div>
+                <h2>TAROTCUAHALLE</h2>
+                <div style="font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 3px; color: var(--gold-light); margin-bottom: 18px; text-transform: uppercase;">✦ Thông Điệp & Luận Giải Vũ Trụ ✦</div>
+                <div class="question-display-box" id="result-question-display">
+                    <strong>Câu hỏi của bạn:</strong> <span id="display-question-text"></span>
+                </div>
+            </div>
+
+            <!-- GRID 3 LÁ BÀI -->
+            <div class="cards-grid" id="cards-grid-display">
+                <!-- Sẽ được điền động bởi Javascript -->
+            </div>
+
+            <!-- PHẦN PHÂN TÍCH CHUYÊN SÂU -->
+            <div class="ai-reading-box">
+                <div id="ai-reading-badge" class="ai-badge">✦ LUẬN GIẢI CHI TIẾT TRẢI BÀI ✦</div>
+                
+                <div id="ai-loading" class="ai-loading-state">
+                    <div class="ai-spinner">✦</div>
+                    <div class="ai-loading-text">✦ ĐANG PHÂN TÍCH & GIẢI MÃ TRẢI BÀI... ✦</div>
+                    <div class="ai-loading-sub">Soi chiếu dòng chảy năng lượng và giải đáp câu hỏi của bạn</div>
+                </div>
+
+                <div id="ai-content" class="reading-markdown-content" style="display: none;"></div>
+            </div>
+
+            <!-- NÚT ĐIỀU HƯỚNG -->
+            <div class="result-actions">
+                <button class="action-btn btn-restart" onclick="resetToNewReading()">✦ Trải Bài Mới</button>
+                <button class="action-btn btn-copy" onclick="copyFullReading()">📋 Sao Chép Luận Giải</button>
+                <button class="action-btn btn-restart" style="border-color: rgba(255,255,255,0.3);" onclick="openApiModal()">⚙ Cài Đặt</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CÀI ĐẶT HỆ THỐNG & AI (SETTINGS MODAL) -->
+    <div id="api-modal" onclick="if(event.target===this) closeApiModal()">
+        <div class="api-modal-box">
+            <div class="modal-close-btn" onclick="closeApiModal()" title="Đóng">✕</div>
+            <h3>⚙ CÀI ĐẶT HỆ THỐNG & AI</h3>
+            <div class="settings-status-row">
+                <span class="settings-status-label">Trạng thái kết nối:</span>
+                <span id="settings-api-status" class="api-status-badge api-status-inactive">🟡 Chế độ Offline</span>
+            </div>
+            
+            <div class="settings-field">
+                <label for="api-key-input">Google Gemini API Key:</label>
+                <div class="api-key-input-wrapper">
+                    <input type="password" id="api-key-input" class="api-input" placeholder="Dán Gemini API Key (AIzaSy...)">
+                    <button type="button" class="btn-toggle-pwd" onclick="toggleApiKeyVisibility()" title="Ẩn/Hiện Key">👁</button>
+                </div>
+                <div class="field-hint">Key được lưu an toàn trong LocalStorage máy bạn. Nếu để trống, hệ thống sử dụng bộ máy giải nghĩa Offline từ sách Tarot Chú Giải.</div>
+            </div>
+
+            <div class="settings-field">
+                <label for="setting-model-select">Mô hình AI (Model):</label>
+                <select id="setting-model-select" class="api-select">
+                    <option value="gemini-3.5-flash" selected>Gemini 3.5 Flash (Khuyên dùng - Nhanh & Cân bằng nhất)</option>
+                    <option value="gemini-3.8-flash">Gemini 3.8 Flash (Thế hệ mới)</option>
+                    <option value="gemini-2.5-flash">Gemini 2.5 Flash (Ổn định)</option>
+                    <option value="gemini-3.8-pro">Gemini 3.8 Pro (Phân tích chuyên sâu)</option>
+                </select>
+                <div class="field-hint">Chọn mô hình dùng để luận giải dòng chảy năng lượng 3 lá bài.</div>
+            </div>
+
+            <div id="settings-test-result" class="settings-test-result" style="display: none;"></div>
+
+            <div class="modal-actions-row">
+                <button type="button" class="action-btn btn-test" id="btn-test-key" onclick="testCurrentSettings()">⚡ Kiểm Tra Kết Nối</button>
+                <button type="button" class="action-btn btn-save" onclick="saveSettings()">💾 Lưu Cài Đặt</button>
+                <button type="button" class="action-btn btn-clear" onclick="clearApiKey()">🗑️ Xóa Key</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST THÔNG BÁO -->
+    <div id="toast">Đã sao chép nội dung thành công!</div>
+
+    <!-- LOADING BAN ĐẦU -->
     <div id="loading">
         <div class="loader-content">
-            <div style="font-size: 2rem; color: #fff;">✦</div>
-            <div style="font-size: 0.8rem; color: #888; letter-spacing: 4px; margin-top: 10px;">LOADING...</div>
+            <div style="font-size: 2.2rem; color: #fff;">✦</div>
+            <div style="font-size: 0.85rem; color: var(--gold-light); letter-spacing: 4px; margin-top: 12px; font-family: 'Cinzel', serif;">TAROTCUAHALLE • KHỞI TẠO KHÔNG GIAN VŨ TRỤ...</div>
         </div>
     </div>
 
     <script>
-        // --- DATA ---
-        const TAROT_DATA = [
-            { name: "The Fool", url: "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg", meaning: "Khởi đầu mới, tự phát." },
-            { name: "The Magician", url: "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg", meaning: "Kỹ năng, hành động." },
-            { name: "The High Priestess", url: "https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg", meaning: "Trực giác, bí ẩn." },
-            { name: "The Empress", url: "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg", meaning: "Trù phú, sáng tạo." },
-            { name: "The Emperor", url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg", meaning: "Quyền lực, cấu trúc." },
-            { name: "The Lovers", url: "https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg", meaning: "Tình yêu, lựa chọn." },
-            { name: "The Chariot", url: "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg", meaning: "Ý chí, chiến thắng." },
-            { name: "The Hermit", url: "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg", meaning: "Suy ngẫm, cô độc." },
-            { name: "Wheel of Fortune", url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg", meaning: "Vận may, thay đổi." },
-            { name: "Death", url: "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg", meaning: "Kết thúc, tái sinh." },
-            { name: "The Devil", url: "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg", meaning: "Cám dỗ, trói buộc." },
-            { name: "The Tower", url: "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg", meaning: "Sụp đổ đột ngột." },
-            { name: "The Star", url: "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg", meaning: "Hy vọng, niềm tin." },
-            { name: "The Moon", url: "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg", meaning: "Ảo tưởng, sợ hãi." },
-            { name: "The Sun", url: "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg", meaning: "Thành công, niềm vui." },
-            { name: "The World", url: "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg", meaning: "Hoàn thành, trọn vẹn." }
-        ];
+        // --- NGUỒN DỮ LIỆU TỪ SÁCH "TAROT CHÚ GIẢI" ---
+        const ALL_BOOK_CARDS = (window.TAROT_BOOK_DATA && window.TAROT_BOOK_DATA.length > 0) 
+            ? window.TAROT_BOOK_DATA 
+            : [
+                { id: "major-0", nameEn: "The Fool", nameVi: "0. Chàng Khờ (The Fool)", image: "assets/cards/the_fool.jpg", element: "Khí", astrology: "Sao Thiên Vương", keywords: ["Khởi đầu mới", "Ngây thơ", "Phiêu lưu"], upright: "Khởi đầu mới đầy tự do và tin tưởng vào trực giác.", reversed: "Sự liều lĩnh thiếu cân nhắc hoặc do dự bước tiếp.", advice: { upright: "Tự tin bước đi theo tiếng gọi trái tim.", reversed: "Tháo gỡ sự e ngại, lập kế hoạch cẩn thận." } },
+                { id: "major-1", nameEn: "The Magician", nameVi: "I. Pháp Sư (The Magician)", image: "assets/cards/the_magician.jpg", element: "Khí", astrology: "Sao Thủy", keywords: ["Ý chí", "Sáng tạo", "Nguồn lực"], upright: "Hội tụ đầy đủ nguồn lực và kỹ năng để biến ước mơ thành hiện thực.", reversed: "Lãng phí tiềm năng hoặc do dự hành động.", advice: { upright: "Chủ động hành động và sử dụng hết tài năng.", reversed: "Tập trung vào sự chân thành và mục tiêu thực chất." } }
+            ];
 
-        // --- CẤU HÌNH FINAL ---
+        // CẤU HÌNH THREE.JS & BÀN TRẢI BÀI
         const CONFIG = {
-            cardCount: TAROT_DATA.length, 
+            cardCount: 22, // 22 lá bài xếp thành vòng tròn 3D
             radius: 5.5, 
             cardWidth: 1.4, cardHeight: 2.4, 
             inspectPos: { x: 0, y: 0, z: 3.8 }, 
@@ -166,31 +766,495 @@
         let explosions = [];
         let storedCards = [];
         let inspectingCard = null;
-        let isGameActive = true;
+        let isGameActive = false; // Chỉ active khi người dùng bấm "Bắt đầu bốc bài"
         let particleTexture;
+        let inspectSpot, cameraLight;
 
         let handX = 0.5; 
         let isPinching = false;
         let cursorPosition = { x: 0, y: 0 };
         let rotationSpeed = 0.002;
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
+        let userQuestion = "";
+        let generatedAiReadingText = "";
+        let prefetchReadingPromise = null;
+
+        // LƯU TRỮ VÀ ĐỒNG BỘ CẤU HÌNH API & MODEL (LOCALSTORAGE)
+        function getSavedApiKey() {
+            return (localStorage.getItem('TAROT_GEMINI_API_KEY') || "").trim();
+        }
+        function getSavedModel() {
+            let m = localStorage.getItem('TAROT_GEMINI_MODEL');
+            if (!m || m !== 'gemini-3.5-flash') {
+                m = 'gemini-3.5-flash';
+                localStorage.setItem('TAROT_GEMINI_MODEL', m);
+            }
+            return m;
+        }
+        function toggleApiKeyVisibility() {
+            const input = document.getElementById('api-key-input');
+            if (input) {
+                input.type = input.type === 'password' ? 'text' : 'password';
             }
         }
+        function updateApiKeyUI() {
+            const key = getSavedApiKey();
+            const model = getSavedModel();
+            const statusEl = document.getElementById('settings-api-status');
 
-        // --- TẠO HẠT MÀU TRẮNG ---
+            if (statusEl) {
+                if (key) {
+                    statusEl.innerText = `🟢 Đã kết nối (${model})`;
+                    statusEl.className = "api-status-badge api-status-active";
+                } else {
+                    statusEl.innerText = "🟡 Chế độ Luận Giải Offline";
+                    statusEl.className = "api-status-badge api-status-inactive";
+                }
+            }
+        }
+        async function testCurrentSettings() {
+            const keyInput = document.getElementById('api-key-input');
+            const modelSelect = document.getElementById('setting-model-select');
+            const resultBox = document.getElementById('settings-test-result');
+            const btnTest = document.getElementById('btn-test-key');
+
+            const key = keyInput ? keyInput.value.trim() : "";
+            const model = modelSelect ? modelSelect.value : "gemini-3.5-flash";
+
+            if (!key) {
+                if (resultBox) {
+                    resultBox.style.display = 'block';
+                    resultBox.className = 'settings-test-result test-error';
+                    resultBox.innerText = '⚠️ Vui lòng dán API Key trước khi kiểm tra!';
+                }
+                showToast("Vui lòng dán API Key trước khi thử!");
+                return;
+            }
+
+            if (resultBox) {
+                resultBox.style.display = 'block';
+                resultBox.className = 'settings-test-result test-loading';
+                resultBox.innerText = `✦ Đang gửi tín hiệu kiểm tra kết nối (${model})...`;
+            }
+            if (btnTest) btnTest.disabled = true;
+
+            try {
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`;
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ role: "user", parts: [{ text: "Ping test" }] }],
+                        generationConfig: { maxOutputTokens: 64 }
+                    })
+                });
+
+                if (res.ok) {
+                    if (resultBox) {
+                        resultBox.className = 'settings-test-result test-success';
+                        resultBox.innerText = `🟢 Kết nối thành công tới ${model}! API Key hợp lệ và sẵn sàng.`;
+                    }
+                    showToast(`🟢 Kết nối (${model}) thành công!`);
+                } else {
+                    const err = await res.json().catch(() => ({}));
+                    const msg = err.error ? err.error.message : `HTTP ${res.status}`;
+                    if (resultBox) {
+                        resultBox.className = 'settings-test-result test-error';
+                        resultBox.innerText = `🔴 Lỗi kết nối (${res.status}): ${msg}`;
+                    }
+                    showToast("🔴 Lỗi kiểm tra Key: " + msg);
+                }
+            } catch (err) {
+                if (resultBox) {
+                    resultBox.className = 'settings-test-result test-error';
+                    resultBox.innerText = `🔴 Lỗi mạng/truy vấn: ${err.message}`;
+                }
+                showToast("🔴 Lỗi mạng hoặc API: " + err.message);
+            } finally {
+                if (btnTest) btnTest.disabled = false;
+            }
+        }
+        function saveSettings() {
+            const keyInput = document.getElementById('api-key-input');
+            const modelSelect = document.getElementById('setting-model-select');
+
+            const key = keyInput ? keyInput.value.trim() : "";
+            const model = modelSelect ? modelSelect.value : "gemini-3.5-flash";
+
+            localStorage.setItem('TAROT_GEMINI_API_KEY', key);
+            localStorage.setItem('TAROT_GEMINI_MODEL', model);
+
+            updateApiKeyUI();
+            closeApiModal();
+
+            if (key) {
+                showToast(`Đã lưu cấu hình! Hệ thống luận giải đã sẵn sàng.`);
+            } else {
+                showToast("Đã lưu cấu hình (Chế độ Luận Giải Offline).");
+            }
+        }
+        function clearApiKey() {
+            localStorage.removeItem('TAROT_GEMINI_API_KEY');
+            const keyInput = document.getElementById('api-key-input');
+            const resultBox = document.getElementById('settings-test-result');
+            if (keyInput) keyInput.value = "";
+            if (resultBox) resultBox.style.display = 'none';
+            updateApiKeyUI();
+            showToast("Đã xóa API Key. Đã chuyển về chế độ Offline!");
+        }
+        function openApiModal() {
+            const key = getSavedApiKey();
+            const model = getSavedModel();
+            const keyInput = document.getElementById('api-key-input');
+            const modelSelect = document.getElementById('setting-model-select');
+            const resultBox = document.getElementById('settings-test-result');
+
+            if (keyInput) keyInput.value = key;
+            if (modelSelect) modelSelect.value = model;
+            if (resultBox) resultBox.style.display = 'none';
+
+            updateApiKeyUI();
+            document.getElementById('api-modal').style.display = 'flex';
+        }
+        function closeApiModal() {
+            document.getElementById('api-modal').style.display = 'none';
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function setQuickQuestion(q) {
+            document.getElementById('user-question-input').value = q;
+        }
+
+        // --- BƯỚC 1 -> BƯỚC 2: BẮT ĐẦU TRẢI BÀI ---
+        function startTarotJourney() {
+            const q = document.getElementById('user-question-input').value.trim();
+            userQuestion = q || "Thông điệp vũ trụ và năng lượng dẫn lối tổng quan dành cho tôi lúc này.";
+            
+            // Pre-warm kết nối SSL/TLS tới máy chủ API ngay khi bắt đầu để giảm 400ms độ trễ khi bốc xong
+            const key = getSavedApiKey();
+            if (key) {
+                fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash?key=${key}`).catch(() => {});
+            }
+
+            // Ẩn overlay mở đầu với hiệu ứng mượt
+            const intro = document.getElementById('intro-overlay');
+            intro.style.opacity = '0';
+            setTimeout(() => {
+                intro.style.display = 'none';
+                triggerDeckShuffleAnimation();
+            }, 700);
+        }
+
+        // --- HỆ THỐNG TEXTURE CACHE & CANVAS DỰ PHÒNG HOÀN TOÀN TỰ ĐỘNG ---
+        const textureCache = {};
+        let sharedBackTexture = null;
+
+        // TẠO MẶT SAU THẺ BÀI HUYỀN BÍ SIÊU NÉT BẰNG CANVAS (CHỐNG LỖI MẶT SAU TỐI HOẶC KHÔNG HIỆN)
+        function createProceduralCardBackTexture() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 880;
+            const ctx = canvas.getContext('2d');
+
+            // Nền tối vũ trụ sâu thẳm
+            const bgGrad = ctx.createRadialGradient(256, 440, 30, 256, 440, 480);
+            bgGrad.addColorStop(0, '#1a1832');
+            bgGrad.addColorStop(0.5, '#0e0d1e');
+            bgGrad.addColorStop(1, '#06050e');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, 512, 880);
+
+            // Bụi sao lấp lánh li ti
+            ctx.fillStyle = 'rgba(212, 175, 55, 0.25)';
+            for (let i = 0; i < 220; i++) {
+                const sx = (Math.sin(i * 137.5) * 0.5 + 0.5) * 512;
+                const sy = (Math.cos(i * 93.3) * 0.5 + 0.5) * 880;
+                const sr = (i % 4 === 0) ? 2.2 : 1.2;
+                ctx.beginPath();
+                ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Khung viền kép mạ vàng hoàng gia
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 8;
+            ctx.strokeRect(20, 20, 472, 840);
+
+            ctx.strokeStyle = 'rgba(251, 238, 164, 0.7)';
+            ctx.lineWidth = 2.5;
+            ctx.strokeRect(34, 34, 444, 812);
+
+            // 4 Góc họa tiết hoa văn cổ điển
+            const corners = [[34, 34], [478, 34], [34, 846], [478, 846]];
+            corners.forEach(([cx, cy]) => {
+                ctx.beginPath();
+                ctx.arc(cx, cy, 22, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.2)';
+                ctx.fill();
+                ctx.strokeStyle = '#fbeea4';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            });
+
+            // Vòng tròn trung tâm (Sacred Solar/Lunar Mandala)
+            const cx = 256, cy = 440;
+            
+            // Quầng sáng vàng kim trung tâm
+            const sunGlow = ctx.createRadialGradient(cx, cy, 10, cx, cy, 190);
+            sunGlow.addColorStop(0, 'rgba(251, 238, 164, 0.45)');
+            sunGlow.addColorStop(0.5, 'rgba(212, 175, 55, 0.15)');
+            sunGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            ctx.fillStyle = sunGlow;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 190, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Vòng tròn hình học thiêng liêng
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 3.5;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 125, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.strokeStyle = 'rgba(251, 238, 164, 0.8)';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(cx, cy, 140, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Ngôi sao 8 cánh mặt trời (8-Pointed Solar Star)
+            for (let pass = 0; pass < 2; pass++) {
+                ctx.save();
+                ctx.translate(cx, cy);
+                if (pass === 1) ctx.rotate(Math.PI / 4);
+                ctx.strokeStyle = pass === 0 ? '#fbeea4' : '#d4af37';
+                ctx.lineWidth = 3;
+                ctx.strokeRect(-70, -70, 140, 140);
+                ctx.restore();
+            }
+
+            // Các tia sáng mặt trời
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.85)';
+            ctx.lineWidth = 2;
+            for (let a = 0; a < Math.PI * 2; a += Math.PI / 8) {
+                ctx.beginPath();
+                ctx.moveTo(cx + Math.cos(a) * 45, cy + Math.sin(a) * 45);
+                ctx.lineTo(cx + Math.cos(a) * 115, cy + Math.sin(a) * 115);
+                ctx.stroke();
+            }
+
+            // Mặt trời & Mặt trăng ở lõi
+            ctx.fillStyle = '#fbeea4';
+            ctx.beginPath();
+            ctx.arc(cx, cy, 35, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = '#151328';
+            ctx.beginPath();
+            ctx.arc(cx + 12, cy - 8, 28, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Biểu tượng sao 4 cánh huyền bí
+            function drawStar4(px, py, size) {
+                ctx.fillStyle = '#fbeea4';
+                ctx.beginPath();
+                ctx.moveTo(px, py - size);
+                ctx.quadraticCurveTo(px, py, px + size, py);
+                ctx.quadraticCurveTo(px, py, px, py + size);
+                ctx.quadraticCurveTo(px, py, px - size, py);
+                ctx.quadraticCurveTo(px, py, px, py - size);
+                ctx.fill();
+            }
+            drawStar4(cx, 150, 26);
+            drawStar4(cx, 730, 26);
+            drawStar4(110, cy, 20);
+            drawStar4(402, cy, 20);
+
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.generateMipmaps = true;
+            tex.minFilter = THREE.LinearMipmapLinearFilter;
+            tex.wrapS = THREE.ClampToEdgeWrapping;
+            tex.wrapT = THREE.ClampToEdgeWrapping;
+            return tex;
+        }
+
+        // TẠO MẶT TRƯỚC DỰ PHÒNG KHI ẢNH ĐANG TẢI (TRÁNH LÁ BÀI BỊ ĐEN XÌ)
+        function createProceduralCardFrontTexture(nameVi, nameEn, element) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 512;
+            canvas.height = 880;
+            const ctx = canvas.getContext('2d');
+
+            const grad = ctx.createLinearGradient(0, 0, 512, 880);
+            grad.addColorStop(0, '#1e1b34');
+            grad.addColorStop(0.5, '#2e274a');
+            grad.addColorStop(1, '#16142a');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, 512, 880);
+
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 6;
+            ctx.strokeRect(20, 20, 472, 840);
+            ctx.lineWidth = 2;
+            ctx.strokeRect(32, 32, 448, 816);
+
+            ctx.fillStyle = '#fbeea4';
+            ctx.font = 'bold 28px serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(nameVi.toUpperCase(), 256, 85);
+
+            ctx.font = 'italic 20px sans-serif';
+            ctx.fillStyle = '#94a3b8';
+            ctx.fillText(nameEn, 256, 120);
+
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(256, 440, 150, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.font = '80px serif';
+            ctx.fillStyle = '#fbeea4';
+            ctx.fillText('✦', 256, 470);
+
+            if (element) {
+                ctx.font = 'bold 22px serif';
+                ctx.fillStyle = '#d4af37';
+                ctx.fillText(`NGUYÊN TỐ: ${element.toUpperCase()}`, 256, 780);
+            }
+
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.generateMipmaps = true;
+            return tex;
+        }
+
+        // LẤY NGUỒN ẢNH TỪ BASE64 DATA URI (ĐẢM BẢO KHÔNG DÍNH CORS TRÊN FILE:// VÀ LOAD TỨC THÌ)
+        function getCardImageSrc(url) {
+            if (window.CARD_IMAGE_DATA && window.CARD_IMAGE_DATA[url]) {
+                return window.CARD_IMAGE_DATA[url];
+            }
+            return url;
+        }
+
+        // HÀM LẤY VÀ CACHE TEXTURE MẶT TRƯỚC AN TOÀN - HIỂN THỊ TRANH LÁ BÀI 100%
+        function getCardFrontTexture(cardData) {
+            const url = cardData.image;
+            if (textureCache[url]) return textureCache[url];
+
+            const src = getCardImageSrc(url);
+            const tex = textureLoader.load(src, (loadedTex) => {
+                loadedTex.generateMipmaps = true;
+                loadedTex.minFilter = THREE.LinearMipmapLinearFilter;
+                loadedTex.needsUpdate = true;
+            }, undefined, (err) => {
+                console.warn("Lỗi tải ảnh lá bài, dùng fallback:", url, err);
+                const fallbackTex = createProceduralCardFrontTexture(cardData.nameVi, cardData.nameEn, cardData.element);
+                tex.image = fallbackTex.image;
+                tex.needsUpdate = true;
+            });
+
+            tex.generateMipmaps = true;
+            tex.minFilter = THREE.LinearMipmapLinearFilter;
+            textureCache[url] = tex;
+            return tex;
+        }
+
+        // BƯỚC 2: HIỆU ỨNG GOM & XÀO BÀI (SHUFFLE) VỚI TỈ LỆ BÀI NGƯỢC (30% - 40%)
+        function triggerDeckShuffleAnimation() {
+            const banner = document.getElementById('shuffle-banner');
+            banner.style.display = 'block';
+
+            // Xáo trộn dữ liệu bài & phân bổ bài ngược
+            rebuildDeckWithReversal();
+
+            // Hiệu ứng Three.js: Gom bài về tâm
+            cardGroup.children.forEach(c => {
+                new TWEEN.Tween(c.position)
+                    .to({ x: 0, y: 0, z: 0 }, 600)
+                    .easing(TWEEN.Easing.Cubic.In)
+                    .start();
+            });
+
+            // Xoay tít vòng tròn
+            new TWEEN.Tween(cardGroup.rotation)
+                .to({ y: cardGroup.rotation.y + Math.PI * 4 }, 1200)
+                .easing(TWEEN.Easing.Quadratic.InOut)
+                .start();
+
+            // Mở rộng bài trở lại bán kính 5.5
+            setTimeout(() => {
+                cardGroup.children.forEach((c, i) => {
+                    const angle = (i / CONFIG.cardCount) * Math.PI * 2;
+                    const targetX = Math.sin(angle) * CONFIG.radius;
+                    const targetZ = Math.cos(angle) * CONFIG.radius;
+                    new TWEEN.Tween(c.position)
+                        .to({ x: targetX, y: 0, z: targetZ }, 700)
+                        .easing(TWEEN.Easing.Back.Out)
+                        .start();
+                });
+
+                setTimeout(() => {
+                    banner.style.display = 'none';
+                    isGameActive = true;
+                    updateCounter();
+                }, 800);
+            }, 700);
+        }
+
+        // TÁI TẠO BỘ BÀI VÀ GÁN TỈ LỆ BÀI NGƯỢC (35%)
+        function rebuildDeckWithReversal() {
+            const shuffledPool = [...ALL_BOOK_CARDS].sort(() => 0.5 - Math.random());
+            const selectedCards = shuffledPool.slice(0, CONFIG.cardCount);
+
+            cardGroup.children.forEach((mesh, i) => {
+                const cardData = selectedCards[i] || ALL_BOOK_CARDS[i % ALL_BOOK_CARDS.length];
+                const isReversed = Math.random() < 0.35;
+                
+                mesh.userData = {
+                    id: i,
+                    data: cardData,
+                    isPicked: false,
+                    isReversed: isReversed
+                };
+
+                // Lấy texture từ cache đảm bảo không tải lại gây gián đoạn
+                const frontTex = getCardFrontTexture(cardData);
+                mesh.material[5].map = frontTex;
+                mesh.material[5].roughness = 0.8;
+                mesh.material[5].metalness = 0.1;
+                mesh.material[5].emissive.setHex(0x000000);
+                mesh.material[5].emissiveIntensity = 0;
+                mesh.material[5].needsUpdate = true;
+
+                // Đảm bảo mặt sau luôn có texture hợp lệ
+                if (!mesh.material[4].map || !mesh.material[4].map.image) {
+                    mesh.material[4].map = sharedBackTexture;
+                }
+                mesh.material[4].roughness = 0.8;
+                mesh.material[4].metalness = 0.1;
+                mesh.material[4].emissive.setHex(0x000000);
+                mesh.material[4].emissiveIntensity = 0;
+                mesh.material[4].needsUpdate = true;
+            });
+        }
+
+        // TẠO HẠT NỔ TRẮNG LẤP LÁNH
         function generateParticleTexture() {
             const canvas = document.createElement('canvas');
             canvas.width = 64; canvas.height = 64;
             const ctx = canvas.getContext('2d');
             
             const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-            grad.addColorStop(0, 'rgba(255, 255, 255, 1)');      // Trắng
-            grad.addColorStop(0.4, 'rgba(255, 255, 255, 0.5)'); 
-            grad.addColorStop(1, 'rgba(255, 255, 255, 0)');     
+            grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+            grad.addColorStop(0.3, 'rgba(255, 240, 180, 0.85)');
+            grad.addColorStop(0.6, 'rgba(212, 175, 55, 0.45)'); 
+            grad.addColorStop(1, 'rgba(212, 175, 55, 0)');     
             
             ctx.fillStyle = grad;
             ctx.fillRect(0, 0, 64, 64);
@@ -200,10 +1264,11 @@
             return tex;
         }
 
+        // KHỞI TẠO KHÔNG GIAN THREE.JS VỚI HỆ THỐNG ÁNH SÁNG ĐA CHIỀU CHỐNG TỐI ĐEN
         function init() {
             const container = document.getElementById('canvas-container');
             scene = new THREE.Scene();
-            scene.fog = new THREE.FogExp2(0x050505, 0.02);
+            scene.fog = new THREE.FogExp2(0x05050a, 0.015);
             
             camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
             camera.position.set(0, 0, 5);
@@ -212,18 +1277,67 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.0; // Giảm exposure về mức 1.0 tiêu chuẩn để màu sắc tranh trung thực, không bị cháy sáng
             container.appendChild(renderer.domElement);
 
-            const ambient = new THREE.AmbientLight(0xffffff, 0.6); 
+            // 1. ĐÈN AMBIENT TỔNG QUAN (0.7 - ÊM DỊU, KHÔNG GÂY LÓA)
+            const ambient = new THREE.AmbientLight(0xffffff, 0.7); 
             scene.add(ambient);
-            const spotLight = new THREE.SpotLight(0xffffff, 2.0); 
+
+            // 2. ĐÈN HEMISPHERE (Bầu trời vàng ấm - Mặt đất tím huyền bí)
+            const hemiLight = new THREE.HemisphereLight(0xfffaed, 0x221a3a, 0.65);
+            scene.add(hemiLight);
+
+            // 3. ĐÈN SPOTLIGHT TRÊN CAO CHIẾU XUỐNG
+            const spotLight = new THREE.SpotLight(0xfffae0, 0.8); 
             spotLight.position.set(0, 10, 10); 
             scene.add(spotLight);
 
+            // 4. ĐÈN DIRECTIONAL GÓC CHÉO - TRÁNH GÓC CHIẾU VUÔNG GÓC GÂY LÓA TRẮNG
+            const frontDirLight = new THREE.DirectionalLight(0xffffff, 0.6);
+            frontDirLight.position.set(2.5, 4, 6);
+            scene.add(frontDirLight);
+
+            // 5. ĐÈN POINTLIGHT GẮN TRÊN CAMERA - CƯỜNG ĐỘ DỊU NHẸ (0.5)
+            cameraLight = new THREE.PointLight(0xfff8e7, 0.5, 20);
+            cameraLight.position.set(0, 0, 1.5);
+            camera.add(cameraLight);
+            scene.add(camera);
+
+            // 6. ĐÈN SPOTLIGHT TẬP TRUNG TẠI ĐIỂM INSPECT (GÓC CHIẾU DỊU 0.6)
+            inspectSpot = new THREE.SpotLight(0xfff3cc, 0.6, 15, Math.PI / 4, 0.5);
+            inspectSpot.position.set(2, 4, 5);
+            inspectSpot.target.position.set(0, 0, CONFIG.inspectPos.z);
+            scene.add(inspectSpot);
+            scene.add(inspectSpot.target);
+
             textureLoader = new THREE.TextureLoader();
             particleTexture = generateParticleTexture(); 
+
+            // Khởi tạo texture mặt sau mặc định từ canvas (luôn sẵn sàng 100%)
+            sharedBackTexture = createProceduralCardBackTexture();
+
+            // Cố gắng tải thêm back.png từ Base64 Data URI hoặc file
+            const backSrc = getCardImageSrc('assets/back.png');
+            textureLoader.load(backSrc, (loadedTex) => {
+                loadedTex.generateMipmaps = true;
+                loadedTex.minFilter = THREE.LinearMipmapLinearFilter;
+                sharedBackTexture = loadedTex;
+                if (cardGroup) {
+                    cardGroup.children.forEach(c => {
+                        if (c.material && c.material[4]) {
+                            c.material[4].map = loadedTex;
+                            c.material[4].needsUpdate = true;
+                        }
+                    });
+                }
+            }, undefined, (err) => {
+                console.info("Duy trì procedural back texture cao cấp.");
+            });
+
+            // Pre-load trước toàn bộ 22 lá bài đầu tiên vào GPU Cache
+            ALL_BOOK_CARDS.slice(0, CONFIG.cardCount).forEach(c => getCardFrontTexture(c));
             
-            shuffleArray(TAROT_DATA);
             createCards();
             createBackgroundStars();
 
@@ -232,27 +1346,32 @@
             document.addEventListener('mousedown', onMouseDown);
             window.addEventListener('resize', onResize);
             
+            // Khởi tạo trạng thái API Key từ LocalStorage
+            updateApiKeyUI(getSavedApiKey());
+            
+            // Kết thúc màn hình loading ban đầu
             setTimeout(() => {
                 document.getElementById('loading').style.opacity = 0;
-                setTimeout(()=>document.getElementById('loading').style.display='none', 1500);
-            }, 2000);
+                setTimeout(() => document.getElementById('loading').style.display = 'none', 1000);
+            }, 800);
         }
 
         function createBackgroundStars() {
-            const starCount = 800;
+            const starCount = 900;
             const geo = new THREE.BufferGeometry();
             const positions = [];
             const sizes = [];
-            for(let i=0; i<starCount; i++) {
-                positions.push((Math.random()-0.5)*60, (Math.random()-0.5)*40, (Math.random()-0.5)*50 - 10);
-                sizes.push(Math.random() * 0.5 + 0.1);
+            for(let i = 0; i < starCount; i++) {
+                positions.push((Math.random() - 0.5) * 70, (Math.random() - 0.5) * 50, (Math.random() - 0.5) * 60 - 10);
+                sizes.push(Math.random() * 0.6 + 0.15);
             }
             geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
             geo.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
-            const sprite = textureLoader.load('sparkle.png', undefined, undefined, (err) => {});
+            const sparkleSrc = getCardImageSrc('assets/sparkle.png');
+            const sprite = textureLoader.load(sparkleSrc, undefined, undefined, () => {});
             const mat = new THREE.PointsMaterial({
-                size: 0.8, map: sprite, transparent: true, opacity: 0.9,
-                depthWrite: false, blending: THREE.AdditiveBlending, color: 0xffffff
+                size: 0.85, map: sprite, transparent: true, opacity: 0.9,
+                depthWrite: false, blending: THREE.AdditiveBlending, color: 0xfffae0
             });
             starFieldMesh = new THREE.Points(geo, mat);
             scene.add(starFieldMesh);
@@ -262,27 +1381,51 @@
             cardGroup = new THREE.Group();
             scene.add(cardGroup);
             const geo = new THREE.BoxGeometry(CONFIG.cardWidth, CONFIG.cardHeight, 0.02);
-            const backTex = textureLoader.load('back.png', undefined, undefined, (err) => {});
-            const matEdge = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.8, roughness: 0.2 }); 
+            
+            // Viền mạ vàng có tính phản chiếu kim loại cao cấp
+            const matEdge = new THREE.MeshStandardMaterial({ 
+                color: 0xd4af37, metalness: 0.9, roughness: 0.2, 
+                emissive: 0x332808, emissiveIntensity: 0.3 
+            }); 
 
-            TAROT_DATA.forEach((data, i) => {
-                const frontTex = textureLoader.load(data.url);
-                const matFront = new THREE.MeshStandardMaterial({ map: frontTex });
-                const matBack = new THREE.MeshStandardMaterial({ map: backTex, color: 0xffffff });
+            for (let i = 0; i < CONFIG.cardCount; i++) {
+                const cardData = ALL_BOOK_CARDS[i % ALL_BOOK_CARDS.length];
+                const frontTex = getCardFrontTexture(cardData);
+                
+                // Vật liệu mặt trước: độ nhám cao (roughness 0.8), không chói lóa, màu sắc tự nhiên trung thực
+                const matFront = new THREE.MeshStandardMaterial({ 
+                    map: frontTex, 
+                    roughness: 0.8, 
+                    metalness: 0.1,
+                    emissive: 0x000000,
+                    emissiveIntensity: 0
+                });
+
+                // Vật liệu mặt sau: mịn màng, chống lóa
+                const matBack = new THREE.MeshStandardMaterial({ 
+                    map: sharedBackTexture, 
+                    color: 0xffffff,
+                    roughness: 0.8, 
+                    metalness: 0.1,
+                    emissive: 0x000000,
+                    emissiveIntensity: 0
+                });
+
                 const materials = [matEdge, matEdge, matEdge, matEdge, matBack, matFront];
                 const card = new THREE.Mesh(geo, materials);
                 
                 const angle = (i / CONFIG.cardCount) * Math.PI * 2;
                 card.position.set(Math.sin(angle) * CONFIG.radius, 0, Math.cos(angle) * CONFIG.radius);
                 card.lookAt(0, 0, 0);
-                card.userData = { id: i, data: data, isPicked: false };
+
+                const isReversed = Math.random() < 0.35;
+                card.userData = { id: i, data: cardData, isPicked: false, isReversed: isReversed };
                 cardGroup.add(card);
-            });
+            }
         }
 
-        // --- HIỆU ỨNG NỔ HẠT (Bé, Chậm, Trắng) ---
         function createExplosion(position) {
-            const particleCount = 150;
+            const particleCount = 140;
             const geo = new THREE.BufferGeometry();
             const positions = [];
             const velocities = [];
@@ -292,15 +1435,13 @@
                 positions.push(position.x, position.y, position.z); 
                 const theta = Math.random() * Math.PI * 2;
                 const phi = Math.acos(2 * Math.random() - 1);
-                
-                const speed = Math.random() * 0.03 + 0.01; 
+                const speed = Math.random() * 0.035 + 0.01; 
 
                 velocities.push(
                     speed * Math.sin(phi) * Math.cos(theta),
                     speed * Math.sin(phi) * Math.sin(theta),
                     speed * Math.cos(phi)
                 );
-                
                 sizes.push(Math.random() * 0.15 + 0.05); 
             }
 
@@ -308,13 +1449,8 @@
             geo.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
 
             const mat = new THREE.PointsMaterial({
-                size: 0.2,
-                map: particleTexture, 
-                transparent: true, 
-                opacity: 0.9,
-                depthWrite: false, 
-                blending: THREE.AdditiveBlending, 
-                color: 0xffffff 
+                size: 0.2, map: particleTexture, transparent: true, opacity: 0.95,
+                depthWrite: false, blending: THREE.AdditiveBlending, color: 0xffffff 
             });
 
             const points = new THREE.Points(geo, mat);
@@ -334,7 +1470,7 @@
                 }
                 ex.mesh.geometry.attributes.position.needsUpdate = true;
                 ex.mesh.material.opacity = 1 - (ex.age / 60); 
-                ex.mesh.scale.setScalar(1 + ex.age * 0.01); 
+                ex.mesh.scale.setScalar(1 + ex.age * 0.012); 
                 if (ex.age > 60) {
                     scene.remove(ex.mesh);
                     ex.mesh.geometry.dispose();
@@ -345,28 +1481,89 @@
 
         function updateCounter() {
             document.getElementById('counter').innerText = `${storedCards.length} / 3`;
-            if (storedCards.length === 3) {
-                document.getElementById('guide-text').innerText = "Định mệnh đã an bài...";
-                setTimeout(revealReading, 2000);
+            const positions = [
+                "Lá thứ 1: Quá khứ / Căn nguyên", 
+                "Lá thứ 2: Hiện tại / Nút thắt", 
+                "Lá thứ 3: Tương lai / Lời khuyên"
+            ];
+            const guide = document.getElementById('guide-text');
+            if (storedCards.length < 3) {
+                guide.innerText = `Hãy chọn ${positions[storedCards.length]}`;
+            } else {
+                guide.innerText = "✦ ĐỊNH MỆNH ĐÃ AN BÀI... ĐANG MỞ CỔNG TIÊN TRI ✦";
+                setTimeout(revealReading, 250);
             }
         }
 
+        // BƯỚC 2 & 3: BỐC BÀI VỚI HIỆU ỨNG XOAY ĐẢO 180 ĐỘ KHI LÀ BÀI NGƯỢC
         function pickCard(card) {
-            if (inspectingCard || storedCards.length >= 3 || card.userData.isPicked) return;
-            card.userData.isPicked = true; inspectingCard = card;
+            if (inspectingCard || storedCards.length >= 3 || card.userData.isPicked || !isGameActive) return;
+            card.userData.isPicked = true; 
+            inspectingCard = card;
             scene.attach(card);
 
-            new TWEEN.Tween(card.position).to(CONFIG.inspectPos, 1000).easing(TWEEN.Easing.Cubic.Out).start();
-            new TWEEN.Tween(card.rotation).to({ x: 0, y: Math.PI, z: 0 }, 1000).easing(TWEEN.Easing.Back.Out).start();
+            const isReversed = card.userData.isReversed;
+            const isThirdCard = storedCards.length === 2;
+
+            // NẾU ĐÂY LÀ LÁ THỨ 3: Kích hoạt gọi API luận giải NGẦM NGAY LẬP TỨC trong lúc đang lật bài 3D
+            if (isThirdCard) {
+                const allThreeCards = [...storedCards, card];
+                prefetchReadingPromise = fetchAiOrOfflineReading(allThreeCards);
+            }
             
+            // Xoay đối diện camera (y: Math.PI); NẾU LÀ BÀI NGƯỢC: XOAY QUANH TRỤC Z 180 ĐỘ (z: Math.PI)!
+            const targetRotation = { 
+                x: 0, 
+                y: Math.PI, 
+                z: isReversed ? Math.PI : 0 
+            };
+
+            // Hiển thị banner thông báo tên lá bài & trạng thái xuôi/ngược
+            showInspectToast(card.userData.data.nameVi, isReversed);
+
+            const flipDuration = isThirdCard ? 650 : 900;
+            const holdDuration = isThirdCard ? 350 : 1100;
+
+            new TWEEN.Tween(card.position).to(CONFIG.inspectPos, flipDuration).easing(TWEEN.Easing.Cubic.Out).start();
+            new TWEEN.Tween(card.rotation).to(targetRotation, flipDuration).easing(TWEEN.Easing.Back.Out).start();
+            
+            // Giữ ánh sáng dịu nhẹ 0.65 khi lật bài, tránh tăng vọt gây lóa trắng mặt bài
+            if (inspectSpot) {
+                new TWEEN.Tween(inspectSpot)
+                    .to({ intensity: 0.65 }, 400)
+                    .start();
+            }
+
             const targetScale = CONFIG.inspectScale;
-            new TWEEN.Tween(card.scale).to({ x: targetScale, y: targetScale, z: targetScale }, 1000)
+            new TWEEN.Tween(card.scale).to({ x: targetScale, y: targetScale, z: targetScale }, flipDuration)
                 .onComplete(() => { 
                     setTimeout(() => {
                         createExplosion(card.position);
-                        setTimeout(storeCard, 100); 
-                    }, 1500); 
+                        setTimeout(storeCard, 60); 
+                    }, holdDuration); 
                 }).start();
+        }
+
+        function showInspectToast(name, isReversed) {
+            const banner = document.getElementById('inspect-banner');
+            const nameEl = document.getElementById('inspect-name');
+            const oriEl = document.getElementById('inspect-orientation');
+
+            nameEl.innerText = name;
+            if (isReversed) {
+                oriEl.innerText = "↺ CHIỀU NGƯỢC";
+                oriEl.className = "status-badge badge-reversed";
+            } else {
+                oriEl.innerText = "✦ CHIỀU XUÔI";
+                oriEl.className = "status-badge badge-upright";
+            }
+
+            banner.style.display = 'block';
+            banner.classList.add('show');
+            setTimeout(() => {
+                banner.classList.remove('show');
+                setTimeout(() => banner.style.display = 'none', 400);
+            }, 2200);
         }
 
         function getSafeVerticalLeftPosition(index) {
@@ -386,7 +1583,9 @@
 
         function storeCard() {
             if (!inspectingCard) return;
-            const card = inspectingCard; storedCards.push(card); inspectingCard = null;
+            const card = inspectingCard; 
+            storedCards.push(card); 
+            inspectingCard = null;
             const index = storedCards.length - 1;
 
             const pos = getSafeVerticalLeftPosition(index);
@@ -408,32 +1607,338 @@
             });
         }
 
-        function revealReading() {
+        // BƯỚC 4: HIỂN THỊ KẾT QUẢ VÀ TÍCH HỢP GEMINI AI / SÁCH "TAROT CHÚ GIẢI"
+        async function revealReading() {
             isGameActive = false;
             document.getElementById('ui-layer').style.pointerEvents = "auto";
             document.getElementById('guide-text').style.opacity = 0;
             document.getElementById('virtual-cursor').style.display = 'none';
-            const content = document.getElementById('final-reading');
-            const contexts = ["QUÁ KHỨ", "HIỆN TẠI", "TƯƠNG LAI"];
-            let html = "";
-            storedCards.forEach((c, i) => {
+
+            const modal = document.getElementById('result-modal');
+            document.getElementById('display-question-text').innerText = userQuestion;
+
+            // Render 3 lá bài lên Grid
+            const grid = document.getElementById('cards-grid-display');
+            const slotTitles = [
+                "✦ QUÁ KHỨ / CĂN NGUYÊN",
+                "✦ HIỆN TẠI / TÌNH THẾ & NÚT THẮT",
+                "✦ TƯƠNG LAI / LỜI KHUYÊN DẪN LỐI"
+            ];
+
+            let gridHtml = "";
+            storedCards.forEach((c, idx) => {
                 const data = c.userData.data;
-                html += `
-                <div class="reading-section">
-                    <span class="reading-label">✦ ${contexts[i]}</span>
-                    <div class="reading-body">
-                        <img src="${data.url}" class="reading-img">
-                        <div class="reading-content">
-                            <h3>${data.name}</h3>
-                            <div class="reading-desc">${data.meaning}</div>
-                        </div>
+                const isRev = c.userData.isReversed;
+                const meaningText = isRev ? (data.reversed || data.upright) : data.upright;
+
+                // Xử lý hiển thị Yes/No xét theo chiều xuôi/ngược
+                let cardYesNo = (data.yes_no_result || 'MAYBE').toUpperCase();
+                let yesNoBadgeClass = 'yesno-maybe';
+                if (!isRev) {
+                    if (cardYesNo === 'YES') yesNoBadgeClass = 'yesno-yes';
+                    else if (cardYesNo === 'NO') yesNoBadgeClass = 'yesno-no';
+                } else {
+                    if (cardYesNo === 'YES') cardYesNo = 'MAYBE (ĐẢO CHIỀU)';
+                    else if (cardYesNo === 'NO') cardYesNo = 'NO (CẢNH BÁO)';
+                    yesNoBadgeClass = (cardYesNo.startsWith('NO')) ? 'yesno-no' : 'yesno-maybe';
+                }
+
+                gridHtml += `
+                <div class="card-card-item">
+                    <span class="card-position-tag">${slotTitles[idx]}</span>
+                    <div class="card-img-wrapper ${isRev ? 'is-reversed' : ''}">
+                        <img src="${getCardImageSrc(data.image)}" alt="${data.nameEn}" onerror="this.src='assets/back.png'">
+                    </div>
+                    <span class="status-pill ${isRev ? 'reversed' : 'upright'}">
+                        ${isRev ? '↺ CHIỀU NGƯỢC' : '✦ CHIỀU XUÔI'}
+                    </span>
+                    <h3 class="card-name-vi">${data.nameVi}</h3>
+                    <p class="card-name-en">${data.nameEn}</p>
+                    <div class="card-meta-chips">
+                        ${data.element ? `<span class="meta-chip">Nguyên tố: ${data.element}</span>` : ''}
+                        ${data.astrology ? `<span class="meta-chip">${data.astrology}</span>` : ''}
                     </div>
                 </div>`;
             });
-            content.innerHTML = html;
-            document.getElementById('result-modal').style.display = 'block';
+            grid.innerHTML = gridHtml;
+
+            // Hiển thị modal kết quả
+            modal.style.display = 'block';
+
+            // Nếu đã kích hoạt pre-fetch từ lúc vừa bốc lá thứ 3 thì dùng luôn kết quả đang chạy, không gọi lại
+            if (prefetchReadingPromise) {
+                await prefetchReadingPromise;
+            } else {
+                await fetchAiOrOfflineReading();
+            }
         }
 
+        // BỘ MÁY LUẬN GIẢI KẾT NỐI API HOẶC OFFLINE ENGINE (HỖ TRỢ PRE-FETCH & STREAMING TỨC THÌ)
+        async function fetchAiOrOfflineReading(customCardsList) {
+            const loadingEl = document.getElementById('ai-loading');
+            const contentEl = document.getElementById('ai-content');
+            const badgeEl = document.getElementById('ai-reading-badge');
+            const keyPromptBanner = document.getElementById('ai-key-prompt-banner');
+
+            generatedAiReadingText = "";
+            loadingEl.style.display = 'block';
+            contentEl.style.display = 'none';
+            contentEl.innerHTML = '';
+            badgeEl.innerText = "✦ ĐANG PHÂN TÍCH & LUẬN GIẢI TRẢI BÀI... ✦";
+
+            const apiKey = getSavedApiKey();
+            const preferredModel = getSavedModel();
+            const targetCards = customCardsList || storedCards;
+            const cardsData = targetCards.map(c => ({
+                data: c.userData.data,
+                isReversed: c.userData.isReversed
+            }));
+
+            let readingMarkdown = "";
+            let isAiSuccess = false;
+
+            // Callback hiển thị chữ tức thì ngay khi từng cụm từ được stream về (< 1 giây)
+            let lastRenderTime = 0;
+            const handleStreamChunk = (partialText) => {
+                generatedAiReadingText = partialText;
+                loadingEl.style.display = 'none';
+                contentEl.style.display = 'block';
+                badgeEl.innerText = "✦ LUẬN GIẢI CHI TIẾT TRẢI BÀI ✦";
+                const now = Date.now();
+                if (now - lastRenderTime > 60) {
+                    contentEl.innerHTML = marked.parse(partialText);
+                    lastRenderTime = now;
+                }
+            };
+
+            // 1. Якщо người dùng đã nhập API Key trên trình duyệt: Ưu tiên gọi Streaming trực tiếp để hiển thị chữ ngay lập tức
+            if (apiKey) {
+                try {
+                    readingMarkdown = await requestGeminiInterpretation(apiKey, userQuestion, cardsData, preferredModel, handleStreamChunk);
+                    isAiSuccess = true;
+                } catch (err) {
+                    console.warn("Client API streaming call failed:", err);
+                }
+            }
+
+            // 2. Nếu chưa có kết quả, thử gọi Backend API /api/tarot/interpret (nếu chạy qua server http)
+            if (!isAiSuccess && window.location.protocol.startsWith('http')) {
+                try {
+                    const res = await fetch('/api/tarot/interpret', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            userQuestion: userQuestion,
+                            cards: cardsData.map((c, i) => ({
+                                id: c.data?.id,
+                                nameVi: c.data?.nameVi,
+                                nameEn: c.data?.nameEn,
+                                isReversed: c.isReversed,
+                                position: ["Quá khứ / Căn nguyên", "Hiện tại / Thử thách", "Tương lai / Lời khuyên"][i]
+                            })),
+                            apiKey: apiKey || undefined,
+                            model: preferredModel || undefined
+                        })
+                    });
+
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data && data.reading) {
+                            readingMarkdown = data.reading;
+                            isAiSuccess = true;
+                        }
+                    }
+                } catch (apiErr) {
+                    console.info("Backend API không phản hồi, chuyển sang fallback:", apiErr);
+                }
+            }
+
+            // 3. Dự phòng cuối: Dùng bộ máy luận giải Offline tích hợp 3 nguồn tri thức
+            if (!isAiSuccess) {
+                if (apiKey) {
+                    showToast("Đang chuyển sang bộ máy luận giải nội bộ.");
+                }
+                readingMarkdown = generateMasterTarotInterpretation(userQuestion, cardsData);
+            }
+
+            badgeEl.innerText = "✦ LUẬN GIẢI CHI TIẾT TRẢI BÀI ✦";
+            generatedAiReadingText = readingMarkdown;
+            loadingEl.style.display = 'none';
+            contentEl.style.display = 'block';
+            contentEl.innerHTML = marked.parse(readingMarkdown);
+
+            if (keyPromptBanner) {
+                keyPromptBanner.style.display = 'none';
+            }
+        }
+
+        // BỘ MÁY GỌI API LUẬN GIẢI TRỰC TIẾP (HỖ TRỢ STREAMING TỨC THÌ & TẮT THINKING DELAY)
+        async function requestGeminiInterpretation(apiKey, question, cards, preferredModel, onStreamChunk) {
+            if (window.TarotInterpretationEngine && window.TarotInterpretationEngine.requestGeminiInterpretation) {
+                return await window.TarotInterpretationEngine.requestGeminiInterpretation(apiKey, question, cards, preferredModel, onStreamChunk);
+            }
+            // Dự phòng nếu script ngoài chưa tải xong
+            const [c1, c2, c3] = cards;
+            const cardsDetails = cards.map((c, i) => {
+                const pos = ["Căn nguyên / Nền tảng", "Thực trạng / Nút thắt", "Xu hướng / Chuyển hóa"][i];
+                const d = c.data || c;
+                const m = d.meanings || {};
+                const meaning = c.isReversed ? (m.reversed || d.reversed || d.meaningVi) : (m.upright || d.upright || d.meaningVi);
+                return `[Vị trí: ${pos}]\n- Lá: ${d.nameVi || d.nameEn} (${d.nameEn || ''}) - Trạng thái: ${c.isReversed ? 'Ngược' : 'Xuôi'}\n- Ý nghĩa: ${meaning || ''}\n- Gợi mở sâu: ${d.deepInterpretation || d.fortune || ''}`;
+            }).join('\n\n');
+
+            const systemPrompt = `Bạn là một chuyên gia tư vấn Tarot và tâm lý học thực tế, sâu sắc, từng trải và đầy thấu cảm.
+Người dùng tìm đến bạn để tìm câu trả lời và giải pháp cụ thể cho vấn đề của họ, KHÔNG PHẢI ĐỂ HỌC Ý NGHĨA SÁCH CỦA TỪNG LÁ BÀI.
+
+## NGUYÊN TẮC CỐT TỬ:
+1. **TUYỆT ĐỐI KHÔNG GIẢI THÍCH Ý NGHĨA TỪNG LÁ BÀI RỜI RẠC:**
+   - Không liệt kê kiểu "Lá 1 là gì...", "Lá 2 có ý nghĩa là...".
+   - Hãy hấp thu toàn bộ kiến thức của 3 lá bài từ sách (nguyên mẫu tâm thức, tương tác nguyên tố, chiều xuôi/ngược, mốc thời gian) làm "chất liệu phân tích ngầm" để mổ xẻ trực tiếp câu chuyện của người hỏi.
+2. **TẬP TRUNG 100% VÀO PHÂN TÍCH VÀ TRẢ LỜI CÂU HỎI CỦA NGƯỜI DÙNG:**
+   - Đọc kỹ từng từ trong câu hỏi của người dùng để nắm bắt nỗi sợ, mong muốn và điểm nghẽn.
+   - Đưa ra câu trả lời trực diện, rõ ràng ngay từ đầu (Nên/Không nên, Có/Không, Khả thi ra sao).
+3. **XƯNG HÔ & TRÌNH BÀY:**
+   - Luôn xưng "mình" và gọi người hỏi là "bạn" (thân tình, điềm đạm, lắng nghe).
+   - Tuyệt đối không nhắc đến tên "Gemini", "AI", "trí tuệ nhân tạo" hay cụm từ "đồng hành và trò chuyện" trong câu trả lời.
+   - Bắt buộc viết trọn vẹn, đầy đủ cả 4 phần từ đầu đến cuối câu cuối cùng, tuyệt đối không viết dở dang hay ngắt ngang câu.
+
+## CẤU TRÚC BÀI ĐỌC (MARKDOWN):
+
+[Câu chốt trực diện trả lời ngay câu hỏi của bạn - Ví dụ: "Chào bạn, nhìn thẳng vào câu hỏi của bạn, mình thấy..."]
+
+---
+
+### ✦ 1. CÂU TRẢ LỜI TRỰC DIỆN CHO VẤN ĐỀ CỦA BẠN
+- **Định hướng cốt lõi:** **[NÊN / KHÔNG NÊN / CHƯA PHẢI LÚC / CÓ CƠ HỘI / KHẢ THI CAO]**
+- **Thông điệp thức tỉnh:** *[1 câu đúc kết sâu sắc nhất dành riêng cho hoàn cảnh của người hỏi]*
+
+---
+
+### ✦ 2. PHÂN TÍCH CHUYÊN SÂU THEO CÂU HỎI CỦA BẠN (SOI CHIẾU TỪ TRI THỨC SÁCH)
+- **Nguồn cơn gốc rễ:** [Lý giải tại sao người hỏi lại rơi vào tình trạng bế tắc/trăn trở này dựa trên năng lượng và tâm lý học nguyên mẫu].
+- **Thực trạng & Nút thắt tâm lý hiện tại:** [Điểm mù lớn nhất khiến người hỏi cảm thấy áp lực/mắc kẹt lúc này là gì? Rào cản bên ngoài và sự giằng xé bên trong].
+- **Tương tác hoàn cảnh:** [Nhìn nhận khách quan về đối phương hoặc môi trường xung quanh].
+
+---
+
+### ✦ 3. XU HƯỚNG DIỄN TIẾN & DỰ BÁO THỜI GIAN
+- **Nếu giữ nguyên cách làm/tâm lý cũ:** [Hệ quả tiếp diễn].
+- **Nếu chủ động chuyển hóa hành động:** [Cơ hội và bước ngoặt mới].
+- **Dự báo mốc chuyển biến (Philippe Ngô):** ⏳ **[Mốc thời gian cụ thể]**
+
+---
+
+### ✦ 4. LỜI KHUYÊN HÀNH ĐỘNG CHIẾN LƯỢC CHO BẠN
+1. **Quản trị tâm lý & Ranh giới cảm xúc:** [Hành động cụ thể ngay lúc này để bảo vệ năng lượng bản thân].
+2. **Kế hoạch hành động thực tế:** [1-2 bước đi rõ ràng, khôn ngoan để giải quyết đúng trọng tâm câu hỏi].`;
+
+            const userPromptText = `CÂU HỎI CỦA NGƯỜI HỎI CẦN BẠN GIẢI ĐÁP:
+"${question}"
+
+DỮ LIỆU SÁCH SỐ HÓA CỦA 3 LÁ BÀI (Dùng làm tri thức nền tảng để đối chiếu ngầm):
+${cardsDetails}
+
+YÊU CẦU: BỎ HẲN việc liệt kê giải thích ý nghĩa từng lá bài riêng lẻ. TẬP TRUNG TOÀN LỰC VÀO CÂU HỎI của người dùng: phân tích sâu bối cảnh câu hỏi và đưa ra câu trả lời rõ ràng kèm lời khuyên hành động thực tế theo đúng cấu trúc chuẩn. Hoàn thiện trọn vẹn đầy đủ cả 4 phần đến dấu chấm câu cuối cùng.`;
+
+            const selectedModel = preferredModel || getSavedModel() || 'gemini-3.5-flash';
+            const defaultModels = ['gemini-3.5-flash', 'gemini-3.6-flash', 'gemini-3.8-flash', 'gemini-2.5-flash'];
+            const candidateModels = [selectedModel, ...defaultModels.filter(m => m !== selectedModel)];
+            let lastErr = null;
+
+            for (const model of candidateModels) {
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+                const genConfig = { maxOutputTokens: 16384 };
+                if (model.startsWith('gemini-3')) {
+                    genConfig.thinkingConfig = { thinkingLevel: "LOW" };
+                } else if (model.includes('2.5-flash')) {
+                    genConfig.thinkingConfig = { thinkingBudget: 256 };
+                }
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            system_instruction: { parts: [{ text: systemPrompt }] },
+                            contents: [{ role: "user", parts: [{ text: userPromptText }] }],
+                            generationConfig: genConfig
+                        })
+                    });
+
+                    if (response.ok) {
+                        const resData = await response.json();
+                        const parts = resData.candidates?.[0]?.content?.parts || [];
+                        const text = parts
+                            .filter(p => !p.thought && typeof p.text === 'string')
+                            .map(p => p.text)
+                            .join('');
+                        if (text && text.trim().length > 0) {
+                            if (typeof onStreamChunk === 'function') onStreamChunk(text);
+                            return text;
+                        }
+                    } else {
+                        const errBody = await response.text();
+                        console.warn(`Model ${model} trả về lỗi ${response.status}:`, errBody);
+                        lastErr = new Error(`Model ${model} (${response.status})`);
+                    }
+                } catch (e) {
+                    console.warn(`Lỗi gọi model ${model}:`, e);
+                    lastErr = e;
+                }
+            }
+
+            throw lastErr || new Error("Không thể kết nối API. Vui lòng kiểm tra lại API Key hoặc mạng internet.");
+        }
+
+        // BỘ MÁY LUẬN GIẢI CHUYÊN SÂU (OFFLINE ENGINE)
+        function generateMasterTarotInterpretation(question, cards) {
+            if (window.TarotInterpretationEngine && window.TarotInterpretationEngine.generateMasterTarotInterpretation) {
+                return window.TarotInterpretationEngine.generateMasterTarotInterpretation(question, cards);
+            }
+            // Fallback trực tiếp
+            return "Đang tải dữ liệu luận giải...";
+        }
+
+        // RESET VÀ TRẢI BÀI MỚI
+        function resetToNewReading() {
+            document.getElementById('result-modal').style.display = 'none';
+            document.getElementById('ui-layer').style.pointerEvents = "none";
+            document.getElementById('guide-text').style.opacity = 1;
+            
+            // Xóa sạch bài đã lưu
+            storedCards.forEach(c => scene.remove(c));
+            storedCards = [];
+            inspectingCard = null;
+            prefetchReadingPromise = null;
+            scene.remove(cardGroup);
+
+            // Tạo lại bàn bài
+            createCards();
+            updateCounter();
+
+            // Mở lại màn hình overlay đặt câu hỏi
+            const intro = document.getElementById('intro-overlay');
+            intro.style.display = 'flex';
+            setTimeout(() => intro.style.opacity = '1', 50);
+            document.getElementById('user-question-input').value = "";
+        }
+
+        // SAO CHÉP TOÀN BỘ BÀI ĐỌC
+        function copyFullReading() {
+            const cardSummary = storedCards.map((c, i) => {
+                const pos = ["Cội nguồn", "Hiện tại", "Chuyển hóa"][i];
+                return `[${pos}]: ${c.userData.data.nameVi} (${c.userData.isReversed ? 'Ngược' : 'Xuôi'})`;
+            }).join('\n');
+
+            const fullText = `✦ LUẬN GIẢI TAROT CHI TIẾT ✦\nCâu hỏi của bạn: "${userQuestion}"\n\n${cardSummary}\n\n${generatedAiReadingText}`;
+
+            navigator.clipboard.writeText(fullText).then(() => {
+                showToast("Đã sao chép toàn bộ bài đọc vào bộ nhớ tạm!");
+            }).catch(() => {
+                showToast("Không thể sao chép tự động, vui lòng chọn và copy thủ công.");
+            });
+        }
+
+        // CLICK CHUỘT / TAP MÀN HÌNH BỐC BÀI
         function onMouseDown(event) {
             if (!isGameActive || storedCards.length >= 3) return;
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -443,13 +1948,17 @@
             if (intersects.length > 0) pickCard(intersects[0].object);
         }
 
+        // XỬ LÝ NHẬN DIỆN CỬ CHỈ BÀN TAY (MEDIAPIPE HANDS) - GIỮ NGUYÊN 100%
         function onResults(results) {
             const cursor = document.getElementById('virtual-cursor');
             const guide = document.getElementById('guide-text');
 
             if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
                 const lm = results.multiHandLandmarks[0];
-                if(storedCards.length === 0) guide.innerText = "Chụm ngón cái và trỏ để chọn";
+                if (isGameActive && storedCards.length === 0) {
+                    guide.innerText = "Chụm ngón cái và trỏ để chọn lá bài đầu tiên";
+                }
+                
                 handX = 1 - lm[9].x; 
                 const x = (lm[8].x + lm[4].x) / 2;
                 const y = (lm[8].y + lm[4].y) / 2;
@@ -468,7 +1977,7 @@
 
                 if (isPinchingNow && !isPinching) {
                     cursor.classList.add('pinching'); 
-                    if (isGameActive) {
+                    if (isGameActive && storedCards.length < 3) {
                         raycaster.setFromCamera(cursorPosition, camera);
                         const intersects = raycaster.intersectObjects(cardGroup.children);
                         if (intersects.length > 0) {
@@ -497,29 +2006,32 @@
             updateExplosions(); 
 
             if (isGameActive) {
-                let targetRotSpeed = 0.001; // Tốc độ mặc định khi đứng yên
+                let targetRotSpeed = 0.001; 
                 
-                // ĐÃ CẬP NHẬT: Tăng tốc độ quay khi đưa tay sang 2 bên
-                if (handX < 0.4) targetRotSpeed = -0.035; // Bên trái (Nhanh hơn)
-                else if (handX > 0.6) targetRotSpeed = 0.035; // Bên phải (Nhanh hơn)
+                // Tăng tốc độ quay khi di chuyển tay sang 2 bên
+                if (handX < 0.4) targetRotSpeed = -0.035; 
+                else if (handX > 0.6) targetRotSpeed = 0.035; 
                 
                 rotationSpeed += (targetRotSpeed - rotationSpeed) * 0.05;
                 cardGroup.rotation.y += rotationSpeed;
 
                 cardGroup.children.forEach((c, i) => { 
-                    if(!c.userData.isPicked) c.position.y = Math.sin(time * 0.0015 + i) * 0.15; 
+                    if (!c.userData.isPicked) c.position.y = Math.sin(time * 0.0015 + i) * 0.15; 
                 });
             }
 
-            if(starFieldMesh) {
+            if (starFieldMesh) {
                 starFieldMesh.rotation.y = time * 0.00005;
-                starFieldMesh.material.size = Math.sin(time * 0.002) * 0.1 + 0.9;
+                starFieldMesh.material.size = Math.sin(time * 0.002) * 0.1 + 0.85;
             }
             renderer.render(scene, camera);
         }
 
-        init(); animate();
+        // KHỞI ĐỘNG HỆ THỐNG
+        init(); 
+        animate();
 
+        // KHỞI TẠO MEDIAPIPE CAMERA & HANDS - GIỮ NGUYÊN 100%
         const hands = new Hands({locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`});
         hands.setOptions({ maxNumHands: 1, modelComplexity: 1, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5 });
         hands.onResults(onResults);

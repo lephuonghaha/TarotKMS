@@ -1,0 +1,3591 @@
+// Tự động sinh từ 3 nguồn: "Tarot Chú Giải" + "Hành Trình Tarot" + "Dự Đoán Thời Gian - Philippe Ngô"
+window.TAROT_BOOK_DATA = [
+  {
+    "id": "major-0",
+    "nameEn": "The Fool",
+    "nameVi": "0. Chàng Khờ (The Fool)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 0,
+    "image": "assets/cards/the_fool.jpg",
+    "element": "Khí",
+    "astrology": "Sao Thiên Vương / Khí",
+    "keywords": [
+      "Khởi đầu mới",
+      "Sự ngây thơ",
+      "Tự do phiêu lưu",
+      "Tiềm năng vô hạn"
+    ],
+    "upright": "Báo hiệu một hành trình mới đầy hào hứng, tự do bước đi theo trực giác và niềm tin trong sáng mà không bị trói buộc bởi nỗi sợ hãi quá khứ.",
+    "reversed": "Sự liều lĩnh thiếu tính toán, ngây thơ đến mức mù quáng, hoặc sự do dự không dám bước ra khỏi vùng an toàn.",
+    "love": {
+      "upright": "Một mối tình mới chớm đầy tự do và ngọt ngào, hãy mở lòng đón nhận tình yêu mà không tính toán quá nhiều.",
+      "reversed": "Sự vô tâm, thiếu cam kết hoặc hành động xốc nổi có thể khiến đối phương cảm thấy bất an."
+    },
+    "work": {
+      "upright": "Khởi đầu dự án mới hoặc cơ hội đổi nghề đầy hứa hẹn. Hãy dũng cảm thử nghiệm những ý tưởng mới mẻ.",
+      "reversed": "Thiếu kế hoạch thực tế, đầu tư bốc đồng hoặc xem nhẹ những cảnh báo quan trọng."
+    },
+    "finance": {
+      "upright": "Tài chính rộng mở nếu biết nắm bắt cơ hội mới, nhưng cần kết hợp trực giác với sự tỉnh táo.",
+      "reversed": "Rủi ro chi tiêu quá đà vào những thứ không cần thiết, cần kiểm soát ví tiền cẩn thận."
+    },
+    "study": {
+      "upright": "Tiếp thu kiến thức với tâm thế cởi mở, tò mò và đầy hứng thú với lĩnh vực mới.",
+      "reversed": "Thiếu tập trung, lơ là ôn luyện vì quá mải chơi hoặc xem nhẹ các kỳ thi quan trọng."
+    },
+    "advice": {
+      "general": "Hãy dựa trên khởi đầu mới và sự ngây thơ làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của 0. Chàng Khờ (The Fool): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của 0. Chàng Khờ (The Fool) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "sun-cliff-feather",
+    "suitElement": "Khí",
+    "archetype_story": "Nguyên mẫu Đứa Trẻ Thần Thánh (Divine Child) và Linh Hồn Thuần Khiết. Chàng Khờ đứng trước bờ vực với cành hoa hồng trắng và chú chó nhỏ trung thành, tượng trưng cho bước khởi đầu can đảm của con người khi dấn thân vào cõi đời, không bị vấy bẩn bởi định kiến hay nỗi sợ hãi quá khứ.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Vũ trụ mở ra tiềm năng vô hạn nhưng kết quả phụ thuộc vào việc bạn có dám bước ra khỏi vùng an toàn và tin vào trực giác sơ khai hay không; chưa có gì định hình chắc chắn.",
+    "time_prediction": "Bất ngờ, ngay tức khắc hoặc thời điểm chuyển giao mùa xuân."
+  },
+  {
+    "id": "major-1",
+    "nameEn": "The Magician",
+    "nameVi": "I. Pháp Sư (The Magician)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 1,
+    "image": "assets/cards/the_magician.jpg",
+    "element": "Khí",
+    "astrology": "Sao Thủy (Mercury)",
+    "keywords": [
+      "Ý chí sáng tạo",
+      "Kỹ năng điêu luyện",
+      "Hành động quyết đoán",
+      "Hội tụ nguồn lực"
+    ],
+    "upright": "Bạn đang nắm giữ đầy đủ tài năng, công cụ và nguồn lực để biến ước mơ thành hiện thực. Ý chí mạnh mẽ sẽ dẫn lối thành công.",
+    "reversed": "Thao túng, ảo tưởng sức mạnh, lãng phí tài năng hoặc dùng sự khôn lanh vào mục đích không chính đáng.",
+    "love": {
+      "upright": "Sức hút cá nhân cực kỳ lôi cuốn; bạn có khả năng chủ động xây đắp mối quan hệ thăng hoa.",
+      "reversed": "Cẩn trọng với sự mập mờ, lời hứa suông hoặc cảm giác đang bị người kia thao túng tâm lý."
+    },
+    "work": {
+      "upright": "Thời điểm vàng để thực hiện kế hoạch lớn; bạn làm chủ mọi kỹ năng và có tài ăn nói thuyết phục.",
+      "reversed": "Bế tắc ý tưởng hoặc tự đánh giá quá cao khả năng của mình dẫn đến cam kết quá sức."
+    },
+    "finance": {
+      "upright": "Khả năng sinh lời cao từ chính chất xám và kỹ năng chuyên môn của bản thân.",
+      "reversed": "Cảnh giác trước những lời mời gọi đầu tư ngon ngọt nhưng thiếu tính minh bạch."
+    },
+    "study": {
+      "upright": "Tư duy nhạy bén, khả năng học một hiểu mười và tự tin chinh phục các kỳ thi khó.",
+      "reversed": "Lười biếng nhưng thích ỷ lại vào mẹo vặt, học vẹt dẫn đến hổng kiến thức căn bản."
+    },
+    "advice": {
+      "general": "Hãy dựa trên ý chí sáng tạo và kỹ năng điêu luyện làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của I. Pháp Sư (The Magician): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của I. Pháp Sư (The Magician) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "infinity-wand-table",
+    "suitElement": "Khí",
+    "archetype_story": "Nguyên mẫu Người Sáng Tạo (The Creator / Magus) và Ý Thức Tỉnh Táo. Pháp Sư một tay chỉ lên trời, một tay trỏ xuống đất, trên bàn hội tụ đủ 4 biểu tượng Đất - Nước - Lửa - Khí, biểu thị năng lực biến ý niệm tinh thần thành hiện thực vật chất thông qua ý chí tập trung cao độ.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Bạn đã hội tụ đầy đủ kỹ năng, công cụ và nguồn lực cần thiết; chỉ cần chủ động ra tay hành động là sẽ xoay chuyển cục diện thành công.",
+    "time_prediction": "Rất sớm, ngay khi bạn bắt tay vào hành động / Chu kỳ sao Thủy (khoảng 1 - 2 tuần)."
+  },
+  {
+    "id": "major-2",
+    "nameEn": "The High Priestess",
+    "nameVi": "II. Nữ Tư Tế (The High Priestess)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 2,
+    "image": "assets/cards/the_high_priestess.jpg",
+    "element": "Nước",
+    "astrology": "Mặt Trăng (Moon)",
+    "keywords": [
+      "Trực giác sâu sắc",
+      "Bí ẩn tâm linh",
+      "Tĩnh lặng nội tâm",
+      "Tri thức ngầm"
+    ],
+    "upright": "Hãy lắng nghe tiếng nói sâu thẳm từ trực giác và giấc mơ của bạn. Câu trả lời không nằm ở thế giới xô bồ bên ngoài mà ở sự lắng đọng nội tâm.",
+    "reversed": "Bỏ qua trực giác mách bảo, có bí mật bị che giấu hoặc tâm trạng bất an vì đè nén cảm xúc quá lâu.",
+    "love": {
+      "upright": "Sự kết nối tâm hồn sâu sắc; tình cảm kín đáo, tinh tế và đầy cuốn hút bí ẩn.",
+      "reversed": "Khoảng cách vô hình, cảm giác khó chạm tới trái tim nhau hoặc có điều gì đó chưa được tỏ bày."
+    },
+    "work": {
+      "upright": "Nên quan sát kỹ lưỡng trước khi hành động; trực giác nhạy bén giúp bạn nhận ra cơ hội ngầm.",
+      "reversed": "Thông tin bị bưng bít, tin đồn độc hại chốn công sở gây ảnh hưởng đến phán đoán."
+    },
+    "finance": {
+      "upright": "Tài chính ổn định; tin vào linh cảm của mình khi đứng trước các quyết định nhạy cảm.",
+      "reversed": "Thiếu minh bạch trong sổ sách, hoặc bạn đang phớt lờ các dấu hiệu rủi ro rõ ràng."
+    },
+    "study": {
+      "upright": "Thích hợp cho nghiên cứu chuyên sâu, đọc sách triết lý, tâm lý và khám phá những mảng kiến thức khó.",
+      "reversed": "Bế tắc trong việc diễn đạt ý tưởng, khó tập trung do suy nghĩ mông lung."
+    },
+    "advice": {
+      "general": "Hãy dựa trên trực giác sâu sắc và bí ẩn tâm linh làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của II. Nữ Tư Tế (The High Priestess): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của II. Nữ Tư Tế (The High Priestess) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "crescent-moon-veil",
+    "suitElement": "Nước",
+    "archetype_story": "Nguyên mẫu Nữ Tính Huyền Bí (Anima) và Tiềm Thức Sâu Thẳm. Ngồi giữa hai cột trụ Đen - Trắng (Boaz & Jachin) cùng bức màn quả lựu, Nữ Tư Tế canh giữ cánh cổng tri thức tâm linh, nhắc nhở con người về sự tĩnh lặng và lắng nghe trực giác trước khi hành động.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Câu trả lời đang bị ẩn giấu trong tiềm thức hoặc hoàn cảnh chưa bộc lộ hết; thời điểm này cần quan sát tĩnh lặng hơn là vội vã đưa ra quyết định.",
+    "time_prediction": "Chu kỳ Mặt Trăng (28 ngày hoặc kỳ Trăng tròn tiếp theo)."
+  },
+  {
+    "id": "major-3",
+    "nameEn": "The Empress",
+    "nameVi": "III. Nữ Hoàng (The Empress)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 3,
+    "image": "assets/cards/the_empress.jpg",
+    "element": "Đất",
+    "astrology": "Sao Kim (Venus)",
+    "keywords": [
+      "Phì nhiêu trù phú",
+      "Tình mẫu tử",
+      "Sáng tạo nghệ thuật",
+      "Nuôi dưỡng yêu thương"
+    ],
+    "upright": "Năng lượng của sự thịnh vượng, dồi dào và sinh sôi nảy nở. Những nỗ lực của bạn sắp thu hoạch trái ngọt ấm no.",
+    "reversed": "Sự ngột ngạt vì bảo bọc thái quá, phụ thuộc cảm xúc hoặc bỏ bê chăm sóc bản thân.",
+    "love": {
+      "upright": "Tình yêu nồng ấm, được yêu chiều và gắn kết bền chặt. Tín hiệu tuyệt vời cho hôn nhân và con cái.",
+      "reversed": "Ghen tuông vô cớ, kiểm soát quá mức hoặc cảm giác kiệt sức vì luôn phải hy sinh cho người khác."
+    },
+    "work": {
+      "upright": "Dự án phát triển rực rỡ, môi trường làm việc hài hòa và tràn đầy cảm hứng sáng tạo.",
+      "reversed": "Ý tưởng bị đình trệ, thiếu sự kiên nhẫn để chăm sóc dự án đi đến kết quả cuối cùng."
+    },
+    "finance": {
+      "upright": "Tài lộc dồi dào, thu nhập tăng trưởng ổn định và có lộc ăn uống, quà tặng.",
+      "reversed": "Chi tiêu xa hoa để thỏa mãn cảm xúc nhất thời, cần học cách quản lý ngân sách khôn ngoan."
+    },
+    "study": {
+      "upright": "Môi trường học tập lý tưởng, tinh thần thoải mái giúp bạn phát huy tối đa tư duy thẩm mỹ và sáng tạo.",
+      "reversed": "Nuông chiều bản thân quá mức, trì hoãn bài vở dẫn đến ứ đọng công việc."
+    },
+    "advice": {
+      "general": "Hãy dựa trên phì nhiêu trù phú và tình mẫu tử làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của III. Nữ Hoàng (The Empress): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của III. Nữ Hoàng (The Empress) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "crown-stars-wheat",
+    "suitElement": "Đất",
+    "archetype_story": "Nguyên mẫu Đại Mẫu (Great Mother / Mẹ Thiên Nhiên) và Năng Lượng Nuôi Dưỡng. Ngồi giữa cánh đồng lúa mì vàng óng và dòng thác mát lành, Nữ Hoàng đại diện cho sự thụ thai, phát triển trù phú, lòng bao dung và sự tận hưởng cái đẹp giác quan trọn vẹn.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Năng lượng phì nhiêu, sinh sôi nảy nở đang bảo bọc dự định của bạn; mọi gieo trồng đều sẽ thu hoạch quả ngọt dồi dào.",
+    "time_prediction": "Mùa xuân - Mùa gặt, hoặc chu kỳ thai nghén 9 tháng."
+  },
+  {
+    "id": "major-4",
+    "nameEn": "The Emperor",
+    "nameVi": "IV. Hoàng Đế (The Emperor)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 4,
+    "image": "assets/cards/the_emperor.jpg",
+    "element": "Lửa",
+    "astrology": "Bạch Dương (Aries)",
+    "keywords": [
+      "Quyền lực uy nghiêm",
+      "Kỷ luật thép",
+      "Trật tự vững chắc",
+      "Khả năng lãnh đạo"
+    ],
+    "upright": "Đại diện cho sự kiểm soát vững vàng, tư duy logic, cấu trúc kỷ luật và bản lĩnh đứng đầu che chở cho người khác.",
+    "reversed": "Độc đoán, cứng nhắc bảo thủ, lạm dụng quyền uy hoặc thiếu năng lực tự chủ.",
+    "love": {
+      "upright": "Mối quan hệ nghiêm túc, an toàn và có định hướng lâu dài; đối phương là chỗ dựa vững chắc.",
+      "reversed": "Gia trưởng, thích áp đặt quan điểm và thiếu đi sự lãng mạn, mềm mỏng cần thiết."
+    },
+    "work": {
+      "upright": "Khả năng thăng tiến lên vị trí quản lý; uy tín nghề nghiệp được công nhận rộng rãi.",
+      "reversed": "Xung đột với cấp trên, cơ chế quan liêu kìm hãm hoặc bản thân thiếu sự quyết đoán cần thiết."
+    },
+    "finance": {
+      "upright": "Kế hoạch tài chính quy củ, ngân sách vững vàng và đầu tư có nền tảng pháp lý rõ ràng.",
+      "reversed": "Cứng nhắc không chịu thích nghi với biến động thị trường, mất tiền vì sự tự phụ."
+    },
+    "study": {
+      "upright": "Học tập có phương pháp khoa học, thời gian biểu nghiêm túc đem lại điểm số xuất sắc.",
+      "reversed": "Áp lực thi cử quá nặng nề dẫn đến căng thẳng tột độ, tư duy thiếu linh hoạt."
+    },
+    "advice": {
+      "general": "Hãy dựa trên quyền lực uy nghiêm và kỷ luật thép làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của IV. Hoàng Đế (The Emperor): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của IV. Hoàng Đế (The Emperor) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "throne-ram-orb",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Người Cha (The Father / Phụ Tính) và Trật Tự Xã Hội. Ngồi trên ngai đá chạm khắc đầu cừu uy nghiêm, Hoàng Đế biểu trưng cho lý trí vững vàng, tính kỷ luật, khả năng thiết lập ranh giới và bảo vệ đế chế của bản thân trước hỗn loạn.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Tính thực tế, sự kỷ luật và cấu trúc rõ ràng sẽ giúp bạn làm chủ hoàn cảnh và đạt được kết quả như ý.",
+    "time_prediction": "Mùa Bạch Dương (21/3 - 19/4) hoặc khoảng 4 tuần tới."
+  },
+  {
+    "id": "major-5",
+    "nameEn": "The Hierophant",
+    "nameVi": "V. Giáo Hoàng (The Hierophant)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 5,
+    "image": "assets/cards/the_hierophant.jpg",
+    "element": "Đất",
+    "astrology": "Kim Ngưu (Taurus)",
+    "keywords": [
+      "Truyền thống",
+      "Lời khuyên thông thái",
+      "Học hỏi đạo lý",
+      "Cam kết quy chuẩn"
+    ],
+    "upright": "Tìm kiếm lời khuyên từ người thầy dẫn dắt, tôn trọng các giá trị chuẩn mực và học hỏi tri thức từ những tổ chức uy tín.",
+    "reversed": "Phá vỡ định kiến cũ kỹ, phản đối quy tắc lỗi thời hoặc bị mắc kẹt trong giáo điều mù quáng.",
+    "love": {
+      "upright": "Mối quan hệ hướng tới hôn nhân chính thống, được gia đình hai bên ủng hộ và đồng điệu về nhân sinh quan.",
+      "reversed": "Bất đồng về quan điểm sống, áp lực định kiến gia đình ngăn cản tình yêu tự do."
+    },
+    "work": {
+      "upright": "Làm việc tốt trong môi trường đoàn thể, được bậc tiền bối chỉ dạy tận tình.",
+      "reversed": "Quy trình rườm rà gò bó sáng tạo; cảm giác lạc lõng trong văn hóa công ty hiện tại."
+    },
+    "finance": {
+      "upright": "Nên ưu tiên phương án gửi tiết kiệm hoặc đầu tư vào kênh truyền thống an toàn.",
+      "reversed": "Không nên vội vàng tin theo những lời khuyên tài chính sáo rỗng hoặc thiếu cơ sở."
+    },
+    "study": {
+      "upright": "Rất có duyên với trường lớp chính quy, thầy cô giỏi và đạt thành tích cao trong các kỳ thi chuẩn hóa.",
+      "reversed": "Bất mãn với phương pháp giảng dạy hiện tại, cần tự tìm tòi con đường học hỏi độc lập."
+    },
+    "advice": {
+      "general": "Hãy dựa trên truyền thống và lời khuyên thông thái làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của V. Giáo Hoàng (The Hierophant): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của V. Giáo Hoàng (The Hierophant) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "keys-cross-temple",
+    "suitElement": "Đất",
+    "archetype_story": "Nguyên mẫu Người Thầy Tâm Linh (The Mentor / Wise Old Man) và Truyền Thống. Ngồi giữa hai môn đồ với quyền trượng ba tầng, Giáo Hoàng đại diện cho hệ thống quy chuẩn đạo đức, sự truyền thừa tri thức và sự hòa nhập vào các cấu trúc xã hội chuẩn mực.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Đồng thuận nếu bạn tuân thủ các nguyên tắc đạo đức chuẩn mực, làm theo lời khuyên của người có chuyên môn hoặc đi theo con đường chính thống.",
+    "time_prediction": "Mùa Kim Ngưu (20/4 - 20/5) hoặc khoảng 5 tuần."
+  },
+  {
+    "id": "major-6",
+    "nameEn": "The Lovers",
+    "nameVi": "VI. Đôi Tình Nhân (The Lovers)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 6,
+    "image": "assets/cards/the_lovers.jpg",
+    "element": "Khí",
+    "astrology": "Song Tử (Gemini)",
+    "keywords": [
+      "Tình yêu đích thực",
+      "Lựa chọn ngã rẽ",
+      "Sự hòa hợp tâm hồn",
+      "Giá trị đạo đức"
+    ],
+    "upright": "Sự rung cảm mãnh liệt của hai tâm hồn đồng điệu. Đồng thời báo hiệu một ngã rẽ quan trọng đòi hỏi bạn phải chọn theo tiếng gọi trái tim.",
+    "reversed": "Mất cân bằng, mâu thuẫn nội tâm, chia rẽ tình cảm hoặc đưa ra quyết định sai lầm do cảm tính.",
+    "love": {
+      "upright": "Tình yêu thăng hoa trọn vẹn, tìm thấy 'nửa kia' đích thực; sự thấu hiểu và gắn kết bền chặt.",
+      "reversed": "Rạn nứt vì thiếu tin tưởng, xuất hiện người thứ ba hoặc cảm giác hai người đi trên hai con đường khác nhau."
+    },
+    "work": {
+      "upright": "Hợp tác đối tác ăn ý, tìm được công việc phù hợp với đam mê và đạo đức cá nhân.",
+      "reversed": "Bất đồng trong nhóm làm việc, xung đột lợi ích hoặc đứng trước lựa chọn khó xử."
+    },
+    "finance": {
+      "upright": "Quyết định tài chính sáng suốt dựa trên sự hài hòa giữa mục tiêu ngắn hạn và dài hạn.",
+      "reversed": "Bội chi vì nuông chiều cảm xúc, tranh chấp tiền bạc trong gia đình hoặc đối tác."
+    },
+    "study": {
+      "upright": "Chọn được ngành học đúng sở thích và đam mê; học nhóm đạt kết quả rất cao.",
+      "reversed": "Xao nhãng việc học vì chuyện tình cảm cá nhân, do dự giữa hai nguyện vọng thi cử."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tình yêu đích thực và lựa chọn ngã rẽ làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của VI. Đôi Tình Nhân (The Lovers): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của VI. Đôi Tình Nhân (The Lovers) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "angel-two-hearts",
+    "suitElement": "Khí",
+    "archetype_story": "Nguyên mẫu Sự Hợp Nhất Nhị Nguyên (The Conjunction) và Sự Thức Tỉnh Của Trái Tim. Dưới sự chúc phúc của Thiên thần Raphael, Adam và Eve đại diện cho sự hòa hợp giữa ý thức và tiềm thức, đồng thời đòi hỏi sự lựa chọn dũng cảm theo hệ giá trị cốt lõi.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Kết quả phụ thuộc vào việc bạn có chân thật với trái tim mình hay không; bạn đứng trước ngã rẽ và phải tự chịu trách nhiệm cho lựa chọn đạo đức của mình.",
+    "time_prediction": "Mùa Song Tử (21/5 - 20/6) hoặc trong vòng 6 tuần."
+  },
+  {
+    "id": "major-7",
+    "nameEn": "The Chariot",
+    "nameVi": "VII. Cỗ Xe Chiến Thắng (The Chariot)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 7,
+    "image": "assets/cards/the_chariot.jpg",
+    "element": "Nước",
+    "astrology": "Cự Giải (Cancer)",
+    "keywords": [
+      "Chiến thắng vẻ vang",
+      "Ý chí kiên cường",
+      "Vượt qua thử thách",
+      "Tập trung mục tiêu"
+    ],
+    "upright": "Sử dụng sức mạnh ý chí và sự tự chủ để chế ngự các mâu thuẫn đối nghịch, thẳng tiến về phía trước để giành lấy vinh quang.",
+    "reversed": "Mất phương hướng, mất kiểm soát cảm xúc, bị cuốn theo tham vọng mù quáng hoặc kiệt sức.",
+    "love": {
+      "upright": "Cùng nhau vượt qua sóng gió định kiến để bảo vệ tình yêu; sự chủ động theo đuổi người mình thích.",
+      "reversed": "Cãi vã gay gắt, cả hai bên đều quá hiếu thắng và muốn áp đảo đối phương."
+    },
+    "work": {
+      "upright": "Đột phá vượt bậc trong công việc, đánh bại đối thủ cạnh tranh và khẳng định vị thế cá nhân.",
+      "reversed": "Áp lực dồn dập khiến bạn mất lái; thiếu kiên nhẫn có thể làm hỏng thỏa thuận quan trọng."
+    },
+    "finance": {
+      "upright": "Chủ động kiểm soát dòng tiền, quyết đoán trong việc thu hồi nợ và mở rộng kinh doanh.",
+      "reversed": "Chi tiêu bốc đồng để thể hiện bản thân, đối mặt với các khoản phí phát sinh bất ngờ."
+    },
+    "study": {
+      "upright": "Nỗ lực ôn luyện bền bỉ mang lại kết quả thi cử vượt ngoài mong đợi; đỗ đạt thứ hạng cao.",
+      "reversed": "Thiếu kỷ luật, dễ nản lòng khi gặp bài tập khó hoặc áp lực thi cử đè nặng."
+    },
+    "advice": {
+      "general": "Hãy dựa trên chiến thắng vẻ vang và ý chí kiên cường làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của VII. Cỗ Xe Chiến Thắng (The Chariot): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của VII. Cỗ Xe Chiến Thắng (The Chariot) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "chariot-sphynx-canopy",
+    "suitElement": "Nước",
+    "archetype_story": "Nguyên mẫu Người Hùng Chiến Thắng (The Hero). Chiến binh điều khiển cỗ xe với hai nhân sư trắng - đen bằng sức mạnh ý chí thuần túy chứ không cần dây cương, biểu tượng cho việc vượt qua các xung đột nội tâm để tiến thẳng đến mục tiêu vẻ vang.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Ý chí kiên định và quyết tâm cao độ sẽ giúp bạn đập tan mọi trở ngại phía trước; chiến thắng thuộc về người chủ động.",
+    "time_prediction": "Mùa Cự Giải (21/6 - 22/7) hoặc diễn ra nhanh chóng trong vòng 1 tháng."
+  },
+  {
+    "id": "major-8",
+    "nameEn": "Strength",
+    "nameVi": "VIII. Sức Mạnh Nhu Thắng Cương (Strength)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 8,
+    "image": "assets/cards/strength.jpg",
+    "element": "Lửa",
+    "astrology": "Sư Tử (Leo)",
+    "keywords": [
+      "Lòng dũng cảm",
+      "Sự dịu dàng",
+      "Kiềm chế cảm xúc",
+      "Nội lực bền bỉ"
+    ],
+    "upright": "Chế ngự nỗi sợ và dục vọng bằng lòng trắc ẩn, sự kiên nhẫn và tình yêu thương dịu dàng thay vì bạo lực thô bạo.",
+    "reversed": "Nghi ngờ bản thân, yếu lòng trước cám dỗ, bộc phát cơn giận dữ hoặc cảm thấy bất lực.",
+    "love": {
+      "upright": "Tình yêu được tôi luyện qua thử thách; sự bao dung và dịu dàng giúp hàn gắn mọi tổn thương.",
+      "reversed": "Thiếu tự tin vào bản thân trong tình yêu, để cảm xúc giận hờn làm tổn thương đối phương."
+    },
+    "work": {
+      "upright": "Khéo léo dung hòa các mâu thuẫn trong tập thể; uy tín được tạo dựng từ sự bình tĩnh và chuyên nghiệp.",
+      "reversed": "Tự ti, không dám đứng ra nhận trách nhiệm lớn vì sợ thất bại."
+    },
+    "finance": {
+      "upright": "Khả năng vượt qua giai đoạn thắt chặt tài chính nhờ sự kiên trì và quản lý khéo léo.",
+      "reversed": "Mất bình tĩnh trước biến động tiền bạc, dễ rơi vào bẫy chi tiêu để giải tỏa stress."
+    },
+    "study": {
+      "upright": "Kiên trì bền bỉ với những môn học khó; không nản chí trước điểm số kém ban đầu.",
+      "reversed": "Tâm lý dao động, mất niềm tin vào năng lực của chính mình trước thềm kỳ thi."
+    },
+    "advice": {
+      "general": "Hãy dựa trên lòng dũng cảm và sự dịu dàng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của VIII. Sức Mạnh Nhu Thắng Cương (Strength): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của VIII. Sức Mạnh Nhu Thắng Cương (Strength) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "maiden-lion-infinity",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Thuần Hóa Bản Năng (Taming the Beast) và Sức Mạnh Tinh Thần. Người phụ nữ dịu dàng khép miệng sư tử bằng vòng hoa và tình thương, thể hiện triết lý nhu thắng cương, sự kiên nhẫn và lòng trắc ẩn chế ngự dục vọng thô bạo.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Bạn có đủ nội lực và sự điềm tĩnh để hóa giải khó khăn; hãy dùng lòng kiên nhẫn và sự dịu dàng thay vì áp đặt thô bạo.",
+    "time_prediction": "Mùa Sư Tử (23/7 - 22/8) hoặc khoảng 8 tuần / 2 tháng."
+  },
+  {
+    "id": "major-9",
+    "nameEn": "The Hermit",
+    "nameVi": "IX. Ẩn Sĩ (The Hermit)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 9,
+    "image": "assets/cards/the_hermit.jpg",
+    "element": "Đất",
+    "astrology": "Xử Nữ (Virgo)",
+    "keywords": [
+      "Tự vấn lương tâm",
+      "Tìm kiếm chân lý",
+      "Tách biệt suy ngẫm",
+      "Ánh sáng soi đường"
+    ],
+    "upright": "Thời điểm cần lùi lại một bước, tĩnh tâm soi rọi thế giới nội tâm để tìm ra chân lý và phương hướng thực sự của cuộc đời.",
+    "reversed": "Cô lập bản thân thái quá, cô đơn bi quan, từ chối sự giúp đỡ hoặc lạc lối trong định kiến cá nhân.",
+    "love": {
+      "upright": "Giai đoạn độc thân quý giá để thấu hiểu bản thân; hoặc cả hai cần không gian riêng để suy nghĩ chín chắn.",
+      "reversed": "Lạnh nhạt, xa cách khiến đối phương cảm thấy bị bỏ rơi; sợ mở lòng vì vết thương lòng cũ."
+    },
+    "work": {
+      "upright": "Thời gian để trau dồi chuyên môn sâu, làm việc độc lập hoặc định vị lại con đường sự nghiệp.",
+      "reversed": "Tự cô lập với đồng nghiệp, khép kín khiến bản thân bỏ lỡ các cơ hội thăng tiến."
+    },
+    "finance": {
+      "upright": "Tiết kiệm, giản dị, không bị cuốn vào vòng xoáy tiêu dùng phù phiếm.",
+      "reversed": "Quá dè xẻn ki bo hoặc thiếu tính toán chiến lược khiến nguồn vốn bị đóng băng."
+    },
+    "study": {
+      "upright": "Cực kỳ thuận lợi cho việc tự học, viết luận án, nghiên cứu học thuật chuyên sâu và đọc sách.",
+      "reversed": "Học tập thiếu trao đổi với bạn bè và thầy cô dẫn đến cách hiểu phiến diện."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tự vấn lương tâm và tìm kiếm chân lý làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của IX. Ẩn Sĩ (The Hermit): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của IX. Ẩn Sĩ (The Hermit) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "lantern-staff-mountain",
+    "suitElement": "Đất",
+    "archetype_story": "Nguyên mẫu Nhà Thông Thái Đi Tìm Chân Lý (The Wise Hermit). Vị ẩn sĩ đứng một mình trên đỉnh núi tuyết cầm ngọn đèn lồng soi rọi ngôi sao sáu cánh, đại diện cho việc tạm lánh đám đông để tự vấn lương tâm và tìm ra ngọn hải đăng soi sáng bản ngã.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Hiện tại chưa phải lúc mở rộng ra thế giới bên ngoài; bạn cần khoảng lặng nhìn lại chính mình để thấu suốt bản chất sự việc trước khi quyết định.",
+    "time_prediction": "Mùa Xử Nữ (23/8 - 22/9) hoặc thời gian cần tĩnh lặng từ 1 đến vài tháng."
+  },
+  {
+    "id": "major-10",
+    "nameEn": "Wheel of Fortune",
+    "nameVi": "X. Bánh Xe Số Phận (Wheel of Fortune)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 10,
+    "image": "assets/cards/the_wheel_of_fortune.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Mộc (Jupiter)",
+    "keywords": [
+      "Vận may bất ngờ",
+      "Vòng tuần hoàn",
+      "Bước ngoặt định mệnh",
+      "Cơ hội mới"
+    ],
+    "upright": "Bánh xe định mệnh đang xoay về phía bạn, mang theo vận may, cơ hội đổi đời và những biến chuyển tích cực không ngờ.",
+    "reversed": "Giai đoạn thăng trầm bất khả kháng, vận xui tạm thời, hoặc sự kháng cự không chịu thích nghi với thời cuộc.",
+    "love": {
+      "upright": "Gặp gỡ nhân duyên tiền định bất ngờ; bước ngoặt quan trọng đưa tình cảm sang trang mới.",
+      "reversed": "Thời điểm thử thách tình cảm do hoàn cảnh bên ngoài xáo trộn; hãy kiên nhẫn chờ thời điểm tốt hơn."
+    },
+    "work": {
+      "upright": "Cơ hội thăng tiến bất ngờ gõ cửa; thời cơ thuận lợi để nhảy việc hoặc bắt đầu kinh doanh mới.",
+      "reversed": "Kế hoạch bị đảo lộn vì sự cố ngoài ý muốn; hãy học cách linh hoạt ứng biến."
+    },
+    "finance": {
+      "upright": "Tài lộc nở rộ, có thể nhận được tiền thưởng, trúng thưởng hoặc khoản lợi nhuận lớn bất ngờ.",
+      "reversed": "Biến động thất thường về dòng tiền; tuyệt đối tránh trò đỏ đen may rủi lúc này."
+    },
+    "study": {
+      "upright": "May mắn trúng tủ, đề thi thuận lợi và gặp được người hướng dẫn nhiệt tình.",
+      "reversed": "Kết quả thi cử không như ý do thiếu may mắn; cần chuẩn bị kỹ càng mọi kịch bản."
+    },
+    "advice": {
+      "general": "Hãy dựa trên vận may bất ngờ và vòng tuần hoàn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của X. Bánh Xe Số Phận (Wheel of Fortune): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của X. Bánh Xe Số Phận (Wheel of Fortune) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wheel-four-beasts",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Vô Thức Tập Thể và Quy Luật Vô Thường (Samsara). Bánh xe vũ trụ không ngừng luân chuyển giữa bốn sinh vật thần thoại, nhắc nhở con người rằng vạn vật luôn biến dịch; điểm tĩnh tại duy nhất chính là tâm thức bất biến ở trục trung tâm.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Vận may và bước ngoặt định mệnh đang xoay chuyển theo chiều hướng thuận lợi; hãy nắm bắt thời cơ khi bánh xe đưa bạn lên đỉnh.",
+    "time_prediction": "Bất ngờ, theo bước ngoặt chu kỳ sao Mộc (khoảng 10 ngày hoặc mốc chuyển mùa)."
+  },
+  {
+    "id": "major-11",
+    "nameEn": "Justice",
+    "nameVi": "XI. Công Lý (Justice)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 11,
+    "image": "assets/cards/justice.jpg",
+    "element": "Khí",
+    "astrology": "Thiên Bình (Libra)",
+    "keywords": [
+      "Sự công bằng",
+      "Chân lý rõ ràng",
+      "Luật nhân quả",
+      "Trách nhiệm hành vi"
+    ],
+    "upright": "Mọi việc sẽ được phân xử công minh. Bạn gieo nhân nào sẽ gặt quả nấy; sự thật và lẽ phải sẽ chiến thắng.",
+    "reversed": "Bất công, dối trá, thiên vị, hoặc từ chối chịu trách nhiệm về những sai sót của mình.",
+    "love": {
+      "upright": "Mối quan hệ bình đẳng, tôn trọng lẫn nhau; sự trung thực là nền tảng cốt lõi.",
+      "reversed": "Một bên đòi hỏi quá nhiều trong khi bên kia phải chịu đựng; bất công gây rạn nứt niềm tin."
+    },
+    "work": {
+      "upright": "Được đánh giá công bằng xứng đáng với công sức; hợp đồng ký kết minh bạch, thuận lợi.",
+      "reversed": "Chèn ép chốn công sở, tranh chấp hợp đồng hoặc kết quả đánh giá thiếu khách quan."
+    },
+    "finance": {
+      "upright": "Tài chính minh bạch, giải quyết xong các tranh chấp pháp lý hoặc hoàn thuế thuận lợi.",
+      "reversed": "Rủi ro dính líu đến kiện tụng tài chính, phạt hành chính hoặc bị quỵt tiền."
+    },
+    "study": {
+      "upright": "Điểm số phản ánh chính xác năng lực thực chất; thi cử nghiêm túc, công bằng.",
+      "reversed": "Bị chấm điểm oan hoặc gánh chịu hậu quả từ việc gian lận thi cử."
+    },
+    "advice": {
+      "general": "Hãy dựa trên sự công bằng và chân lý rõ ràng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XI. Công Lý (Justice): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XI. Công Lý (Justice) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "scales-sword-pillar",
+    "suitElement": "Khí",
+    "archetype_story": "Nguyên mẫu Trật Tự Đạo Đức và Quy Luật Nhân Quả (Karma). Nữ thần cầm thanh kiếm phân định sự thật và chiếc cân cân đo hành vi, thể hiện sự công minh tuyệt đối, tính trách nhiệm và quả ngọt/đắng dựa trên chính những gì bạn đã gieo trồng.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Kết quả sẽ hoàn toàn công bằng dựa trên những gì bạn đã hành xử và nỗ lực; sự thật và tính chính trực sẽ quyết định đáp án cuối cùng.",
+    "time_prediction": "Mùa Thiên Bình (23/9 - 22/10) hoặc khoảng 11 ngày/tuần."
+  },
+  {
+    "id": "major-12",
+    "nameEn": "The Hanged Man",
+    "nameVi": "XII. Người Treo Ngược (The Hanged Man)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 12,
+    "image": "assets/cards/the_hanged_man.jpg",
+    "element": "Nước",
+    "astrology": "Sao Hải Vương (Neptune)",
+    "keywords": [
+      "Góc nhìn mới",
+      "Hy sinh có chủ đích",
+      "Đình trệ để giác ngộ",
+      "Buông bỏ kiểm soát"
+    ],
+    "upright": "Hãy sẵn sàng buông bỏ những kỳ vọng cũ để nhìn nhận thế giới từ góc độ hoàn toàn mới. Sự chậm lại lúc này là cần thiết để trưởng thành.",
+    "reversed": "Hy sinh vô ích, chống cự thực tại một cách bướng bỉnh hoặc bị trì hoãn vô thời hạn.",
+    "love": {
+      "upright": "Cần chấp nhận nhường nhịn và thấu hiểu góc nhìn của đối phương để tìm thấy sự hòa giải.",
+      "reversed": "Chấp nhận làm 'lốp dự phòng' hoặc hy sinh mù quáng cho một người không coi trọng mình."
+    },
+    "work": {
+      "upright": "Công việc có vẻ chững lại nhưng đây là lúc tái cơ cấu và nhìn ra những lỗ hổng chưa từng thấy.",
+      "reversed": "Bế tắc, dậm chân tại chỗ vì sợ thay đổi hoặc cống hiến hết mình mà không được ghi nhận."
+    },
+    "finance": {
+      "upright": "Tạm gác lại các khoản đầu tư rủi ro; học cách hài lòng với những gì đang có.",
+      "reversed": "Thiệt hại tài chính vì những quyết định hy sinh tài sản không đúng người đúng việc."
+    },
+    "study": {
+      "upright": "Đổi mới phương pháp học tập; nhìn nhận bài toán khó dưới một lăng kính hoàn toàn khác.",
+      "reversed": "Áp lực học tập khiến tinh thần trì trệ, mất cảm hứng và không có động lực tiến lên."
+    },
+    "advice": {
+      "general": "Đừng cố dùng sức đẩy một cánh cửa đang đóng. Hãy tạm dừng lại, đổi góc nhìn 180 độ để thấy điều kỳ diệu.",
+      "upright": "Chấp nhận khoảng lặng hiện tại; quan sát từ một lăng kính mới để tìm ra giải pháp sáng suốt.",
+      "reversed": "Tránh hy sinh mù quáng hoặc tự biến mình thành nạn nhân; hãy hành động thực tế để tháo gỡ khó khăn."
+    },
+    "iconSymbol": "halo-tree-upside",
+    "suitElement": "Nước",
+    "archetype_story": "Nguyên mẫu Sự Hy Sinh Tự Nguyện và Đổi Góc Nhìn (Surrender & Metanoia). Chàng trai tự nguyện treo ngược chân trên cành cây sự sống với vầng hào quang rạng rỡ, tượng trưng cho sự dừng lại cần thiết để nhìn đời bằng lăng kính hoàn toàn mới.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Mọi việc đang bị trì hoãn để bạn buông bỏ cái tôi cố chấp; cố gượng ép lúc này sẽ không có kết quả, cần học cách chờ đợi và đổi góc nhìn.",
+    "time_prediction": "Thời gian trì hoãn từ vài tuần đến vài tháng; sự việc diễn ra chậm rãi."
+  },
+  {
+    "id": "major-13",
+    "nameEn": "Death",
+    "nameVi": "XIII. Chuyển Hóa & Tái Sinh (Death)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 13,
+    "image": "assets/cards/death.jpg",
+    "element": "Nước",
+    "astrology": "Bọ Cạp (Scorpio)",
+    "keywords": [
+      "Kết thúc chu kỳ cũ",
+      "Chuyển hóa mạnh mẽ",
+      "Tái sinh từ tro tàn",
+      "Buông bỏ dứt khoát"
+    ],
+    "upright": "Một cánh cửa cũ khép lại để mở ra một khởi đầu mới rực rỡ hơn. Hãy dũng cảm buông bỏ những điều không còn phù hợp để đón nhận sự tái sinh.",
+    "reversed": "Sợ hãi thay đổi, níu kéo quá khứ đã tàn lụi, kháng cự quy luật tự nhiên gây đau khổ kéo dài.",
+    "love": {
+      "upright": "Chấm dứt mối quan hệ độc hại để mở lối cho hạnh phúc mới, hoặc tình cảm bước sang một giai đoạn lột xác toàn diện.",
+      "reversed": "Mòn mỏi níu kéo một mối quan hệ đã nguội lạnh; nỗi sợ cô đơn ngăn cản bạn bước tiếp."
+    },
+    "work": {
+      "upright": "Rời bỏ công việc cũ đã kìm hãm bạn; bắt đầu một chặng đường sự nghiệp mang tính cách mạng.",
+      "reversed": "Bám víu lấy vị trí cũ an toàn dù không còn cơ hội phát triển; sợ thất nghiệp khi đổi mới."
+    },
+    "finance": {
+      "upright": "Tái cấu trúc nợ và danh mục tài chính; cắt lỗ dứt khoát để bảo toàn vốn cho chu kỳ mới.",
+      "reversed": "Không chịu chấp nhận thua lỗ, tiếp tục rót tiền vào dự án không còn lối thoát."
+    },
+    "study": {
+      "upright": "Bỏ đi thói quen học tập sai lầm; bắt đầu phương pháp hoàn toàn mới giúp tiến bộ nhảy vọt.",
+      "reversed": "Uể oải, suy nghĩ tiêu cực sau một kỳ thi thất bại; không chịu đứng dậy làm lại từ đầu."
+    },
+    "advice": {
+      "general": "Mọi sự kết thúc đều mang theo hạt mầm của sự tái sinh. Hãy can đảm khép lại chu kỳ cũ để đón nhận những cơ hội mới.",
+      "upright": "Sẵn sàng từ bỏ những thói quen, mối quan hệ hoặc suy nghĩ đã lỗi thời để bản thân được lột xác.",
+      "reversed": "Nhận diện nỗi sợ thay đổi bên trong bạn; sự bám víu chỉ làm kéo dài cảm giác bế tắc không đáng có."
+    },
+    "iconSymbol": "black-flag-rose-skeleton",
+    "suitElement": "Nước",
+    "archetype_story": "Nguyên mẫu Sự Tái Sinh và Cái Chết Tâm Lý (Transformation). Kỵ sĩ xương mặc giáp đen cưỡi ngựa trắng bước qua tro tàn hướng về ánh bình minh phía xa, biểu thị sự chấm dứt tất yếu của cái cũ để nhường chỗ cho mầm sống mới đâm chồi.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Giai đoạn cũ đã đến lúc phải khép lại; đừng cố níu giữ những gì không còn phục vụ cho sự tiến hóa của tâm hồn bạn.",
+    "time_prediction": "Mùa Bọ Cạp (23/10 - 21/11) hoặc thời điểm kết thúc một chu kỳ để bắt đầu cái mới."
+  },
+  {
+    "id": "major-14",
+    "nameEn": "Temperance",
+    "nameVi": "XIV. Tiết Chế & Hòa Hợp (Temperance)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 14,
+    "image": "assets/cards/temperance.jpg",
+    "element": "Lửa",
+    "astrology": "Nhân Mã (Sagittarius)",
+    "keywords": [
+      "Cân bằng hài hòa",
+      "Điều độ kiên nhẫn",
+      "Dung hợp hoàn hảo",
+      "Chữa lành nội tâm"
+    ],
+    "upright": "Sự dung hòa hoàn hảo giữa các mặt đối lập, giữ tâm thế bình an và kiên nhẫn rót dòng nước sự sống từ từ để tạo nên điều kỳ diệu.",
+    "reversed": "Mất cân bằng, nóng nảy cực đoan, xung đột lợi ích hoặc lối sống buông thả quá đà.",
+    "love": {
+      "upright": "Tình cảm êm đềm, hòa hợp bền bỉ; cả hai biết lắng nghe và cùng nhau chữa lành mọi khúc mắc.",
+      "reversed": "Bất đồng quan điểm liên miên, một bên mất kiên nhẫn dẫn đến lời qua tiếng lại gây tổn thương."
+    },
+    "work": {
+      "upright": "Phối hợp ăn ý giữa các bộ phận; tiến độ công việc nhịp nhàng, ổn định và bền vững.",
+      "reversed": "Quá tải công việc, phân bổ thời gian bất hợp lý dẫn đến kiệt sức và stress."
+    },
+    "finance": {
+      "upright": "Cân đối thu chi hoàn hảo; dòng tiền ổn định và các quyết định tài chính rất mực sáng suốt.",
+      "reversed": "Tiêu xài mất kiểm soát, đầu tư chắp vá thiếu quy hoạch lâu dài."
+    },
+    "study": {
+      "upright": "Biết cân bằng giữa việc học tập và nghỉ ngơi giải trí; tinh thần thư thái giúp ghi nhớ lâu.",
+      "reversed": "Học dồn trước kỳ thi, thức đêm quá nhiều khiến trí não quá tải và giảm hiệu suất."
+    },
+    "advice": {
+      "general": "Hãy dựa trên cân bằng hài hòa và điều độ kiên nhẫn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XIV. Tiết Chế & Hòa Hợp (Temperance): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XIV. Tiết Chế & Hòa Hợp (Temperance) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "angel-cups-flow",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Giả Kim Thuật Tâm Hồn (Alchemy) và Cân Bằng Năng Lượng. Thiên thần một chân đặt dưới nước, một chân trên đất liền, rót nước qua lại giữa hai chiếc chén mà không làm sánh một giọt, biểu hiện của sự dung hòa, điều tiết và chữa lành vi diệu.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Sự dung hòa, kiên nhễn và điều độ sẽ mang lại kết quả bình an, bền vững và thuận hòa cho mọi phía.",
+    "time_prediction": "Mùa Nhân Mã (22/11 - 21/12) hoặc cần khoảng thời gian dung hòa từ 1 đến 3 tháng."
+  },
+  {
+    "id": "major-15",
+    "nameEn": "The Devil",
+    "nameVi": "XV. Ác Quỷ (The Devil)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 15,
+    "image": "assets/cards/the_devil.jpg",
+    "element": "Đất",
+    "astrology": "Ma Kết (Capricorn)",
+    "keywords": [
+      "Cám dỗ vật chất",
+      "Mê muội ràng buộc",
+      "Ảo tưởng phụ thuộc",
+      "Bóng tối tâm lý"
+    ],
+    "upright": "Cảnh báo bạn đang bị trói buộc bởi những dục vọng, thói quen tiêu cực hoặc nỗi sợ hãi do chính tâm trí bạn tạo ra.",
+    "reversed": "Thức tỉnh, nhận ra xiềng xích vô hình, dũng cảm cắt đứt mối quan hệ độc hại hoặc vượt qua thói quen xấu.",
+    "love": {
+      "upright": "Sức hút nhục dục mãnh liệt nhưng tiềm ẩn độc hại; mối quan hệ thao túng, ghen tuông ám ảnh.",
+      "reversed": "Thoát khỏi mối quan hệ kiểm soát; lấy lại tự do và lòng tự trọng cá nhân."
+    },
+    "work": {
+      "upright": "Cảm giác bị giam cầm trong công việc vì đồng tiền; môi trường làm việc chèn ép, đấu đá ngầm.",
+      "reversed": "Từ chối thỏa hiệp với điều sai trái; quyết định tìm kiếm môi trường làm việc lành mạnh hơn."
+    },
+    "finance": {
+      "upright": "Nợ nần chồng chất vì thói tiêu hoang, bị cám dỗ bởi các chiêu trò làm giàu nhanh bất hợp pháp.",
+      "reversed": "Quyết tâm trả dứt các khoản nợ, lập lại kỷ luật tài chính nghiêm ngặt."
+    },
+    "study": {
+      "upright": "Nghiện game, mạng xã hội và thói trì hoãn khiến việc học hành sa sút nghiêm trọng.",
+      "reversed": "Cai nghiện các thói quen xấu, thiết lập lại sự tập trung cao độ cho kỳ thi."
+    },
+    "advice": {
+      "general": "Xiềng xích lớn nhất chính là những ảo tưởng và sự lệ thuộc trong tâm trí. Tự do bắt đầu ngay khi bạn nhận diện được chúng.",
+      "upright": "Xem xét lại những thói quen độc hại hoặc sự phụ thuộc cảm xúc; chủ động lấy lại quyền kiểm soát cuộc đời bạn.",
+      "reversed": "Bạn đang trên đà thức tỉnh và phá vỡ xiềng xích; hãy kiên định với ranh giới cá nhân lành mạnh."
+    },
+    "iconSymbol": "horns-chains-torch",
+    "suitElement": "Đất",
+    "archetype_story": "Nguyên mẫu Cái Bóng Tâm Lý (The Shadow) và Xiềng Xích Ảo Tưởng. Cặp đôi bị xích lỏng lẻo dưới chân ác quỷ Baphomet, biểu trưng cho sự lệ thuộc vào dục vọng, nỗi sợ hãi, lòng tham vật chất mà thực chất chỉ là ảo tưởng do tâm trí tự trói buộc.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Dấu hiệu của sự độc hại, phụ thuộc mù quáng hoặc cám dỗ nguy hiểm; nếu tiếp tục bạn sẽ đánh mất tự do và quyền tự chủ cá nhân.",
+    "time_prediction": "Mùa Ma Kết (22/12 - 19/1) hoặc giai đoạn bế tắc ngắn hạn."
+  },
+  {
+    "id": "major-16",
+    "nameEn": "The Tower",
+    "nameVi": "XVI. Tòa Tháp Đổ (The Tower)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 16,
+    "image": "assets/cards/the_tower.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Hỏa (Mars)",
+    "keywords": [
+      "Sụp đổ bất ngờ",
+      "Thức tỉnh đột ngột",
+      "Giải thoát khỏi ảo tưởng",
+      "Biến cố định mệnh"
+    ],
+    "upright": "Sét đánh làm sụp đổ những nền móng giả tạo. Dù biến cố có thể gây choáng váng nhưng đó là đòn bẩy cần thiết để giải phóng bạn khỏi sự dối trá.",
+    "reversed": "Trì hoãn điều tất yếu phải xảy ra, sợ hãi đối mặt với sự thật, hoặc may mắn thoát khỏi thảm họa trong gang tấc.",
+    "love": {
+      "upright": "Sự thật bất ngờ phơi bày làm sụp đổ vỏ bọc hoàn hảo; cuộc chia tay đột ngột nhưng mở đường giải thoát.",
+      "reversed": "Âm thầm chịu đựng cuộc hôn nhân rạn nứt vì sợ điều tiếng; vết thương lòng âm ỉ kéo dài."
+    },
+    "work": {
+      "upright": "Biến động lớn trong công ty, mất việc hoặc dự án bị hủy bỏ đột ngột buộc bạn phải tái định hình sự nghiệp.",
+      "reversed": "Cố gắng cứu vãn một dự án đang sụp đổ; cần chấp nhận thực tế để giảm thiểu thiệt hại."
+    },
+    "finance": {
+      "upright": "Thiệt hại tài chính bất ngờ do thị trường sập hoặc chi phí phát sinh khẩn cấp; cần tỉnh táo xử lý.",
+      "reversed": "Suýt rơi vào cảnh vỡ nợ, bài học cảnh tỉnh sâu sắc để quản trị rủi ro tiền bạc."
+    },
+    "study": {
+      "upright": "Kết quả thi cử bất ngờ kém xa kỳ vọng; cú sốc khiến bạn phải nghiêm túc nhìn nhận lại phương pháp.",
+      "reversed": "May mắn qua môn sát nút nhưng không được phép chủ quan trong những kỳ thi tiếp theo."
+    },
+    "advice": {
+      "general": "Đừng níu kéo những bức tường đang nứt vỡ; sự sụp đổ của ảo tưởng chính là tiền đề để bạn xây dựng lại một thực tại chân thật và vững chắc hơn.",
+      "upright": "Chấp nhận biến động như một sự giải phóng cần thiết. Buông bỏ kiểm soát và chuẩn bị cho một khởi đầu mới mẻ.",
+      "reversed": "Đừng cố gắng chống cự hay trì hoãn việc đối diện với sự thật; đối diện càng sớm, vết thương càng nhanh lành."
+    },
+    "iconSymbol": "tower-lightning-crown",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Sự Sụp Đổ Của Bản Ngã (Ego Collapse) và Sấm Sét Thức Tỉnh. Tia sét đánh sụp đỉnh tháp ngạo mạn, hất tung những ảo tưởng để trả con người về mặt đất chân thực; đau đớn nhưng là sự giải phóng tất yếu khỏi một nhà tù tâm lý.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Nền tảng hiện tại xây trên ảo tưởng và nguy cơ sụp đổ rất cao; vũ trụ đang buộc bạn thức tỉnh và tái cấu trúc lại từ đầu.",
+    "time_prediction": "Đột ngột như sét đánh, diễn ra tức khắc trong vài ngày tới hoặc mùa sao Hỏa."
+  },
+  {
+    "id": "major-17",
+    "nameEn": "The Star",
+    "nameVi": "XVII. Ngôi Sao Hy Vọng (The Star)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 17,
+    "image": "assets/cards/the_star.jpg",
+    "element": "Khí",
+    "astrology": "Bảo Bình (Aquarius)",
+    "keywords": [
+      "Hy vọng tái sinh",
+      "Niềm tin rạng ngời",
+      "Chữa lành tâm hồn",
+      "Cảm hứng vô tận"
+    ],
+    "upright": "Sau cơn giông bão là ánh sao hy vọng dẫn đường. Bình an, lạc quan và cảm hứng tươi mới đang tràn ngập tâm hồn bạn.",
+    "reversed": "Mất niềm tin, bi quan thất vọng, cảm thấy cô đơn và không nhìn thấy ánh sáng cuối đường hầm.",
+    "love": {
+      "upright": "Tình yêu trong sáng, tràn đầy hy vọng và sự thấu hiểu; sự chữa lành kỳ diệu cho những trái tim từng tổn thương.",
+      "reversed": "Mất niềm tin vào tình yêu sau đổ vỡ; đặt kỳ vọng quá cao và xa vời vào người yêu."
+    },
+    "work": {
+      "upright": "Cảm hứng sáng tạo dồi dào; các cơ hội phát triển tương lai sáng lạn đang dần rộng mở.",
+      "reversed": "Cảm giác bế tắc, tự ti về tương lai nghề nghiệp; cần tìm lại niềm đam mê ban đầu."
+    },
+    "finance": {
+      "upright": "Tài chính dần khởi sắc, bước qua giai đoạn khó khăn và tìm thấy hướng đầu tư đầy tiềm năng.",
+      "reversed": "Ảo tưởng về các khoản thu chưa có thật; cần thực tế hơn trong việc quản lý tiền bạc."
+    },
+    "study": {
+      "upright": "Tinh thần phấn chấn, tự tin vào mục tiêu thi cử và tràn đầy năng lượng tích cực.",
+      "reversed": "Mất động lực học tập, chán nản vì chưa thấy kết quả ngay lập tức."
+    },
+    "advice": {
+      "general": "Hãy dựa trên hy vọng tái sinh và niềm tin rạng ngời làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XVII. Ngôi Sao Hy Vọng (The Star): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XVII. Ngôi Sao Hy Vọng (The Star) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "eight-star-urns-pool",
+    "suitElement": "Khí",
+    "archetype_story": "Nguyên mẫu Hy Vọng và Nguồn Sống Tinh Khiết (The Guiding Star). Người thiếu nữ khỏa thân đổ nước nguồn vào đất và hồ dưới bầu trời đầy sao lấp lánh, tượng trưng cho sự chữa lành sâu sắc sau giông bão, niềm tin vào vũ trụ và vẻ đẹp chân thật.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Ánh sáng hy vọng và sự bảo trợ tâm linh đang soi rọi con đường bạn đi; hãy giữ vững niềm tin thuần khiết, ước mơ sẽ thành tựu.",
+    "time_prediction": "Mùa Bảo Bình (20/1 - 18/2) hoặc nở rộ sau giai đoạn chữa lành (khoảng 2 - 3 tháng)."
+  },
+  {
+    "id": "major-18",
+    "nameEn": "The Moon",
+    "nameVi": "XVIII. Mặt Trăng Huyền Bí (The Moon)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 18,
+    "image": "assets/cards/the_moon.jpg",
+    "element": "Nước",
+    "astrology": "Song Ngư (Pisces)",
+    "keywords": [
+      "Mơ hồ bất an",
+      "Ảo tưởng tiềm thức",
+      "Bí mật ẩn giấu",
+      "Trực giác nhạy cảm"
+    ],
+    "upright": "Cảnh báo những điều không rõ ràng, sự nghi ngờ và nỗi sợ vô hình từ tiềm thức. Đừng vội vàng đưa ra quyết định khi sương mù chưa tan.",
+    "reversed": "Sự thật dần được đưa ra ánh sáng, bóng tối sợ hãi tan biến, tìm lại sự sáng suốt trong suy nghĩ.",
+    "love": {
+      "upright": "Cảm giác bấp bênh, nghi ngờ đối phương che giấu điều gì đó; cảm xúc thất thường khó lường.",
+      "reversed": "Hiểu lầm được tháo gỡ, bí mật được sáng tỏ giúp mối quan hệ trở nên chân thành hơn."
+    },
+    "work": {
+      "upright": "Thông tin mập mờ, cạm bẫy thương trường hoặc những thỏa thuận ngầm bất lợi cho bạn.",
+      "reversed": "Nhận diện được chiêu trò cạnh tranh không lành mạnh, nhìn rõ con đường cần đi."
+    },
+    "finance": {
+      "upright": "Rủi ro lừa đảo tài chính hoặc các điều khoản ẩn trong hợp đồng; tuyệt đối không đầu tư theo cảm tính.",
+      "reversed": "Phát hiện kịp thời sai sót tài chính, tránh được một vố lừa tiền bạc."
+    },
+    "study": {
+      "upright": "Hoang mang trước khối lượng kiến thức, lo lắng quá mức dẫn đến mất ngủ trước ngày thi.",
+      "reversed": "Tìm lại được sự bình tĩnh, giải tỏa áp lực tâm lý và tự tin bước vào phòng thi."
+    },
+    "advice": {
+      "general": "Hãy dựa trên mơ hồ bất an và ảo tưởng tiềm thức làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XVIII. Mặt Trăng Huyền Bí (The Moon): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XVIII. Mặt Trăng Huyền Bí (The Moon) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "moon-wolves-crayfish",
+    "suitElement": "Nước",
+    "archetype_story": "Nguyên mẫu Vùng Vô Thức Nguyên Thủy (The Wild Unconscious) và Ảo Ảnh Sợ Hãi. Hai chú chó sói hú dưới ánh trăng mờ ảo cùng con tôm trồi lên từ đầm lầy, đại diện cho những nỗi sợ mơ hồ, ảo tưởng và hành trình vượt qua mê hồn trận của tâm trí.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Mọi thứ còn chìm trong sương mù ảo giác và sự nghi kỵ; chưa thể nhìn rõ thực tế nên nếu quyết định lúc này rất dễ bị lừa dối hoặc lạc lối.",
+    "time_prediction": "Mùa Song Ngư (19/2 - 20/3) hoặc chu kỳ 1 tháng trăng từ non đến tròn."
+  },
+  {
+    "id": "major-19",
+    "nameEn": "The Sun",
+    "nameVi": "XIX. Mặt Trời Rực Rỡ (The Sun)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 19,
+    "image": "assets/cards/the_sun.jpg",
+    "element": "Lửa",
+    "astrology": "Mặt Trời (Sun)",
+    "keywords": [
+      "Thành công vang dội",
+      "Hạnh phúc ấm áp",
+      "Năng lượng rạng ngời",
+      "Sự thật tỏ tường"
+    ],
+    "upright": "Lá bài may mắn bậc nhất Tarot! Báo hiệu niềm vui tột cùng, sức sống dồi dào, thành công rực rỡ và ánh hào quang chiến thắng.",
+    "reversed": "Niềm vui bị trì hoãn tạm thời, sự lạc quan thái quá hoặc kiêu ngạo dẫn đến sơ suất.",
+    "love": {
+      "upright": "Tình yêu thăng hoa, nụ cười rạng rỡ và sự gắn kết ngọt ngào; một cái kết viên mãn như đám cưới ấm áp.",
+      "reversed": "Tình cảm nhìn chung vẫn tốt nhưng có chút hờn dỗi trẻ con hoặc thiếu kiên nhẫn với nhau."
+    },
+    "work": {
+      "upright": "Dự án thành công rực rỡ, được cấp trên khen ngợi và mở ra cơ hội thăng quan tiến chức huy hoàng.",
+      "reversed": "Thành công chưa đạt đến mức kỳ vọng tối đa; cần khiêm tốn học hỏi thêm."
+    },
+    "finance": {
+      "upright": "Tài vận hanh thông, tiền bạc dồi dào, các khoản đầu tư sinh lời vượt bậc.",
+      "reversed": "Chi tiêu hơi hoang phí cho các buổi tiệc tùng ăn mừng, cần tiết chế lại."
+    },
+    "study": {
+      "upright": "Thi cử đạt điểm số thủ khoa, đỗ vào ngôi trường mơ ước trong niềm tự hào của gia đình.",
+      "reversed": "Chủ quan khinh địch vì tự tin quá mức, cần cẩn thận trong từng chi tiết nhỏ."
+    },
+    "advice": {
+      "general": "Hãy dựa trên thành công vang dội và hạnh phúc ấm áp làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XIX. Mặt Trời Rực Rỡ (The Sun): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XIX. Mặt Trời Rực Rỡ (The Sun) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "sun-child-horse-sunflowers",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Sự Tỏa Sáng Toàn Bích (The Conscious Self) và Hạnh Phúc Thuần Khiết. Đứa trẻ cưỡi ngựa trắng dưới ánh mặt trời rực rỡ và những bông hướng dương nở rộ, biểu tượng của sự hợp nhất hoàn hảo giữa bản ngã và vũ trụ, thành công viên mãn.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Năng lượng rực rỡ, may mắn và thành công trọn vẹn; mọi bóng tối hoài nghi đều bị xua tan bởi niềm vui và chân lý sáng ngời.",
+    "time_prediction": "Mùa hè rực rỡ, buổi trưa đầy nắng, hoặc diễn ra viên mãn trong vòng 1 tháng."
+  },
+  {
+    "id": "major-20",
+    "nameEn": "Judgement",
+    "nameVi": "XX. Phán Xét & Thức Tỉnh (Judgement)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 20,
+    "image": "assets/cards/judgement.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Diêm Vương (Pluto)",
+    "keywords": [
+      "Tiếng gọi định mệnh",
+      "Thức tỉnh tâm linh",
+      "Đánh giá lại quá khứ",
+      "Sự tha thứ"
+    ],
+    "upright": "Tiếng kèn thiên sứ vang lên kêu gọi bạn thức tỉnh. Đã đến lúc đánh giá lại chặng đường đã qua để bước lên một tầm cao mới của nhận thức.",
+    "reversed": "Tự phán xét bản thân quá khắc nghiệt, do dự chần chừ không dám nghe theo tiếng gọi định mệnh, tiếc nuối quá khứ.",
+    "love": {
+      "upright": "Tha thứ cho những lỗi lầm cũ để hàn gắn tình yêu; hoặc đưa ra quyết định dứt khoát về tương lai hai người.",
+      "reversed": "Mắc kẹt trong sự dằn vặt và oán trách quá khứ; không chịu tha thứ khiến cả hai cùng mệt mỏi."
+    },
+    "work": {
+      "upright": "Tìm thấy sứ mệnh nghề nghiệp thực sự; được đánh giá công tâm và chuyển mình mạnh mẽ.",
+      "reversed": "Né tránh trách nhiệm, do dự không dám nắm lấy cơ hội thăng tiến vì tự ti."
+    },
+    "finance": {
+      "upright": "Giải quyết dứt điểm các vướng mắc tiền bạc kéo dài; cơ hội bắt đầu chu kỳ đầu tư mới.",
+      "reversed": "Lặp lại những sai lầm tài chính trong quá khứ do không chịu rút ra bài học."
+    },
+    "study": {
+      "upright": "Nhận ra năng khiếu và con đường học vấn đích thực; chuẩn bị bước vào giai đoạn thi cử mang tính quyết định.",
+      "reversed": "Tự ti về khả năng của mình, để những lần trượt điểm trong quá khứ làm nhụt chí."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tiếng gọi định mệnh và thức tỉnh tâm linh làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XX. Phán Xét & Thức Tỉnh (Judgement): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XX. Phán Xét & Thức Tỉnh (Judgement) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "angel-horn-graves-rising",
+    "suitElement": "Lửa",
+    "archetype_story": "Nguyên mẫu Sự Phục Sinh và Thức Tỉnh Lương Tri (Resurrection). Tiếng kèn của thiên thần thức tỉnh những linh hồn trỗi dậy từ nấm mồ, đại diện cho việc rũ bỏ quá khứ, tha thứ cho bản thân và bước vào một tầm mức tâm thức cao hơn.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Thời điểm chín muồi để đưa ra quyết định bước ngoặt; hãy lắng nghe tiếng gọi chân thật của lương tri và tự tin tái sinh.",
+    "time_prediction": "Thời điểm quyết định bước ngoặt, không thể trì hoãn; diễn ra trong vòng vài tuần."
+  },
+  {
+    "id": "major-21",
+    "nameEn": "The World",
+    "nameVi": "XXI. Thế Giới Viên Mãn (The World)",
+    "arcana": "Major",
+    "suit": null,
+    "number": 21,
+    "image": "assets/cards/the_world.jpg",
+    "element": "Đất",
+    "astrology": "Sao Thổ (Saturn)",
+    "keywords": [
+      "Viên mãn trọn vẹn",
+      "Hoàn thành mục tiêu",
+      "Hòa hợp vũ trụ",
+      "Khởi đầu chu kỳ mới"
+    ],
+    "upright": "Đỉnh cao của hành trình Tarot! Mọi nỗ lực của bạn đã đơm hoa kết trái viên mãn, sự trọn vẹn và tự do tuyệt đối trong tâm hồn.",
+    "reversed": "Gần chạm tới đích nhưng còn dang dở một bước cuối, thiếu sự kiên trì để hoàn tất chặng cuối.",
+    "love": {
+      "upright": "Tình yêu viên mãn, cái kết hạnh phúc trọn vẹn; cùng nhau du lịch khám phá thế giới rộng lớn.",
+      "reversed": "Cảm giác còn thiếu một điều gì đó để hoàn hảo; cần nói chuyện thẳng thắn để gỡ bỏ khúc mắc cuối cùng."
+    },
+    "work": {
+      "upright": "Hoàn thành xuất sắc dự án lớn mang tầm quốc tế; danh tiếng và sự nghiệp đạt đỉnh cao.",
+      "reversed": "Chậm trễ trong khâu hoàn thiện sản phẩm; cần tập trung dứt điểm thay vì phân tán sức lực."
+    },
+    "finance": {
+      "upright": "Tự do tài chính, nguồn thu ổn định và dồi dào từ nhiều nguồn khác nhau.",
+      "reversed": "Gần đạt được mục tiêu tài chính nhưng phát sinh một vài khoản chi chưa lường trước."
+    },
+    "study": {
+      "upright": "Tốt nghiệp xuất sắc, nhận bằng khen, học bổng du học hoặc chinh phục thành công chứng chỉ danh giá.",
+      "reversed": "Trì hoãn việc nộp luận văn hoặc hoàn tất thủ tục cuối cùng; hãy cố gắng nốt chặng này."
+    },
+    "advice": {
+      "general": "Hãy dựa trên viên mãn trọn vẹn và hoàn thành mục tiêu làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của XXI. Thế Giới Viên Mãn (The World): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của XXI. Thế Giới Viên Mãn (The World) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wreath-dancer-four-watchers",
+    "suitElement": "Đất",
+    "archetype_story": "Nguyên mẫu Sự Toàn Vẹn Tự Thân (Individuation / Mandala Vũ Trụ). Người nhảy múa trong vòng nguyệt quế giữa bốn vị thần bảo hộ, tượng trưng cho sự hoàn tất vẻ vang một chu kỳ tiến hóa tâm linh, hợp nhất trọn vẹn với dòng chảy sự sống.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Mọi nỗ lực đã đi đến đỉnh cao viên mãn; bạn đang chạm tay vào sự trọn vẹn, mở ra một chương đời mới đầy tự do và thành tựu.",
+    "time_prediction": "Kết thúc một chu kỳ lớn (cuối năm hoặc sau khi hoàn thành chu kỳ 4 mùa)."
+  },
+  {
+    "id": "wands-1",
+    "nameEn": "Ace of Wands",
+    "nameVi": "Ace of Wands (Ách Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 1,
+    "image": "assets/cards/wands_01.jpg",
+    "element": "Lửa",
+    "astrology": "Cung Lửa (Bạch Dương, Sư Tử, Nhân Mã)",
+    "keywords": [
+      "Tia lửa cảm hứng",
+      "Khởi đầu rực cháy",
+      "Năng lượng dồi dào",
+      "Ý chí quyết tâm"
+    ],
+    "upright": "Một luồng cảm hứng mới thổi bùng ngọn lửa sáng tạo và thôi thúc bạn bắt tay vào hành động ngay lập tức.",
+    "reversed": "Thiếu động lực, ý tưởng bị đình trệ, sự nhiệt tình ban đầu nguội lạnh nhanh chóng.",
+    "love": {
+      "upright": "Tia sét ái tình mãnh liệt, đam mê bùng nổ.",
+      "reversed": "Cả thèm chóng chán, thiếu sự kiên nhẫn nuôi dưỡng tình cảm."
+    },
+    "work": {
+      "upright": "Ý tưởng kinh doanh đột phá, cơ hội bắt đầu dự án mới đầy triển vọng.",
+      "reversed": "Trì hoãn, ý tưởng hay nhưng chưa thể triển khai thực tế."
+    },
+    "finance": {
+      "upright": "Cơ hội kiếm tiền mới xuất hiện, tài vận khởi sắc từ sự năng động.",
+      "reversed": "Đầu tư vội vàng theo cảm hứng nhất thời dẫn đến thua lỗ."
+    },
+    "study": {
+      "upright": "Hứng khởi ngập tràn với môn học mới, tiếp thu kiến thức cực nhanh.",
+      "reversed": "Nản chí sớm khi gặp phải phần bài tập khó đầu tiên."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tia lửa cảm hứng và khởi đầu rực cháy làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ace of Wands (Ách Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ace of Wands (Ách Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-ace",
+    "suitElement": "Lửa",
+    "archetype_story": "Hạt mầm ý chí và ngọn lửa sáng tạo nguyên khôi. Bàn tay vũ trụ trao cây gậy nảy lộc giữa trời mây, biểu tượng cho nguồn cảm hứng bộc phát và sự can đảm khai mở hành trình mới.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Ngọn lửa nhiệt huyết và cơ hội mới đang bùng cháy mạnh mẽ; hành động ngay sẽ gặt hái kết quả rực rỡ.",
+    "time_prediction": "1 ngày hoặc mùa xuân (Bạch Dương)."
+  },
+  {
+    "id": "wands-2",
+    "nameEn": "Two of Wands",
+    "nameVi": "Two of Wands (Hai Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 2,
+    "image": "assets/cards/wands_02.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Hỏa trong Bạch Dương",
+    "keywords": [
+      "Lên kế hoạch tương lai",
+      "Tầm nhìn xa",
+      "Bước ra thế giới",
+      "Quyết định bước ngoặt"
+    ],
+    "upright": "Bạn đã có nền tảng vững chắc và đang đứng trên đỉnh cao nhìn ra thế giới rộng lớn để vạch ra chiến lược đường dài.",
+    "reversed": "Sợ hãi rủi ro khi bước ra khỏi vùng an toàn, kế hoạch thiếu tính thực tế.",
+    "love": {
+      "upright": "Cùng nhau bàn bạc về tương lai lâu dài và những chuyến đi xa.",
+      "reversed": "Bất đồng về hướng đi tương lai, sợ hãi cam kết lâu dài."
+    },
+    "work": {
+      "upright": "Mở rộng thị trường, tìm kiếm cơ hội hợp tác quốc tế hoặc đối tác lớn.",
+      "reversed": "Dự án gặp khó khăn trong khâu triển khai ra ngoài phạm vi quen thuộc."
+    },
+    "finance": {
+      "upright": "Cân nhắc đa dạng hóa danh mục đầu tư cho mục tiêu dài hạn.",
+      "reversed": "Do dự không dám giải ngân vì sợ biến động thị trường."
+    },
+    "study": {
+      "upright": "Lên kế hoạch du học hoặc học nâng cao để mở rộng tầm nhìn.",
+      "reversed": "Chần chừ chọn ngành, thiếu định hướng rõ ràng cho tương lai."
+    },
+    "advice": {
+      "general": "Hãy dựa trên lên kế hoạch tương lai và tầm nhìn xa làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Two of Wands (Hai Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Two of Wands (Hai Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-2",
+    "suitElement": "Lửa",
+    "archetype_story": "Người chỉ huy đứng trên lâu đài cầm quả địa cầu ngắm nhìn đại dương xa xăm. Sự cân nhắc giữa vùng an toàn hiện tại và khát vọng chinh phục thế giới rộng lớn hơn.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Bạn đang đứng trước ngã rẽ lựa chọn mở rộng tầm nhìn; cần lập kế hoạch cụ thể trước khi dấn thân.",
+    "time_prediction": "2 ngày hoặc đầu mùa xuân (khoảng 21/3 - 30/3)."
+  },
+  {
+    "id": "wands-3",
+    "nameEn": "Three of Wands",
+    "nameVi": "Three of Wands (Ba Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 3,
+    "image": "assets/cards/wands_03.jpg",
+    "element": "Lửa",
+    "astrology": "Mặt Trời trong Bạch Dương",
+    "keywords": [
+      "Mở rộng cơ hội",
+      "Tầm nhìn phát triển",
+      "Đón tàu về bến",
+      "Khám phá chân trời mới"
+    ],
+    "upright": "Những hạt mầm bạn gieo trồng đang bắt đầu đơm hoa. Hãy sẵn sàng đón nhận những chuyến tàu chở đầy tài lộc và cơ hội trở về.",
+    "reversed": "Sự chậm trễ trong các kế hoạch, thất vọng vì kết quả đến chậm hơn dự tính.",
+    "love": {
+      "upright": "Tình cảm vượt qua khoảng cách địa lý; tin tưởng vào tương lai chung.",
+      "reversed": "Khoảng cách xa xôi làm phai nhạt tình cảm; sự chờ đợi mệt mỏi."
+    },
+    "work": {
+      "upright": "Công việc kinh doanh vươn tầm ra ngoài, gặt hái thành tựu bước đầu rất tốt.",
+      "reversed": "Đối tác giao hàng chậm trễ, kế hoạch mở rộng gặp rào cản pháp lý."
+    },
+    "finance": {
+      "upright": "Các khoản đầu tư bắt đầu sinh lời đều đặn; dòng tiền thông suốt.",
+      "reversed": "Thu hồi vốn chậm hơn dự kiến, cần dự phòng chi phí phát sinh."
+    },
+    "study": {
+      "upright": "Kết quả học tập mở ra nhiều cơ hội học bổng và giao lưu quốc tế.",
+      "reversed": "Kế hoạch thi cử bị hoãn hoặc dời lịch gây ảnh hưởng tâm lý."
+    },
+    "advice": {
+      "general": "Hãy dựa trên mở rộng cơ hội và tầm nhìn phát triển làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Three of Wands (Ba Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Three of Wands (Ba Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-3",
+    "suitElement": "Lửa",
+    "archetype_story": "Lữ khách đứng trên vách đá ngắm nhìn đoàn thuyền chở hàng xuôi gió ra khơi. Nỗ lực bước đầu đã được phóng thích và bắt đầu mở ra chân trời cơ hội mới.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Những hạt mầm bạn gieo và đoàn thuyền bạn gửi đi đang trên đường mang lại tin vui và thành quả mở rộng.",
+    "time_prediction": "3 ngày hoặc giữa mùa xuân (khoảng 31/3 - 10/4)."
+  },
+  {
+    "id": "wands-4",
+    "nameEn": "Four of Wands",
+    "nameVi": "Four of Wands (Bốn Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 4,
+    "image": "assets/cards/wands_04.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Kim trong Bạch Dương",
+    "keywords": [
+      "Ăn mừng chiến thắng",
+      "Gia đình sum vầy",
+      "Tổ ấm bình yên",
+      "Cột mốc thành công"
+    ],
+    "upright": "Không khí lễ hội hân hoan, sum họp gia đình, kỷ niệm ngày vui trọng đại như đám cưới, tân gia hoặc hoàn thành một dự án lớn.",
+    "reversed": "Không khí gia đình có chút bất hòa, bữa tiệc bị gián đoạn hoặc cảm giác lạc lõng giữa đám đông.",
+    "love": {
+      "upright": "Đám cưới hạnh phúc, chuyển về sống chung hoặc sự đón nhận nồng nhiệt từ hai bên gia đình.",
+      "reversed": "Trục trặc trong khâu chuẩn bị hôn lễ hoặc mâu thuẫn gia đình hai bên."
+    },
+    "work": {
+      "upright": "Liên hoan tổng kết dự án thành công rực rỡ, tinh thần đồng đội thăng hoa.",
+      "reversed": "Áp lực công việc khiến bạn không có thời gian chia vui cùng đồng nghiệp."
+    },
+    "finance": {
+      "upright": "Mua được nhà mới, bất động sản hoặc nguồn thu ổn định đem lại an tâm.",
+      "reversed": "Chi tiêu hơi quá tay cho tiệc tùng và tân trang nhà cửa."
+    },
+    "study": {
+      "upright": "Ăn mừng đỗ đạt cùng bạn bè và gia đình; một cột mốc học tập đáng nhớ.",
+      "reversed": "Cảm giác chưa thực sự thỏa mãn với kết quả dù người khác thấy ổn."
+    },
+    "advice": {
+      "general": "Hãy dựa trên ăn mừng chiến thắng và gia đình sum vầy làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Four of Wands (Bốn Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Four of Wands (Bốn Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-4",
+    "suitElement": "Lửa",
+    "archetype_story": "Cổng hoa bốn gậy rực rỡ chào đón đôi uyên ương trong ngày hội mùa màng. Đại diện cho niềm vui sum vầy, sự ổn định gia đình và cột mốc thành công xứng đáng được tán dương.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Nền tảng vững chắc, niềm vui sum vầy và thành công xứng đáng được chúc mừng; mọi sự bình an thuận lợi.",
+    "time_prediction": "4 ngày hoặc mùa xuân hoa nở rộ (khoảng 11/4 - 20/4)."
+  },
+  {
+    "id": "wands-5",
+    "nameEn": "Five of Wands",
+    "nameVi": "Five of Wands (Năm Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 5,
+    "image": "assets/cards/wands_05.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Thổ trong Sư Tử",
+    "keywords": [
+      "Cạnh tranh gay gắt",
+      "Xung đột ý kiến",
+      "Hỗn loạn thử thách",
+      "Đấu tranh khẳng định mình"
+    ],
+    "upright": "Môi trường cạnh tranh sôi nổi, nhiều ý kiến trái chiều tranh luận nảy lửa đòi hỏi bạn phải chứng tỏ bản lĩnh và sự linh hoạt.",
+    "reversed": "Tránh né xung đột để tìm kiếm thỏa hiệp, hoặc mệt mỏi vì những cuộc tranh cãi vặt vãnh vô bổ.",
+    "love": {
+      "upright": "Những cuộc cãi cọ vì cái tôi của cả hai quá lớn; có nhiều đối thủ cùng theo đuổi người bạn thích.",
+      "reversed": "Làm lành sau cuộc tranh cãi; học cách lắng nghe thay vì áp đặt."
+    },
+    "work": {
+      "upright": "Thương trường khốc liệt, cạnh tranh chức vụ gay gắt trong nội bộ nhóm.",
+      "reversed": "Tìm được tiếng nói chung giữa các phòng ban sau nhiều bất đồng."
+    },
+    "finance": {
+      "upright": "Tranh chấp tiền bạc hoặc cạnh tranh giá cả gay gắt khiến lợi nhuận sụt giảm.",
+      "reversed": "Dàn xếp xong các vụ tranh chấp quyền lợi tài chính trong êm đẹp."
+    },
+    "study": {
+      "upright": "Áp lực thi đua điểm số gay gắt trong lớp học; các cuộc tranh luận học thuật sôi nổi.",
+      "reversed": "Giải tỏa áp lực ganh đua, tập trung vào sự tiến bộ của chính bản thân."
+    },
+    "advice": {
+      "general": "Hãy dựa trên cạnh tranh gay gắt và xung đột ý kiến làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Five of Wands (Năm Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Five of Wands (Năm Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-5",
+    "suitElement": "Lửa",
+    "archetype_story": "Năm chàng thanh niên vung gậy tranh đấu lẫn nhau giữa bãi đất trống. Đại diện cho sự cạnh tranh gay gắt, xung đột quan điểm và sự phân tán năng lượng do thiếu tổ chức.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Năng lượng đang bị tiêu hao bởi tranh cãi và đấu đá nội bộ; cần tìm kiếm tiếng nói chung thay vì tiếp tục đối đầu.",
+    "time_prediction": "5 ngày hoặc mùa hè (Sư Tử - khoảng 22/7 - 1/8)."
+  },
+  {
+    "id": "wands-6",
+    "nameEn": "Six of Wands",
+    "nameVi": "Six of Wands (Sáu Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 6,
+    "image": "assets/cards/wands_06.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Mộc trong Sư Tử",
+    "keywords": [
+      "Vinh quang khải hoàn",
+      "Được công nhận",
+      "Tự hào dẫn đầu",
+      "Chiến thắng vang dội"
+    ],
+    "upright": "Bạn cưỡi bạch mã trở về trong tiếng reo hò chúc mừng. Những nỗ lực phi thường của bạn đã được đền đáp bằng sự ngưỡng mộ của mọi người.",
+    "reversed": "Tự cao tự đại, danh tiếng bị tổn hại, hoặc chiến thắng bị cướp công trắng trợn.",
+    "love": {
+      "upright": "Tình yêu được mọi người chúc phúc và ngưỡng mộ; chinh phục thành công người trong mộng.",
+      "reversed": "Cái tôi quá lớn làm đối phương phật lòng; sợ mất thể diện trước người yêu."
+    },
+    "work": {
+      "upright": "Thăng chức, nhận bằng khen, đạt doanh số dẫn đầu toàn công ty.",
+      "reversed": "Không được cấp trên ghi nhận xứng đáng; đồng nghiệp ghen tị nói xấu sau lưng."
+    },
+    "finance": {
+      "upright": "Thành công tài chính rực rỡ mang lại sự giàu có và vị thế xã hội.",
+      "reversed": "Hao tài tốn của để đánh bóng tên tuổi; đầu tư thua lỗ vì quá kiêu ngạo."
+    },
+    "study": {
+      "upright": "Đạt giải nhất kỳ thi học sinh giỏi; dẫn đầu bảng xếp hạng điểm số.",
+      "reversed": "Điểm số sa sút do ngủ quên trên chiến thắng; chủ quan trước đối thủ."
+    },
+    "advice": {
+      "general": "Hãy dựa trên vinh quang khải hoàn và được công nhận làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Six of Wands (Sáu Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Six of Wands (Sáu Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-6",
+    "suitElement": "Lửa",
+    "archetype_story": "Người chiến binh đội vòng nguyệt quế cưỡi ngựa trắng diễu hành giữa tiếng reo hò của đám đông. Biểu tượng của vinh quang chiến thắng và sự công nhận từ cộng đồng.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Sự công nhận vẻ vang, chiến thắng và sự ngưỡng mộ từ cộng đồng dành cho bạn; tự tin tiến bước.",
+    "time_prediction": "6 ngày hoặc giữa mùa hè (khoảng 2/8 - 11/8)."
+  },
+  {
+    "id": "wands-7",
+    "nameEn": "Seven of Wands",
+    "nameVi": "Seven of Wands (Bảy Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 7,
+    "image": "assets/cards/wands_07.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Hỏa trong Sư Tử",
+    "keywords": [
+      "Bảo vệ lập trường",
+      "Kiên cường kháng cự",
+      "Vững vàng vị thế",
+      "Đối mặt áp lực"
+    ],
+    "upright": "Bạn đang đứng ở vị thế cao hơn và kiên quyết bảo vệ thành quả của mình trước sự công kích của nhiều phía. Đừng lùi bước!",
+    "reversed": "Quá tải vì bị tấn công từ mọi hướng, mệt mỏi muốn buông xuôi bỏ cuộc.",
+    "love": {
+      "upright": "Kiên quyết bảo vệ tình yêu trước sự phản đối của bạn bè hoặc người ngoài.",
+      "reversed": "Mệt mỏi vì phải liên tục giải thích và phòng thủ trong mối quan hệ."
+    },
+    "work": {
+      "upright": "Bảo vệ ý tưởng dự án thành công trước các phản biện khắt khe của hội đồng.",
+      "reversed": "Bị đối thủ dồn ép vào thế chân tường; mất đi lợi thế cạnh tranh ban đầu."
+    },
+    "finance": {
+      "upright": "Bảo vệ tài sản và nguồn lợi nhuận trước những chiêu trò cạnh tranh bẩn.",
+      "reversed": "Khó khăn trong việc giữ vững thị phần và duy trì doanh thu ổn định."
+    },
+    "study": {
+      "upright": "Bảo vệ thành công khóa luận tốt nghiệp trước những câu hỏi hóc búa.",
+      "reversed": "Áp lực bài vở dồn dập khiến bạn đuối sức và muốn buông tay."
+    },
+    "advice": {
+      "general": "Hãy dựa trên bảo vệ lập trường và kiên cường kháng cự làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Seven of Wands (Bảy Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Seven of Wands (Bảy Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-7",
+    "suitElement": "Lửa",
+    "archetype_story": "Chiến sĩ kiên cường đứng trên đỉnh đồi cao chống lại sáu chiếc gậy nhắm vào mình từ bên dưới. Biểu thị bản lĩnh giữ vững lập trường và lợi thế địa hình trước áp lực bủa vây.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Dù bị bao vây thử thách nhưng vị thế phòng thủ kiên cường của bạn sẽ giúp bạn giữ vững thắng lợi cuối cùng.",
+    "time_prediction": "7 ngày hoặc cuối mùa hè (khoảng 12/8 - 22/8)."
+  },
+  {
+    "id": "wands-8",
+    "nameEn": "Eight of Wands",
+    "nameVi": "Eight of Wands (Tám Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 8,
+    "image": "assets/cards/wands_08.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Thủy trong Nhân Mã",
+    "keywords": [
+      "Tốc độ thần tốc",
+      "Tin tức bay tới",
+      "Di chuyển nhanh",
+      "Hành động dứt khoát"
+    ],
+    "upright": "Các sự kiện diễn ra với tốc độ chóng mặt! Tin tức quan trọng đang bay tới, các rào cản được dỡ bỏ và bạn cần hành động ngay.",
+    "reversed": "Sự chậm trễ gây bức xúc, thông tin hỗn loạn, hoặc hành động quá hấp tấp gây hỏng việc.",
+    "love": {
+      "upright": "Tình cảm tiến triển cực nhanh; nhận được tin nhắn tỏ tình ngọt ngào bất ngờ.",
+      "reversed": "Hiểu lầm do tin nhắn vội vàng; tiến độ mối quan hệ bị chững lại."
+    },
+    "work": {
+      "upright": "Công việc bận rộn nhưng cực kỳ hiệu quả; nhiều hợp đồng chốt nhanh như chớp.",
+      "reversed": "Chậm tiến độ dự án do thông tin nội bộ truyền đạt thiếu chính xác."
+    },
+    "finance": {
+      "upright": "Dòng tiền xoay vòng thần tốc, các khoản thanh toán được xử lý nhanh chóng.",
+      "reversed": "Chậm trễ trong việc giải ngân hoặc chuyển tiền gây lỡ cơ hội tốt."
+    },
+    "study": {
+      "upright": "Tiếp thu bài giảng nhanh như gió; thời gian làm bài thi trôi chảy thuận lợi.",
+      "reversed": "Làm bài vội vàng dẫn đến sai sót ngớ ngẩn; không kịp soát lại bài."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tốc độ thần tốc và tin tức bay tới làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Eight of Wands (Tám Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Eight of Wands (Tám Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-8",
+    "suitElement": "Lửa",
+    "archetype_story": "Tám cành gậy lao vun vút trên bầu trời thanh bình hướng về mặt đất màu mỡ. Tốc độ chuyển dịch cực nhanh, các sự kiện dồn dập đến và không còn trở ngại cản bước.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Tốc độ diễn tiến thần tốc, tin tức bất ngờ bay đến tháo gỡ mọi tắc nghẽn và đưa sự việc về đích.",
+    "time_prediction": "Rất nhanh trong 1 - 2 ngày tới, hoặc mùa Nhân Mã (khoảng 23/11 - 2/12)."
+  },
+  {
+    "id": "wands-9",
+    "nameEn": "Nine of Wands",
+    "nameVi": "Nine of Wands (Chín Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 9,
+    "image": "assets/cards/wands_09.jpg",
+    "element": "Lửa",
+    "astrology": "Mặt Trăng trong Nhân Mã",
+    "keywords": [
+      "Kiên cường chặng cuối",
+      "Phòng thủ cảnh giác",
+      "Bền bỉ chịu đựng",
+      "Sắp cán đích"
+    ],
+    "upright": "Dù cơ thể mang nhiều vết thương sau những trận chiến ác liệt, bạn vẫn kiên cường đứng vững canh gác. Chỉ còn một thử thách cuối cùng!",
+    "reversed": "Kiệt sức, đa nghi quá mức, phòng thủ tiêu cực khiến bản thân luôn sống trong sợ hãi.",
+    "love": {
+      "upright": "Dù từng chịu nhiều tổn thương nhưng bạn vẫn kiên định bảo vệ tình cảm hiện tại.",
+      "reversed": "Bức tường phòng thủ quá cao khiến người khác không thể tiếp cận trái tim bạn."
+    },
+    "work": {
+      "upright": "Dự án sắp về đích sau chuỗi ngày làm việc kiệt lực; hãy giữ vững tinh thần đến phút chót.",
+      "reversed": "Kiệt sức hoàn toàn (burnout); muốn từ bỏ ngay trước ngưỡng cửa thành công."
+    },
+    "finance": {
+      "upright": "Cẩn trọng bảo vệ vốn liếng; không cho vay mượn linh tinh trong thời điểm này.",
+      "reversed": "Ám ảnh sợ mất tiền khiến bạn bỏ lỡ những cơ hội sinh lời an toàn."
+    },
+    "study": {
+      "upright": "Những ngày ôn thi nước rút căng thẳng; cố gắng thêm chút nữa để về đích an toàn.",
+      "reversed": "Mệt mỏi rã rời, học không vào vì đã quá tải trong thời gian dài."
+    },
+    "advice": {
+      "general": "Hãy dựa trên kiên cường chặng cuối và phòng thủ cảnh giác làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Nine of Wands (Chín Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Nine of Wands (Chín Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-9",
+    "suitElement": "Lửa",
+    "archetype_story": "Người lính băng bó vết thương trên trán nhưng ánh mắt vẫn cảnh giác tựa vào cọc gậy phòng thủ cuối cùng. Sức chịu đựng phi thường và tinh thần kiên cường ở chặng cuối gian nan.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Bạn đã kiệt sức sau chặng đường dài; chỉ cần phòng thủ kiên trì nốt bước cuối cùng, đừng vội bỏ cuộc.",
+    "time_prediction": "9 ngày hoặc giữa mùa Nhân Mã (khoảng 3/12 - 12/12)."
+  },
+  {
+    "id": "wands-10",
+    "nameEn": "Ten of Wands",
+    "nameVi": "Ten of Wands (Mười Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 10,
+    "image": "assets/cards/wands_10.jpg",
+    "element": "Lửa",
+    "astrology": "Sao Thổ trong Nhân Mã",
+    "keywords": [
+      "Gánh nặng quá tải",
+      "Trách nhiệm đè nặng",
+      "Cố gắng kiệt cùng",
+      "Cần san sẻ"
+    ],
+    "upright": "Bạn đang ôm đồm quá nhiều việc cùng lúc và lưng còng xuống vì gánh nặng. Dù sắp tới đích, bạn cần học cách san sẻ bớt công việc.",
+    "reversed": "Buông bỏ bớt gánh nặng không cần thiết, hoặc sụp đổ vì không thể gánh vác thêm được nữa.",
+    "love": {
+      "upright": "Một mình gánh vác trách nhiệm vun vén cho mối quan hệ khiến bạn kiệt sức.",
+      "reversed": "Thẳng thắn chia sẻ gánh nặng với đối phương để cùng nhau vượt qua."
+    },
+    "work": {
+      "upright": "Ôm đồm việc của cả nhóm, làm việc tăng ca kiệt quệ; cần phân quyền hợp lý.",
+      "reversed": "Học cách từ chối những đầu việc phát sinh vô lý để bảo vệ sức khỏe."
+    },
+    "finance": {
+      "upright": "Gánh nặng kinh tế gia đình đè nặng lên vai; nhiều khoản chi tiêu bắt buộc phải lo.",
+      "reversed": "Tìm ra giải pháp tái cơ cấu nợ nần, giảm bớt áp lực chi trả hàng tháng."
+    },
+    "study": {
+      "upright": "Đăng ký quá nhiều môn học hoặc khóa học thêm khiến lịch trình quá tải.",
+      "reversed": "Hủy bớt các môn phụ để tập trung cao độ cho các môn thi chính."
+    },
+    "advice": {
+      "general": "Hãy dựa trên gánh nặng quá tải và trách nhiệm đè nặng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ten of Wands (Mười Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ten of Wands (Mười Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-10",
+    "suitElement": "Lửa",
+    "archetype_story": "Người đàn ông còng lưng ôm bó mười cây gậy nặng trĩu tiến về ngôi làng phía trước. Đại diện cho gánh nặng trách nhiệm quá tải, sự ôm đồm và nguy cơ kiệt sức do không biết buông bỏ.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Gánh nặng quá sức chịu đựng; cần học cách buông bỏ bớt trách nhiệm và chia sẻ với người khác.",
+    "time_prediction": "10 ngày hoặc cuối mùa Nhân Mã (khoảng 13/12 - 21/12)."
+  },
+  {
+    "id": "wands-11",
+    "nameEn": "Page of Wands",
+    "nameVi": "Page of Wands (Tiểu Đồng Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 11,
+    "image": "assets/cards/wands_11.jpg",
+    "element": "Lửa",
+    "astrology": "Đất của Lửa (Cung Lửa)",
+    "keywords": [
+      "Nhiệt huyết trẻ trung",
+      "Tin tức hào hứng",
+      "Khám phá thế giới",
+      "Tinh thần học hỏi"
+    ],
+    "upright": "Một người trẻ tràn đầy năng lượng hoặc một tin tức thú vị kích thích sự tò mò và khát khao trải nghiệm của bạn.",
+    "reversed": "Nông nổi, thiếu kiên nhẫn, thích thể hiện nhưng mau chán, tin tức gây thất vọng.",
+    "love": {
+      "upright": "Mối quan hệ mang lại cảm giác tươi trẻ, vui vẻ và đầy ắp những trò nghịch ngợm đáng yêu.",
+      "reversed": "Trẻ con, thiếu chín chắn, hứa hươu hứa vượn rồi để đấy."
+    },
+    "work": {
+      "upright": "Sẵn sàng đón nhận thử thách mới với tinh thần học việc nhiệt huyết nhất.",
+      "reversed": "Làm việc theo cảm tính, hay bỏ dở giữa chừng khi gặp khó khăn."
+    },
+    "finance": {
+      "upright": "Nảy ra nhiều ý tưởng kiếm tiền sáng tạo tuy quy mô ban đầu còn nhỏ.",
+      "reversed": "Tiêu tiền vào những sở thích nhất thời rồi nhanh chóng chán nản."
+    },
+    "study": {
+      "upright": "Học tập với niềm đam mê khám phá thuần khiết; tích cực tham gia hoạt động ngoại khóa.",
+      "reversed": "Thiếu tập trung vào việc học chính khóa, ham chơi hơn ham học."
+    },
+    "advice": {
+      "general": "Hãy dựa trên nhiệt huyết trẻ trung và tin tức hào hứng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Page of Wands (Tiểu Đồng Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Page of Wands (Tiểu Đồng Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-page",
+    "suitElement": "Lửa",
+    "archetype_story": "Chàng trai trẻ đứng giữa sa mạc chăm chú ngắm nhìn mầm chồi xanh biếc nảy nở trên đầu ngọn gậy. Tinh thần phiêu lưu, khát khao học hỏi và đón nhận nguồn cảm hứng mới.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Tinh thần khám phá non trẻ và tin tức hào hứng đang truyền cảm hứng cho bạn bắt đầu.",
+    "time_prediction": "Vài ngày tới hoặc giai đoạn bắt đầu một dự án mới (mùa Lửa)."
+  },
+  {
+    "id": "wands-12",
+    "nameEn": "Knight of Wands",
+    "nameVi": "Knight of Wands (Hiệp Sĩ Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 12,
+    "image": "assets/cards/wands_12.jpg",
+    "element": "Lửa",
+    "astrology": "Khí của Lửa (Bạch Dương / Sư Tử)",
+    "keywords": [
+      "Hành động táo bạo",
+      "Đam mê cuồng nhiệt",
+      "Phiêu lưu mạo hiểm",
+      "Xông xáo dũng mãnh"
+    ],
+    "upright": "Kỵ sĩ giục ngựa phi nước đại lao về phía trước với ngọn lửa nhiệt huyết. Không gì có thể ngăn cản bước chân chinh phục của bạn!",
+    "reversed": "Hấp tấp liều lĩnh, dễ nổi nóng, hành động bộc phát thiếu suy nghĩ dẫn đến hậu quả tai hại.",
+    "love": {
+      "upright": "Theo đuổi tình yêu dồn dập, mãnh liệt và lãng mạn như phim ảnh.",
+      "reversed": "Tình cảm đến nhanh đi cũng nhanh; người yêu thiếu chung thủy thích bay nhảy."
+    },
+    "work": {
+      "upright": "Dám nghĩ dám làm, tiên phong mở đường trong những dự án đầy thách thức.",
+      "reversed": "Đốt cháy giai đoạn làm hỏng việc lớn; dễ xung đột nảy lửa với đồng nghiệp."
+    },
+    "finance": {
+      "upright": "Kiếm tiền nhanh chóng nhờ sự nhạy bén và liều lĩnh đúng lúc.",
+      "reversed": "Đầu tư mạo hiểm thiếu cơ sở; tiền vào tay nhanh nhưng ra đi cũng chớp nhoáng."
+    },
+    "study": {
+      "upright": "Quyết tâm đạt mục tiêu cao trong thời gian ngắn; tinh thần chiến đấu mạnh mẽ.",
+      "reversed": "Học kiểu cưỡi ngựa xem hoa, thiếu tính hệ thống và sâu sắc."
+    },
+    "advice": {
+      "general": "Hãy dựa trên hành động táo bạo và đam mê cuồng nhiệt làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Knight of Wands (Hiệp Sĩ Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Knight of Wands (Hiệp Sĩ Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-knight",
+    "suitElement": "Lửa",
+    "archetype_story": "Kỵ sĩ giáp vàng cưỡi ngựa chiến phi nước đại giữa sa mạc rực lửa. Đại diện cho sự bùng nổ nhiệt huyết, hành động quyết liệt không chút sợ hãi và tính bộc phát mạnh mẽ.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Hành động thần tốc và lòng quả cảm đưa bạn lao nhanh về phía trước; đừng do dự.",
+    "time_prediction": "Diễn ra cực nhanh trong vài ngày hoặc giữa mùa Lửa."
+  },
+  {
+    "id": "wands-13",
+    "nameEn": "Queen of Wands",
+    "nameVi": "Queen of Wands (Hoàng Hậu Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 13,
+    "image": "assets/cards/wands_13.jpg",
+    "element": "Lửa",
+    "astrology": "Nước của Lửa (Bạch Dương)",
+    "keywords": [
+      "Tự tin quyến rũ",
+      "Năng lượng ấm áp",
+      "Độc lập bản lĩnh",
+      "Truyền cảm hứng"
+    ],
+    "upright": "Một người phụ nữ rạng rỡ, tự tin, phóng khoáng và luôn là tâm điểm thu hút mọi ánh nhìn bằng sự ấm áp và tài năng lãnh đạo.",
+    "reversed": "Ghen tị, thao túng người khác bằng sự drama, đòi hỏi sự chú ý thái quá.",
+    "love": {
+      "upright": "Sức hút cá nhân cực kỳ lôi cuốn; bạn hoàn toàn tự tin và làm chủ hạnh phúc của mình.",
+      "reversed": "Kiểm soát người yêu quá đà, dễ nổi cơn thịnh nộ vô cớ."
+    },
+    "work": {
+      "upright": "Nhà quản lý tài ba, truyền cảm hứng mạnh mẽ cho toàn thể đội ngũ nhân viên.",
+      "reversed": "Lạm quyền, thiên vị cảm tính trong công việc làm mất lòng tập thể."
+    },
+    "finance": {
+      "upright": "Quản lý dòng tiền tự tin, chi tiêu hào phóng đúng nơi đúng lúc.",
+      "reversed": "Vung tiền vào những món đồ xa xỉ chỉ để khoe khoang trên mạng xã hội."
+    },
+    "study": {
+      "upright": "Tự tin thuyết trình trước đám đông; học tập với tinh thần chủ động cao.",
+      "reversed": "Chủ quan không chịu nghe góp ý từ người khác dẫn đến sai sót."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tự tin quyến rũ và năng lượng ấm áp làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Queen of Wands (Hoàng Hậu Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Queen of Wands (Hoàng Hậu Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-queen",
+    "suitElement": "Lửa",
+    "archetype_story": "Hoàng hậu ngồi trên ngai vàng khắc hoa hướng dương và sư tử, tay cầm hoa hướng dương và chú mèo đen bên cạnh. Biểu tượng của sự ấm áp, tự tin, sức quyến rũ và năng lượng tích cực.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Sức hút tự tin, sự ấm áp và bản lĩnh giúp bạn làm chủ hoàn toàn tình thế và truyền cảm hứng cho mọi người.",
+    "time_prediction": "Khoảng 1 - 2 tuần hoặc mùa xuân ấm áp."
+  },
+  {
+    "id": "wands-14",
+    "nameEn": "King of Wands",
+    "nameVi": "King of Wands (Vua Gậy)",
+    "arcana": "Minor",
+    "suit": "wands",
+    "number": 14,
+    "image": "assets/cards/wands_14.jpg",
+    "element": "Lửa",
+    "astrology": "Lửa của Lửa (Sư Tử / Nhân Mã)",
+    "keywords": [
+      "Nhà lãnh đạo có tầm nhìn",
+      "Ý chí sắt đá",
+      "Hùng tâm tráng chí",
+      "Khởi xướng vĩ đại"
+    ],
+    "upright": "Bậc minh quân với tầm nhìn chiến lược vĩ đại, ý chí kiên định và khả năng biến những ý tưởng táo bạo thành hiện thực huy hoàng.",
+    "reversed": "Độc tài chuyên chế, áp đặt suy nghĩ cá nhân, nóng nảy và không chấp nhận sự phản biện.",
+    "love": {
+      "upright": "Người yêu đĩnh đạc, bản lĩnh, chung thủy và có thể che chở cho bạn cả đời.",
+      "reversed": "Gia trưởng, xem mình là trung tâm vũ trụ và ít khi quan tâm đến cảm xúc của đối phương."
+    },
+    "work": {
+      "upright": "Lãnh đạo xuất chúng dẫn dắt doanh nghiệp gặt hái những thành công vang dội.",
+      "reversed": "Ra quyết định duy ý chí khiến cấp dưới bất mãn và dự án gặp trục trặc."
+    },
+    "finance": {
+      "upright": "Tầm nhìn đầu tư sắc bén, khả năng tạo ra nguồn tài chính khổng lồ bền vững.",
+      "reversed": "Đầu tư kiêu ngạo bỏ qua cảnh báo của chuyên gia dẫn đến tổn thất lớn."
+    },
+    "study": {
+      "upright": "Làm chủ hoàn toàn lộ trình học thuật; định hướng nghề nghiệp xuất sắc từ sớm.",
+      "reversed": "Cứng nhắc bướng bỉnh trong học thuật, không chịu đổi mới tư duy."
+    },
+    "advice": {
+      "general": "Hãy dựa trên nhà lãnh đạo có tầm nhìn và ý chí sắt đá làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của King of Wands (Vua Gậy): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của King of Wands (Vua Gậy) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "wands-king",
+    "suitElement": "Lửa",
+    "archetype_story": "Vị vua ngồi trên ngai chạm khắc thằn lằn cắn đuôi (Ouroboros) và ngọn lửa uy nghiêm. Đỉnh cao của tầm nhìn lãnh đạo, ý chí sắt đá và khả năng biến ý tưởng vĩ mô thành sự nghiệp hiển hách.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Tầm nhìn lãnh đạo uy nghiêm và khả năng truyền cảm hứng dẫn dắt tập thể thành công rực rỡ.",
+    "time_prediction": "Khoảng 1 tháng hoặc mùa hè rực lửa."
+  },
+  {
+    "id": "cups-1",
+    "nameEn": "Ace of Cups",
+    "nameVi": "Ace of Cups (Ách Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 1,
+    "image": "assets/cards/cups_01.jpg",
+    "element": "Nước",
+    "astrology": "Cung Nước (Cự Giải, Bọ Cạp, Song Ngư)",
+    "keywords": [
+      "Suối nguồn tình yêu",
+      "Trực giác nở rộ",
+      "Tràn trề cảm xúc",
+      "Chữa lành trái tim"
+    ],
+    "upright": "Chén thánh tình yêu tràn trề dòng nước phúc lành. Trái tim bạn rộng mở đón nhận tình yêu trong sáng, sự bình an và sáng tạo vô tận.",
+    "reversed": "Đè nén cảm xúc, trái tim tổn thương chưa lành, cảm thấy trống rỗng hoặc thất vọng trong tình cảm.",
+    "love": {
+      "upright": "Bắt đầu một tình yêu tuyệt đẹp; cảm xúc rung động mãnh liệt và chân thành.",
+      "reversed": "Khép chặt cánh cửa trái tim vì sợ tổn thương; tình cảm đơn phương không được đáp lại."
+    },
+    "work": {
+      "upright": "Tìm được công việc đúng đam mê mang lại niềm vui và cảm hứng mỗi ngày.",
+      "reversed": "Cạn kiệt cảm xúc với công việc hiện tại, môi trường làm việc ngột ngạt thiếu tình người."
+    },
+    "finance": {
+      "upright": "Tài chính mang lại sự an vui; có lộc quà tặng hoặc được người khác giúp đỡ.",
+      "reversed": "Chi tiền theo cảm xúc buồn vui thất thường dẫn đến hao hụt."
+    },
+    "study": {
+      "upright": "Học tập với niềm say mê thực sự, trực giác nhạy bén trong các môn nghệ thuật và xã hội.",
+      "reversed": "Mất hứng thú học tập, cảm thấy bài vở khô khan và vô vị."
+    },
+    "advice": {
+      "general": "Hãy dựa trên suối nguồn tình yêu và trực giác nở rộ làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ace of Cups (Ách Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ace of Cups (Ách Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-ace",
+    "suitElement": "Nước",
+    "archetype_story": "Chiếc chén vàng thánh thần tuôn trào năm dòng suối cảm xúc vào đầm sen thanh tịnh, chim bồ câu ngậm bánh thánh hạ xuống. Nguồn cội của tình yêu thương vô điều kiện và sự thức tỉnh tâm linh.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Chiếc cốc tình yêu và niềm vui tinh thần đang tràn đầy; hãy mở lòng đón nhận hạnh phúc.",
+    "time_prediction": "1 tháng hoặc mùa hè (Cự Giải)."
+  },
+  {
+    "id": "cups-2",
+    "nameEn": "Two of Cups",
+    "nameVi": "Two of Cups (Hai Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 2,
+    "image": "assets/cards/cups_02.jpg",
+    "element": "Nước",
+    "astrology": "Sao Kim trong Cự Giải",
+    "keywords": [
+      "Tâm đầu ý hợp",
+      "Kết nối sâu sắc",
+      "Tình yêu đôi lứa",
+      "Hợp tác hài hòa"
+    ],
+    "upright": "Sự kết hợp hoàn hảo giữa hai tâm hồn, cùng nâng ly chia sẻ yêu thương và sự thấu hiểu bình đẳng tuyệt đối.",
+    "reversed": "Hiểu lầm, mâu thuẫn rạn nứt, sự bất đồng quan điểm hoặc thiếu tôn trọng lẫn nhau.",
+    "love": {
+      "upright": "Tìm thấy người bạn tri kỷ đời mình; tình yêu ngọt ngào, gắn kết và thấu hiểu sâu sắc.",
+      "reversed": "Cãi vã, lạnh nhạt, cảm giác không còn tìm thấy tiếng nói chung với người yêu."
+    },
+    "work": {
+      "upright": "Tìm được đối tác ăn ý cùng chí hướng; hợp đồng ký kết đôi bên cùng có lợi.",
+      "reversed": "Bất đồng ý kiến trong nhóm làm việc, đối tác không giữ đúng cam kết ban đầu."
+    },
+    "finance": {
+      "upright": "Hợp tác làm ăn sinh lời thuận lợi; tài chính cân bằng và ổn định.",
+      "reversed": "Tranh chấp quyền lợi khi chia lợi nhuận hợp tác; tiền nong thiếu minh bạch."
+    },
+    "study": {
+      "upright": "Đôi bạn cùng tiến giúp nhau vượt qua mọi kỳ thi khó nhằn.",
+      "reversed": "Học nhóm bất thành do mâu thuẫn cá nhân giữa các thành viên."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tâm đầu ý hợp và kết nối sâu sắc làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Two of Cups (Hai Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Two of Cups (Hai Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-2",
+    "suitElement": "Nước",
+    "archetype_story": "Đôi nam nữ trao nhau chiếc chén ước nguyện dưới biểu tượng gậy thần Hermes (Caduceus) và đầu sư tử có cánh. Sự hòa hợp âm dương, tình yêu đích thực và sự gắn kết tâm hồn sâu sắc.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Sự đồng điệu gắn kết của hai tâm hồn, tình cảm thăng hoa và hợp tác bền vững đôi bên cùng có lợi.",
+    "time_prediction": "2 tháng hoặc đầu mùa hè (khoảng 21/6 - 2/7)."
+  },
+  {
+    "id": "cups-3",
+    "nameEn": "Three of Cups",
+    "nameVi": "Three of Cups (Ba Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 3,
+    "image": "assets/cards/cups_03.jpg",
+    "element": "Nước",
+    "astrology": "Sao Thủy trong Cự Giải",
+    "keywords": [
+      "Tiệc tùng chúc mừng",
+      "Tình bạn tri kỷ",
+      "Niềm vui gắn kết",
+      "Cộng đồng hỗ trợ"
+    ],
+    "upright": "Ba cô gái cùng nâng ly nhảy múa dưới chùm nho trĩu quả. Niềm vui sum họp bạn bè, tiệc tùng chúc mừng và tình thân ấm áp.",
+    "reversed": "Tụ tập vui chơi quá đà, buôn chuyện nói xấu sau lưng, hoặc sự xuất hiện của người thứ ba gây xáo trộn.",
+    "love": {
+      "upright": "Tình yêu nhận được sự ủng hộ nhiệt tình từ bạn bè; cùng nhau tham gia các buổi tiệc vui tươi.",
+      "reversed": "Người ngoài can thiệp quá sâu vào chuyện tình cảm; nghi vấn người thứ ba xen vào."
+    },
+    "work": {
+      "upright": "Môi trường công sở thân thiện, đồng nghiệp hòa đồng hỗ trợ nhau hết mình.",
+      "reversed": "Bè phái chốn công sở, buôn chuyện làm giảm hiệu suất công việc chung."
+    },
+    "finance": {
+      "upright": "Có tiền đãi tiệc hoặc được người khác khao; tài chính thoải mái để giao lưu bạn bè.",
+      "reversed": "Hao hụt tiền bạc vì những cuộc vui vô bổ và tụ tập ăn chơi quá đà."
+    },
+    "study": {
+      "upright": "Học tập trong không khí vui vẻ, bạn bè cùng nhau chia sẻ tài liệu ôn tập hiệu quả.",
+      "reversed": "Mải chơi bời tụ tập với bạn bè mà lơ là việc ôn bài trước ngày thi."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tiệc tùng chúc mừng và tình bạn tri kỷ làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Three of Cups (Ba Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Three of Cups (Ba Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-3",
+    "suitElement": "Nước",
+    "archetype_story": "Ba thiếu nữ nâng cao ba chiếc cốc kết vòng hoa dạo múa giữa vườn nho trĩu quả. Niềm vui gắn kết cộng đồng, tình bạn chân thành và sự sẻ chia hạnh phúc mùa màng.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Niềm vui chia sẻ, lễ hội ăn mừng và sự nâng đỡ ấm áp từ bạn bè, hội nhóm.",
+    "time_prediction": "3 tháng hoặc giữa mùa hè (khoảng 3/7 - 12/7)."
+  },
+  {
+    "id": "cups-4",
+    "nameEn": "Four of Cups",
+    "nameVi": "Four of Cups (Bốn Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 4,
+    "image": "assets/cards/cups_04.jpg",
+    "element": "Nước",
+    "astrology": "Mặt Trăng trong Cự Giải",
+    "keywords": [
+      "Thờ ơ lãnh đạm",
+      "Bỏ lỡ cơ hội",
+      "Chán chường u uất",
+      "Thu mình ngẫm ngợi"
+    ],
+    "upright": "Bạn đang ngồi khoanh tay dưới gốc cây nhìn ba chiếc ly cũ mà thờ ơ không nhận ra chiếc ly thứ tư đầy phúc lành đang được đưa tới.",
+    "reversed": "Thức tỉnh khỏi cơn u mê, mở mắt nhận ra cơ hội quý giá và sẵn sàng đón nhận niềm vui mới.",
+    "love": {
+      "upright": "Chán ngán trong tình cảm, xem nhẹ sự quan tâm của đối phương; kén cá chọn canh.",
+      "reversed": "Mở lòng cho người khác cơ hội; bước ra khỏi sự tự kỷ để đón nhận tình yêu."
+    },
+    "work": {
+      "upright": "Cảm thấy công việc tẻ nhạt, thiếu động lực phấn đấu dù xung quanh không thiếu cơ hội.",
+      "reversed": "Tìm lại được niềm cảm hứng làm việc, chủ động nắm bắt dự án mới."
+    },
+    "finance": {
+      "upright": "Không hài lòng với mức thu nhập hiện tại nhưng lại lười tìm cách cải thiện.",
+      "reversed": "Nhận ra cách kiếm tiền mới mà trước đây mình từng bỏ qua."
+    },
+    "study": {
+      "upright": "Chán học, thờ ơ với bài giảng trên lớp; tâm trí để đi đâu đâu.",
+      "reversed": "Lấy lại tinh thần học tập nghiêm túc sau chuỗi ngày chểnh mảng."
+    },
+    "advice": {
+      "general": "Hãy dựa trên thờ ơ lãnh đạm và bỏ lỡ cơ hội làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Four of Cups (Bốn Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Four of Cups (Bốn Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-4",
+    "suitElement": "Nước",
+    "archetype_story": "Chàng trai ngồi khoanh tay dưới gốc cây thờ ơ trước ba chiếc cốc trước mặt, không buồn để ý chiếc cốc thứ tư đang được bàn tay vũ trụ trao tặng. Sự chán nản và mù quáng cảm xúc.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Sự thờ ơ, chán nản khiến bạn bỏ qua chiếc cốc kỳ diệu vũ trụ đang trao tặng; hãy mở mắt nhìn lại.",
+    "time_prediction": "4 tháng hoặc giai đoạn cảm xúc lắng đọng (khoảng 13/7 - 22/7)."
+  },
+  {
+    "id": "cups-5",
+    "nameEn": "Five of Cups",
+    "nameVi": "Five of Cups (Năm Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 5,
+    "image": "assets/cards/cups_05.jpg",
+    "element": "Nước",
+    "astrology": "Sao Hỏa trong Bọ Cạp",
+    "keywords": [
+      "Nuối tiếc mất mát",
+      "Đau buồn quá khứ",
+      "Nhìn về phía trước",
+      "Hy vọng còn lại"
+    ],
+    "upright": "Bạn trùm áo đen đau buồn nhìn ba chiếc ly bị đổ mà quên mất rằng sau lưng vẫn còn hai chiếc ly nguyên vẹn và cây cầu dẫn về lâu đài.",
+    "reversed": "Vượt qua nỗi đau buồn, chấp nhận quá khứ đã qua và quay lại với cuộc sống thực tại.",
+    "love": {
+      "upright": "Đau khổ dằn vặt sau cuộc chia tay; chìm đắm trong tiếc nuối những gì đã mất.",
+      "reversed": "Chữa lành vết thương lòng, sẵn sàng tha thứ và mở lòng tìm kiếm hạnh phúc mới."
+    },
+    "work": {
+      "upright": "Thất vọng vì dự án thất bại hoặc không đạt chỉ tiêu; tiếc nuối cơ hội đã trôi qua.",
+      "reversed": "Rút ra bài học kinh nghiệm từ sai lầm cũ và bắt tay vào xây dựng kế hoạch mới."
+    },
+    "finance": {
+      "upright": "Thiệt hại một khoản tiền trong đầu tư khiến bạn buồn phiền, lo âu.",
+      "reversed": "Chấp nhận cắt lỗ để bảo toàn số vốn còn lại; dòng tiền dần hồi phục."
+    },
+    "study": {
+      "upright": "Suy sụp vì kết quả thi không tốt; buồn bã tự trách móc bản thân.",
+      "reversed": "Lấy lại tinh thần, quyết tâm làm lại trong kỳ thi lại hoặc đợt thi tiếp theo."
+    },
+    "advice": {
+      "general": "Đừng mãi cúi đầu thương khóc những chiếc chén đã đổ; hãy quay lại nhìn hai chiếc chén tình cảm vẫn còn nguyên vẹn.",
+      "upright": "Chấp nhận sự mất mát, nhưng đừng quên trân trọng những điều tốt đẹp và tình yêu thương vẫn còn bên cạnh bạn.",
+      "reversed": "Mở lòng đón nhận sự an ủi và cơ hội mới; chiếc cầu dẫn sang miền hy vọng đang chờ bạn bước qua."
+    },
+    "iconSymbol": "cups-5",
+    "suitElement": "Nước",
+    "archetype_story": "Người áo đen cúi đầu xót xa nhìn ba chiếc cốc đổ rượu lênh láng trên mặt đất, quên mất hai chiếc cốc vẫn còn nguyên vẹn phía sau lưng. Nỗi đau mất mát và sự chấp niệm quá khứ.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Bạn đang mải đau buồn nhìn ba chiếc cốc đổ mà quên mất hai chiếc cốc còn nguyên phía sau; hãy quay đầu lại.",
+    "time_prediction": "5 tháng hoặc mùa Bọ Cạp (khoảng 23/10 - 2/11)."
+  },
+  {
+    "id": "cups-6",
+    "nameEn": "Six of Cups",
+    "nameVi": "Six of Cups (Sáu Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 6,
+    "image": "assets/cards/cups_06.jpg",
+    "element": "Nước",
+    "astrology": "Mặt Trời trong Bọ Cạp",
+    "keywords": [
+      "Kỷ niệm tuổi thơ",
+      "Gặp lại người xưa",
+      "Sự ngây thơ trong sáng",
+      "Hoài niệm ngọt ngào"
+    ],
+    "upright": "Cậu bé trao đóa hoa trong chiếc ly cho cô bé trước tòa lâu đài cổ. Kỷ niệm tuổi thơ ngọt ngào ùa về, gặp lại cố nhân hoặc nhận được món quà vô tư.",
+    "reversed": "Mắc kẹt trong quá khứ không chịu lớn lên, hoặc dứt bỏ được ảo ảnh xưa cũ để sống cho hiện tại.",
+    "love": {
+      "upright": "Tình cũ không rủ cũng tới; mối tình thanh mai trúc mã hoặc tình cảm ngọt ngào trong trẻo.",
+      "reversed": "So sánh người yêu hiện tại với người yêu cũ; ôm mãi bóng hình người xưa."
+    },
+    "work": {
+      "upright": "Được đồng nghiệp cũ giúp đỡ; quay lại làm việc tại công ty cũ hoặc ngành nghề quen thuộc.",
+      "reversed": "Tư duy lỗi thời không còn phù hợp với xu thế công nghệ mới của thị trường."
+    },
+    "finance": {
+      "upright": "Nhận được sự hỗ trợ tài chính từ gia đình hoặc thừa kế một món quà quý từ người thân.",
+      "reversed": "Dựa dẫm tài chính vào gia đình quá lâu, cần học cách tự lập kinh tế."
+    },
+    "study": {
+      "upright": "Gặp lại thầy cô giáo cũ được truyền cảm hứng; ôn lại kiến thức căn bản rất nhanh.",
+      "reversed": "Áp dụng phương pháp học từ thời phổ thông vào bậc đại học không còn hiệu quả."
+    },
+    "advice": {
+      "general": "Hãy dựa trên kỷ niệm tuổi thơ và gặp lại người xưa làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Six of Cups (Sáu Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Six of Cups (Sáu Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-6",
+    "suitElement": "Nước",
+    "archetype_story": "Hai đứa trẻ thơ ngây trong lâu đài cổ kính trao nhau chiếc cốc chứa đầy hoa trắng thơm ngát. Sự hoài niệm ngọt ngào, lòng vị tha và tình cảm trong sáng từ miền ký ức tuổi thơ.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Kỷ niệm ngọt ngào của tuổi thơ, sự tái ngộ nhân duyên cũ và tình cảm chân thành thuần khiết.",
+    "time_prediction": "6 tháng hoặc giữa mùa Bọ Cạp (khoảng 3/11 - 12/11)."
+  },
+  {
+    "id": "cups-7",
+    "nameEn": "Seven of Cups",
+    "nameVi": "Seven of Cups (Bảy Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 7,
+    "image": "assets/cards/cups_07.jpg",
+    "element": "Nước",
+    "astrology": "Sao Kim trong Bọ Cạp",
+    "keywords": [
+      "Ảo tưởng mộng mơ",
+      "Quá nhiều lựa chọn",
+      "Lạc lối mê cung",
+      "Cần tỉnh táo thực tế"
+    ],
+    "upright": "Bảy chiếc ly hiện lên giữa những đám mây chứa đầy châu báu, rồng, lâu đài và cám dỗ. Bạn đứng trước quá nhiều lựa chọn nhưng cẩn thận ảo ảnh!",
+    "reversed": "Tỉnh mộng, xóa tan sương mù ảo tưởng, đưa ra lựa chọn thực tế và tập trung vào một mục tiêu cụ thể.",
+    "love": {
+      "upright": "Mơ mộng hình mẫu người yêu hoàn hảo xa rời thực tế; thả thính nhiều người cùng lúc.",
+      "reversed": "Nhận ra ai mới là người thực sự yêu thương mình; dứt bỏ những ảo tưởng viển vông."
+    },
+    "work": {
+      "upright": "Có quá nhiều ý tưởng nhưng không có hành động cụ thể; bánh vẽ dự án thiếu tính khả thi.",
+      "reversed": "Thu hẹp phạm vi mục tiêu, chọn ra phương án khả thi nhất để tập trung nguồn lực."
+    },
+    "finance": {
+      "upright": "Bị hoa mắt bởi các cơ hội đầu tư hứa hẹn lãi khủng; cẩn thận cạm bẫy đa cấp lừa đảo.",
+      "reversed": "Tỉnh táo phân tích số liệu tài chính thực tế, tránh mất tiền oan."
+    },
+    "study": {
+      "upright": "Đứng núi này trông núi nọ, muốn học đủ thứ chứng chỉ nhưng không đâu vào đâu.",
+      "reversed": "Xác định rõ ràng ngành học mũi nhọn và tập trung toàn lực ôn luyện."
+    },
+    "advice": {
+      "general": "Hãy dựa trên ảo tưởng mộng mơ và quá nhiều lựa chọn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Seven of Cups (Bảy Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Seven of Cups (Bảy Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-7",
+    "suitElement": "Nước",
+    "archetype_story": "Hình bóng người đàn ông sững sờ trước bảy chiếc cốc bồng bềnh trong mây mờ, chứa đựng rắn độc, lâu đài, ngọc quý, vòng nguyệt quế và quỷ dữ. Ảo mộng và cám dỗ của dục vọng hư vô.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Quá nhiều ảo tưởng và lựa chọn viển vông; cần kéo tâm trí về thực tại tỉnh táo để chọn một điều duy nhất.",
+    "time_prediction": "7 tháng hoặc thời điểm trăng tròn (khoảng 13/11 - 22/11)."
+  },
+  {
+    "id": "cups-8",
+    "nameEn": "Eight of Cups",
+    "nameVi": "Eight of Cups (Tám Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 8,
+    "image": "assets/cards/cups_08.jpg",
+    "element": "Nước",
+    "astrology": "Sao Thổ trong Song Ngư",
+    "keywords": [
+      "Dứt áo ra đi",
+      "Tìm kiếm ý nghĩa cao hơn",
+      "Rời bỏ vùng an toàn",
+      "Hành trình nội tâm"
+    ],
+    "upright": "Người lữ khách chống gậy quay lưng bước đi trong đêm trăng, bỏ lại tám chiếc ly đã dày công xếp đặt để lên đường tìm kiếm chân trời ý nghĩa hơn.",
+    "reversed": "Sợ hãi không dám dứt bỏ điều đã hết hạn sử dụng, bế tắc trong vùng an toàn tẻ nhạt.",
+    "love": {
+      "upright": "Dũng cảm rời bỏ mối tình không còn cảm xúc để đi tìm sự thanh thản cho tâm hồn.",
+      "reversed": "Dùng dằng nửa muốn đi nửa muốn ở; không nỡ buông tay dù biết không có tương lai."
+    },
+    "work": {
+      "upright": "Nghỉ việc ở công ty cũ dù lương ổn định để theo đuổi đam mê và lý tưởng lớn hơn.",
+      "reversed": "Ngần ngại nhảy việc vì sợ môi trường mới dù công việc hiện tại đã quá ngột ngạt."
+    },
+    "finance": {
+      "upright": "Chấp nhận từ bỏ một khoản lợi nhuận nhỏ để đầu tư cho những mục tiêu nhân văn lâu dài.",
+      "reversed": "Bám víu lấy nguồn thu cạn kiệt vì không dám mạo hiểm tìm hướng đi mới."
+    },
+    "study": {
+      "upright": "Quyết định đổi ngành học để theo đuổi đúng đam mê thực sự của bản thân.",
+      "reversed": "Tiếp tục học ngành mình ghét chỉ vì sợ mang tiếng bỏ cuộc giữa chừng."
+    },
+    "advice": {
+      "general": "Hãy dựa trên dứt áo ra đi và tìm kiếm ý nghĩa cao hơn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Eight of Cups (Tám Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Eight of Cups (Tám Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-8",
+    "suitElement": "Nước",
+    "archetype_story": "Lữ khách quay lưng rời bỏ tám chiếc cốc xếp chồng ngay ngắn, chống gậy đơn độc bước qua dòng suối hướng lên núi cao dưới trăng khuyết. Sự thức tỉnh và can đảm rời bỏ cái quen thuộc.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Sự can đảm dứt áo ra đi khỏi những gì không còn thỏa mãn tâm hồn để tìm kiếm ý nghĩa cao hơn.",
+    "time_prediction": "8 tháng hoặc mùa Song Ngư (khoảng 19/2 - 28/2)."
+  },
+  {
+    "id": "cups-9",
+    "nameEn": "Nine of Cups",
+    "nameVi": "Nine of Cups (Chín Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 9,
+    "image": "assets/cards/cups_09.jpg",
+    "element": "Nước",
+    "astrology": "Sao Mộc trong Song Ngư",
+    "keywords": [
+      "Ước nguyện thành hiện thực",
+      "Thỏa mãn viên mãn",
+      "Hạnh phúc tự thân",
+      "An lạc đủ đầy"
+    ],
+    "upright": "Lá bài của 'Ước gì được nấy'! Người đàn ông mỉm cười hài lòng trước chín chiếc ly vàng xếp hàng ngay ngắn. Mọi ước nguyện của bạn sắp thành sự thật.",
+    "reversed": "Thỏa mãn nhất thời, tham lam đòi hỏi quá mức, hoặc cảm giác trống rỗng dù đã đạt được điều mình muốn.",
+    "love": {
+      "upright": "Hạnh phúc ngập tràn, tìm thấy người yêu lý tưởng như ước nguyện bấy lâu.",
+      "reversed": "Tự mãn trong tình cảm, chỉ muốn nhận chứ không muốn cho đi."
+    },
+    "work": {
+      "upright": "Đạt được vị trí công việc mơ ước, công sức được tưởng thưởng xứng đáng.",
+      "reversed": "Ngủ quên trên thành công, thiếu mục tiêu phấn đấu tiếp theo."
+    },
+    "finance": {
+      "upright": "Tài chính sung túc, có thể thoải mái tận hưởng cuộc sống không lo nghĩ.",
+      "reversed": "Hưởng thụ quá đà, tiêu xài lãng phí vào những thú vui xa xỉ."
+    },
+    "study": {
+      "upright": "Đạt điểm số cao như mơ ước, trúng tuyển nguyện vọng một dễ dàng.",
+      "reversed": "Chủ quan sau kết quả tốt dẫn đến lơ là các bài kiểm tra tiếp theo."
+    },
+    "advice": {
+      "general": "Hãy dựa trên ước nguyện thành hiện thực và thỏa mãn viên mãn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Nine of Cups (Chín Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Nine of Cups (Chín Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-9",
+    "suitElement": "Nước",
+    "archetype_story": "Người đàn ông bệ vệ ngồi khoanh tay mỉm cười mãn nguyện trước bức màn xanh treo chín chiếc cúp vàng lấp lánh. Lá bài của ước nguyện thành sự thật và sự thỏa mãn viên mãn.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Lá bài ước nguyện thành tựu; sự thỏa mãn sâu sắc cả về cảm xúc lẫn chất lượng sống.",
+    "time_prediction": "9 tháng hoặc giữa mùa Song Ngư (khoảng 1/3 - 10/3)."
+  },
+  {
+    "id": "cups-10",
+    "nameEn": "Ten of Cups",
+    "nameVi": "Ten of Cups (Mười Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 10,
+    "image": "assets/cards/cups_10.jpg",
+    "element": "Nước",
+    "astrology": "Sao Hỏa trong Song Ngư",
+    "keywords": [
+      "Gia đình hạnh phúc",
+      "Cầu vồng bình an",
+      "Hòa thuận viên mãn",
+      "Tổ ấm trọn vẹn"
+    ],
+    "upright": "Cặp vợ chồng giang tay hạnh phúc bên hai đứa trẻ nhảy múa, dưới bầu trời có dải cầu vồng kết bằng mười chiếc ly vàng. Hạnh phúc gia đình trọn vẹn nhất.",
+    "reversed": "Bất hòa trong gia đình, xung đột giá trị sống giữa các thế hệ, hoặc sự đổ vỡ của tổ ấm.",
+    "love": {
+      "upright": "Tình yêu viên mãn dẫn tới hôn nhân trọn vẹn; tổ ấm tràn ngập tiếng cười và sự thấu hiểu.",
+      "reversed": "Gia đình lục đục, bất đồng quan điểm nuôi dạy con cái hoặc áp lực họ hàng."
+    },
+    "work": {
+      "upright": "Môi trường công ty như một gia đình thứ hai; các thành viên yêu thương và gắn kết keo sơn.",
+      "reversed": "Môi trường làm việc giả tạo bằng mặt nhưng không bằng lòng."
+    },
+    "finance": {
+      "upright": "Tài chính gia đình vững mạnh, an cư lạc nghiệp và có của ăn của để cho con cái.",
+      "reversed": "Tranh chấp phân chia tài sản trong gia đình gây sứt mẻ tình thân."
+    },
+    "study": {
+      "upright": "Nhận được sự ủng hộ và động viên hết lòng từ người thân trên con đường học vấn.",
+      "reversed": "Áp lực kỳ vọng quá lớn từ gia đình khiến việc học trở thành gánh nặng tâm lý."
+    },
+    "advice": {
+      "general": "Hãy dựa trên gia đình hạnh phúc và cầu vồng bình an làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ten of Cups (Mười Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ten of Cups (Mười Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-10",
+    "suitElement": "Nước",
+    "archetype_story": "Gia đình hạnh phúc cùng hai đứa trẻ nhảy múa dưới dải cầu vồng kết bằng mười chiếc cốc vàng rực rỡ trên bầu trời quê hương. Sự viên mãn tột cùng của tình yêu thương gia đình.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Hạnh phúc gia đình viên mãn, tình yêu trọn vẹn và sự bình an ngập tràn dưới cầu vồng ân sủng.",
+    "time_prediction": "10 tháng hoặc cuối mùa Song Ngư (khoảng 11/3 - 20/3)."
+  },
+  {
+    "id": "cups-11",
+    "nameEn": "Page of Cups",
+    "nameVi": "Page of Cups (Tiểu Đồng Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 11,
+    "image": "assets/cards/cups_11.jpg",
+    "element": "Nước",
+    "astrology": "Đất của Nước (Cung Nước)",
+    "keywords": [
+      "Thông điệp tình yêu",
+      "Trực giác nhạy cảm",
+      "Tâm hồn mơ mộng",
+      "Bất ngờ ngọt ngào"
+    ],
+    "upright": "Chàng trai trẻ ngạc nhiên nhìn chú cá nhỏ nhảy múa trong chiếc ly trên tay mình. Tin nhắn tình yêu dễ thương hoặc lời mời gọi hẹn hò bất ngờ.",
+    "reversed": "Cảm xúc ủy mị, dễ tự ái tổn thương, thất hứa hoặc nhận tin nhắn làm bạn hụt hẫng.",
+    "love": {
+      "upright": "Nhận được lời tỏ tình ngây thơ, đáng yêu; tình cảm chớm nở ngọt ngào.",
+      "reversed": "Tỏ tình thất bại hoặc đối phương có biểu hiện 'trẻ trâu', dỗi hờn vu vơ."
+    },
+    "work": {
+      "upright": "Cơ hội thử sức trong lĩnh vực sáng tạo nghệ thuật; ý tưởng độc đáo nảy nở.",
+      "reversed": "Thiếu thực tế trong công việc, để cảm xúc cá nhân ảnh hưởng đến tiến độ."
+    },
+    "finance": {
+      "upright": "Có khoản tiền nhỏ bất ngờ đến từ quà tặng hoặc sở thích cá nhân.",
+      "reversed": "Bị lừa tiền vì nhẹ dạ cả tin vào những lời cầu xin thương hại."
+    },
+    "study": {
+      "upright": "Cảm hứng dồi dào trong các môn viết lách, văn học, hội họa và âm nhạc.",
+      "reversed": "Ngồi trong lớp mơ mộng trên mây, không chú ý nghe giảng viên truyền đạt."
+    },
+    "advice": {
+      "general": "Hãy dựa trên thông điệp tình yêu và trực giác nhạy cảm làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Page of Cups (Tiểu Đồng Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Page of Cups (Tiểu Đồng Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-page",
+    "suitElement": "Nước",
+    "archetype_story": "Chàng trai trẻ duyên dáng đứng bên bờ biển ngắm nhìn chú cá nhỏ nhảy múa trong chiếc cốc trên tay. Thông điệp bất ngờ từ tiềm thức, sự mộng mơ và trực cảm tâm hồn.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Thông điệp ngọt ngào từ trái tim, sự ngây thơ trực cảm và cơ hội tình cảm mới chớm.",
+    "time_prediction": "Vài tuần tới hoặc đầu mùa Nước."
+  },
+  {
+    "id": "cups-12",
+    "nameEn": "Knight of Cups",
+    "nameVi": "Knight of Cups (Hiệp Sĩ Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 12,
+    "image": "assets/cards/cups_12.jpg",
+    "element": "Nước",
+    "astrology": "Khí của Nước (Bọ Cạp)",
+    "keywords": [
+      "Bạch mã hoàng tử",
+      "Lời mời lãng mạn",
+      "Trực giác dẫn lối",
+      "Theo đuổi ước mơ"
+    ],
+    "upright": "Kỵ sĩ phong nhã cưỡi ngựa thong dong mang theo chiếc ly vàng tràn đầy tình cảm. Lời mời hẹn hò lãng mạn hoặc theo đuổi lý tưởng nghệ thuật cao đẹp.",
+    "reversed": "Ảo tưởng tình cảm, người yêu lăng nhăng nói lời ngon ngọt nhưng thiếu hành động thực tế.",
+    "love": {
+      "upright": "Bạch mã hoàng tử xuất hiện mang theo sự quan tâm tinh tế và lãng mạn.",
+      "reversed": "Gặp phải kẻ 'trap boy/trap girl' chỉ giỏi rót mật vào tai rồi biến mất."
+    },
+    "work": {
+      "upright": "Được mời tham gia dự án nghệ thuật hoặc công việc đúng sở trường đam mê.",
+      "reversed": "Thỏa thuận công việc có vẻ hào nhoáng nhưng thực chất thiếu tính thực tế."
+    },
+    "finance": {
+      "upright": "Dùng tiền vào những trải nghiệm nghệ thuật, du lịch làm giàu đời sống tâm hồn.",
+      "reversed": "Chi tiêu thiếu kiểm soát vì những lời dụ dỗ ngon ngọt của nhân viên bán hàng."
+    },
+    "study": {
+      "upright": "Theo đuổi ngành học mơ ước với trái tim nhiệt huyết và tràn đầy cảm xúc.",
+      "reversed": "Thiếu kỷ luật trong học tập, dễ bị phân tâm bởi các chuyện hẹn hò lãng mạn."
+    },
+    "advice": {
+      "general": "Hãy dựa trên bạch mã hoàng tử và lời mời lãng mạn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Knight of Cups (Hiệp Sĩ Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Knight of Cups (Hiệp Sĩ Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-knight",
+    "suitElement": "Nước",
+    "archetype_story": "Kỵ sĩ áo giáp thêu hình cá bơi lội cưỡi ngựa trắng thong thả bước qua dòng suối hiền hòa, tay nâng cao chiếc cốc tình yêu. Sứ giả của sự lãng mạn, hòa giải và lý tưởng thẩm mỹ.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Chàng kỵ sĩ lãng mạn mang đến lời mời hẹn hò, sự hòa giải hoặc cơ hội nghệ thuật đầy cảm hứng.",
+    "time_prediction": "Khoảng 1 - 2 tháng hoặc mùa hè."
+  },
+  {
+    "id": "cups-13",
+    "nameEn": "Queen of Cups",
+    "nameVi": "Queen of Cups (Hoàng Hậu Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 13,
+    "image": "assets/cards/cups_13.jpg",
+    "element": "Nước",
+    "astrology": "Nước của Nước (Cự Giải)",
+    "keywords": [
+      "Lòng trắc ẩn bao la",
+      "Trực giác siêu phàm",
+      "Thấu cảm tâm hồn",
+      "Chữa lành ấm áp"
+    ],
+    "upright": "Người phụ nữ ngồi bên bờ biển ngắm nhìn chiếc ly nạm đá quý tinh xảo. Bà là hiện thân của tình mẫu tử, lòng trắc ẩn và sự thấu cảm sâu sắc.",
+    "reversed": "Bất ổn cảm xúc, hay suy diễn lung tung, trầm cảm hoặc bị người khác lợi dụng lòng tốt.",
+    "love": {
+      "upright": "Tình yêu sâu sắc, bao dung và luôn là chỗ dựa bình yên cho đối phương.",
+      "reversed": "Quá nhạy cảm, hay hờn dỗi và suy diễn tiêu cực làm ngột ngạt không khí tình yêu."
+    },
+    "work": {
+      "upright": "Khéo léo dung hòa các mối quan hệ chốn công sở bằng sự thấu hiểu và chân thành.",
+      "reversed": "Để cảm xúc chi phối các quyết định chuyên môn; dễ bị tổn thương trước lời phê bình."
+    },
+    "finance": {
+      "upright": "Tài chính an toàn; sẵn lòng giúp đỡ người khó khăn một cách hào phóng.",
+      "reversed": "Cho người khác vay tiền vì mềm lòng dù biết khó có khả năng đòi lại."
+    },
+    "study": {
+      "upright": "Trực giác nhạy bén giúp chọn đúng đáp án; học rất tốt các ngành tâm lý, y học và xã hội.",
+      "reversed": "Tâm trạng thất thường ảnh hưởng trực tiếp đến kết quả học tập."
+    },
+    "advice": {
+      "general": "Hãy dựa trên lòng trắc ẩn bao la và trực giác siêu phàm làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Queen of Cups (Hoàng Hậu Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Queen of Cups (Hoàng Hậu Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-queen",
+    "suitElement": "Nước",
+    "archetype_story": "Hoàng hậu ngồi trên ngai vàng chạm khắc thiên thần biển, ngắm nhìn chiếc cúp tinh xảo có nắp đóng kín bên bờ đại dương bao la. Biểu tượng của trực giác thấu suốt và sự chữa lành thầm lặng.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Trực giác nhạy bén, tấm lòng nhân hậu thấu suốt cảm xúc người khác như mặt hồ yên ả.",
+    "time_prediction": "Khoảng 2 - 3 tháng hoặc mùa hè mát mẻ."
+  },
+  {
+    "id": "cups-14",
+    "nameEn": "King of Cups",
+    "nameVi": "King of Cups (Vua Ly)",
+    "arcana": "Minor",
+    "suit": "cups",
+    "number": 14,
+    "image": "assets/cards/cups_14.jpg",
+    "element": "Nước",
+    "astrology": "Lửa của Nước (Song Ngư)",
+    "keywords": [
+      "Làm chủ cảm xúc",
+      "Thông thái độ lượng",
+      "Người bảo trợ ấm áp",
+      "Cân bằng tâm trí"
+    ],
+    "upright": "Vị vua ngồi vững chãi trên ngai vàng giữa biển khơi dậy sóng mà tà áo không hề dính nước. Bậc thầy kiểm soát cảm xúc với trí tuệ và sự nhân từ.",
+    "reversed": "Thao túng cảm xúc, lạnh lùng tàn nhẫn, nghiện ngập hoặc che giấu sự giận dữ ngầm dưới vẻ ngoài điềm tĩnh.",
+    "love": {
+      "upright": "Người đàn ông chín chắn, biết kiểm soát cảm xúc, yêu thương và bảo bọc bạn chu đáo.",
+      "reversed": "Lạnh lùng, bạo lực lạnh hoặc dùng sự im lặng để trừng phạt đối phương."
+    },
+    "work": {
+      "upright": "Cấp trên thấu hiểu nhân viên, xử lý các khủng hoảng ngoại giao một cách bình tĩnh và sáng suốt.",
+      "reversed": "Môi trường công sở giả tạo; lãnh đạo thiên vị và thích dùng thủ đoạn tâm lý."
+    },
+    "finance": {
+      "upright": "Quản lý dòng tiền thận trọng, không để cảm xúc tham lam hay sợ hãi chi phối.",
+      "reversed": "Đưa ra quyết định đầu tư sai lầm vì nghe theo lời khuyên của kẻ thao túng."
+    },
+    "study": {
+      "upright": "Bình tĩnh, tự tin trong mọi kỳ thi căng thẳng; khả năng tư duy cân bằng hoàn hảo.",
+      "reversed": "Thiếu quyết đoán khi chọn đề tài nghiên cứu; dễ bị lung lay bởi ý kiến bên ngoài."
+    },
+    "advice": {
+      "general": "Hãy dựa trên làm chủ cảm xúc và thông thái độ lượng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của King of Cups (Vua Ly): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của King of Cups (Vua Ly) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "cups-king",
+    "suitElement": "Nước",
+    "archetype_story": "Vị vua ngồi trên ngai vàng nổi trên mặt biển cuộn sóng, tay cầm cúp và quyền trượng, dây chuyền hình cá trước ngực. Khả năng làm chủ cảm xúc phi thường và sự điềm tĩnh trước giông bão đời người.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Bậc thầy làm chủ cảm xúc, lòng khoan dung độ lượng và sự thấu hiểu sâu sắc giúp cân bằng mọi quan hệ.",
+    "time_prediction": "Khoảng 3 tháng hoặc thời điểm cảm xúc chín muồi."
+  },
+  {
+    "id": "swords-1",
+    "nameEn": "Ace of Swords",
+    "nameVi": "Ace of Swords (Ách Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 1,
+    "image": "assets/cards/swords_01.jpg",
+    "element": "Khí",
+    "astrology": "Cung Khí (Song Tử, Thiên Bình, Bảo Bình)",
+    "keywords": [
+      "Chân lý sắc bén",
+      "Đột phá tư duy",
+      "Sự thật tỏ tường",
+      "Quyết định dứt khoát"
+    ],
+    "upright": "Bàn tay từ mây đưa ra thanh kiếm đội vương miện lá nguyệt quế. Sự thật sáng tỏ như ban ngày, tư duy sắc bén cắt đứt mọi hoài nghi.",
+    "reversed": "Tư duy bế tắc, lời nói cay độc làm tổn thương người khác, hoặc lạm dụng trí thông minh vào việc xấu.",
+    "love": {
+      "upright": "Nói chuyện thẳng thắn rõ ràng để giải quyết dứt điểm các khúc mắc bấy lâu.",
+      "reversed": "Lời nói sắc như dao cạo làm tổn thương sâu sắc người mình yêu; cãi vã gay gắt."
+    },
+    "work": {
+      "upright": "Ý tưởng đột phá, giải pháp kỹ thuật xuất sắc giải quyết tận gốc rễ vấn đề.",
+      "reversed": "Kế hoạch thiếu sót nghiêm trọng về mặt pháp lý hoặc tính toán logic."
+    },
+    "finance": {
+      "upright": "Cắt bỏ những khoản chi tiêu thừa thãi một cách dứt khoát; minh bạch sổ sách.",
+      "reversed": "Quyết định tài chính sai lầm do tính toán sai số liệu hoặc tin vào thông tin sai lệch."
+    },
+    "study": {
+      "upright": "Khả năng phân tích logic và phản biện tuyệt vời; đạt điểm số tuyệt đối trong các bài thi tư duy.",
+      "reversed": "Hiểu sai đề bài hoặc tranh cãi cùn với giám khảo dẫn đến trừ điểm."
+    },
+    "advice": {
+      "general": "Hãy dựa trên chân lý sắc bén và đột phá tư duy làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ace of Swords (Ách Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ace of Swords (Ách Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-ace",
+    "suitElement": "Khí",
+    "archetype_story": "Bàn tay vũ trụ vươn ra từ đám mây nâng thanh kiếm hai lưỡi cắm vương miện kết lá cọ và ô liu. Sức mạnh tuyệt đối của lý trí, sự thật khách quan và chân lý chiến thắng dối lừa.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Lưỡi kiếm chân lý chém tan sương mù dối trá; sự sáng suốt và công lý sẽ mang lại thắng lợi dứt khoát.",
+    "time_prediction": "1 tuần hoặc mùa thu (Thiên Bình)."
+  },
+  {
+    "id": "swords-2",
+    "nameEn": "Two of Swords",
+    "nameVi": "Two of Swords (Hai Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 2,
+    "image": "assets/cards/swords_02.jpg",
+    "element": "Khí",
+    "astrology": "Mặt Trăng trong Thiên Bình",
+    "keywords": [
+      "Tiến thoái lưỡng nan",
+      "Bịt mắt trốn tránh",
+      "Bế tắc lựa chọn",
+      "Tìm kiếm thỏa hiệp"
+    ],
+    "upright": "Người phụ nữ bịt mắt bắt chéo hai thanh kiếm trước ngực bên bờ biển tĩnh lặng. Bạn đang đứng giữa hai ngã rẽ khó xử và cố tình né tránh sự thật.",
+    "reversed": "Tháo bỏ dải băng bịt mắt, đối diện với sự thật dù đau lòng để đưa ra quyết định dứt khoát.",
+    "love": {
+      "upright": "Cả hai im lặng chiến tranh lạnh; né tránh nhắc đến vấn đề then chốt của mối quan hệ.",
+      "reversed": "Phải đối mặt với quyết định chia tay hay tiếp tục; không thể trì hoãn được nữa."
+    },
+    "work": {
+      "upright": "Mắc kẹt giữa hai lựa chọn công việc; thiếu thông tin để đưa ra quyết định an toàn.",
+      "reversed": "Thông tin sáng tỏ giúp bạn dứt khoát chọn một hướng đi duy nhất."
+    },
+    "finance": {
+      "upright": "Do dự không dám giải ngân hay thoái vốn; sự chần chừ làm lỡ thời cơ.",
+      "reversed": "Dứt khoát cắt lỗ hoặc thanh lý tài sản để giải quyết nợ nần."
+    },
+    "study": {
+      "upright": "Phân vân giữa hai khối thi hoặc hai ngành học; không thể tập trung ôn luyện.",
+      "reversed": "Quyết định dứt khoát chọn một mục tiêu trọng tâm để dồn sức."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tiến thoái lưỡng nan và bịt mắt trốn tránh làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Two of Swords (Hai Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Two of Swords (Hai Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-2",
+    "suitElement": "Khí",
+    "archetype_story": "Thiếu nữ bịt mắt ngồi trên bờ đá trước biển đêm, hai tay bắt chéo giữ hai thanh kiếm nặng trĩu. Sự bế tắc do lý trí từ chối đối diện sự thật nhức nhối và đè nén cảm xúc.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Bạn đang bịt mắt né tránh đối diện với sự thật nhức nhối; cần hạ kiếm và mở lòng lắng nghe trực giác.",
+    "time_prediction": "2 tuần hoặc thời điểm trăng khuyết (khoảng 23/9 - 2/10)."
+  },
+  {
+    "id": "swords-3",
+    "nameEn": "Three of Swords",
+    "nameVi": "Three of Swords (Ba Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 3,
+    "image": "assets/cards/swords_03.jpg",
+    "element": "Khí",
+    "astrology": "Sao Thổ trong Thiên Bình",
+    "keywords": [
+      "Trái tim tan vỡ",
+      "Nỗi đau chia cắt",
+      "Sự phản bội cay đắng",
+      "Bài học trưởng thành"
+    ],
+    "upright": "Trái tim bị ba thanh kiếm đâm xuyên giữa cơn mưa giông mù mịt. Nỗi đau thất tình, sự phản bội hoặc mất mát đau đớn không thể tránh khỏi.",
+    "reversed": "Vết thương lòng bắt đầu lành sẹo, vượt qua nỗi đau phản bội, tha thứ để bước tiếp.",
+    "love": {
+      "upright": "Đổ vỡ đau đớn, phát hiện sự lừa dối phản bội; trái tim tổn thương sâu sắc.",
+      "reversed": "Hàn gắn sau đổ vỡ; chấp nhận tha thứ cho lỗi lầm của người xưa để giải thoát cho mình."
+    },
+    "work": {
+      "upright": "Bị đối tác đâm sau lưng; bị cắt giảm nhân sự hoặc dự án tâm huyết bị bác bỏ.",
+      "reversed": "Vượt qua cú sốc mất việc; tìm kiếm cơ hội mới với bài học cảnh giác sâu sắc."
+    },
+    "finance": {
+      "upright": "Thất thoát tài chính do tin nhầm người; tranh chấp tiền bạc làm sứt mẻ tình cảm.",
+      "reversed": "Dần thu hồi lại được một phần thiệt hại; học cách quản lý tài chính chặt chẽ hơn."
+    },
+    "study": {
+      "upright": "Trượt kỳ thi quan trọng gây thất vọng cùng cực; tổn thương lòng tự trọng.",
+      "reversed": "Gạt nước mắt đứng dậy làm lại; không để điểm số định nghĩa giá trị bản thân."
+    },
+    "advice": {
+      "general": "Nỗi đau là lời nhắc nhở rằng trái tim bạn đã yêu thương chân thành. Hãy để nước mắt chữa lành và thanh lọc tâm hồn.",
+      "upright": "Thành thật với cảm xúc đau buồn, chia sẻ cùng người tin cậy và không gặm nhấm vết thương trong cô độc.",
+      "reversed": "Quá trình hồi phục đang diễn ra; hãy tha thứ cho quá khứ và cho phép bản thân được đón nhận niềm vui mới."
+    },
+    "iconSymbol": "swords-3",
+    "suitElement": "Khí",
+    "archetype_story": "Trái tim đỏ thắm bị ba lưỡi kiếm đâm xuyên qua giữa bầu trời mây đen vần vũ và mưa tuôn xối xả. Nỗi đau đớn tột cùng của sự chia ly, phản bội và bài học trưởng thành qua tan vỡ.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Nỗi đau thấu tim, sự chia ly hoặc phản bội; cần để nước mắt rửa trôi vết thương lòng trước khi đưa ra quyết định.",
+    "time_prediction": "3 tuần hoặc mùa thu nhiều gió (khoảng 3/10 - 12/10)."
+  },
+  {
+    "id": "swords-4",
+    "nameEn": "Four of Swords",
+    "nameVi": "Four of Swords (Bốn Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 4,
+    "image": "assets/cards/swords_04.jpg",
+    "element": "Khí",
+    "astrology": "Sao Mộc trong Thiên Bình",
+    "keywords": [
+      "Nghỉ ngơi hồi phục",
+      "Tịnh dưỡng tâm trí",
+      "Tạm dừng trận chiến",
+      "Thiền định tĩnh tâm"
+    ],
+    "upright": "Hiệp sĩ nằm chắp tay tịnh dưỡng trên ngôi mộ đá trong nhà thờ, ba thanh kiếm treo trên tường và một thanh kiếm dưới thân. Hãy nghỉ ngơi để nạp lại năng lượng!",
+    "reversed": "Thức tỉnh sau giai đoạn kiệt sức, quay trở lại nhịp sống hoặc bị ép phải làm việc khi chưa bình phục.",
+    "love": {
+      "upright": "Cả hai cần cho nhau không gian riêng để suy nghĩ thấu đáo; tạm hoãn các cuộc tranh cãi.",
+      "reversed": "Sẵn sàng mở lòng kết nối lại sau thời gian dài im lặng suy ngẫm."
+    },
+    "work": {
+      "upright": "Nên xin nghỉ phép vài ngày để xả stress; không nên đưa ra quyết định quan trọng lúc này.",
+      "reversed": "Quay trở lại thị trường lao động sau kỳ nghỉ dài với tinh thần sảng khoái."
+    },
+    "finance": {
+      "upright": "Đóng băng tài chính tạm thời; giữ nguyên hiện trạng tài khoản và không phát sinh chi tiêu lớn.",
+      "reversed": "Khởi động lại các kế hoạch đầu tư sau chuỗi ngày tạm ngưng quan sát."
+    },
+    "study": {
+      "upright": "Não bộ quá tải, cần ngủ đủ giấc và thư giãn trước khi bước vào phòng thi.",
+      "reversed": "Bắt đầu guồng quay ôn thi sau kỳ nghỉ lễ dài; lấy lại phong độ học tập."
+    },
+    "advice": {
+      "general": "Hãy dựa trên nghỉ ngơi hồi phục và tịnh dưỡng tâm trí làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Four of Swords (Bốn Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Four of Swords (Bốn Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-4",
+    "suitElement": "Khí",
+    "archetype_story": "Hiệp sĩ nằm tịnh dưỡng trên lăng mộ đá với ba thanh kiếm treo trên tường và một thanh kiếm đặt bên cạnh, cửa sổ kính màu chiếu sáng. Khoảng lặng tĩnh tâm và hồi phục sinh lực sau chiến trận.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Thời điểm cơ thể và tâm trí cần được nghỉ ngơi phục hồi sau chuỗi ngày kiệt quệ; tạm hoãn hành động lúc này.",
+    "time_prediction": "4 tuần (khoảng 1 tháng) nghỉ ngơi tịnh dưỡng (khoảng 13/10 - 22/10)."
+  },
+  {
+    "id": "swords-5",
+    "nameEn": "Five of Swords",
+    "nameVi": "Five of Swords (Năm Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 5,
+    "image": "assets/cards/swords_05.jpg",
+    "element": "Khí",
+    "astrology": "Sao Kim trong Bảo Bình",
+    "keywords": [
+      "Thắng làm vua thua làm giặc",
+      "Xung đột cay đắng",
+      "Tổn hại danh dự",
+      "Rút lui chiến lược"
+    ],
+    "upright": "Người đàn ông cười đắc thắng ôm lấy các thanh kiếm trong khi đối thủ thất thểu quay đi. Chiến thắng bằng mọi giá nhưng để lại sự cô độc và thù hận.",
+    "reversed": "Hòa giải xung đột, chấm dứt thù hận, hoặc nhận ra cái giá quá đắt của sự hiếu thắng.",
+    "love": {
+      "upright": "Tranh cãi chỉ để giành phần thắng về mình khiến đối phương tổn thương và xa cách.",
+      "reversed": "Chấm dứt cuộc chiến cái tôi, chấp nhận nhượng bộ để bảo vệ mối quan hệ."
+    },
+    "work": {
+      "upright": "Đấu đá nội bộ khốc liệt; thắng thế nhưng bị đồng nghiệp xa lánh và căm ghét.",
+      "reversed": "Nhận ra trò chơi quyền lực không có hồi kết; quyết định rút lui trong danh dự."
+    },
+    "finance": {
+      "upright": "Thắng kiện tài chính nhưng chi phí kiện tụng nuốt trọn số tiền thu được.",
+      "reversed": "Tìm được tiếng nói chung để thỏa thuận ngoài tòa án, tránh tổn thất lớn."
+    },
+    "study": {
+      "upright": "Ganh ghét điểm số với bạn bè; dùng chiêu trò để hạ bệ người khác.",
+      "reversed": "Từ bỏ thói ganh đua tiêu cực, tập trung vào việc trau dồi kiến thức chân chính."
+    },
+    "advice": {
+      "general": "Hãy dựa trên thắng làm vua thua làm giặc và xung đột cay đắng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Five of Swords (Năm Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Five of Swords (Năm Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-5",
+    "suitElement": "Khí",
+    "archetype_story": "Kẻ chiến thắng mỉm cười xảo quyệt thu gom các thanh kiếm trong khi hai kẻ bại trận cúi đầu lầm lũi bỏ đi bờ biển gió lốc. Thắng lợi cay đắng làm tổn hại mối quan hệ và danh dự.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Thắng lợi kiểu Pyrrhus - cái tôi giành phần thắng nhưng mối quan hệ tan vỡ; hãy rút lui để bảo toàn phẩm giá.",
+    "time_prediction": "5 tuần hoặc mùa Bảo Bình (khoảng 20/1 - 29/1)."
+  },
+  {
+    "id": "swords-6",
+    "nameEn": "Six of Swords",
+    "nameVi": "Six of Swords (Sáu Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 6,
+    "image": "assets/cards/swords_06.jpg",
+    "element": "Khí",
+    "astrology": "Sao Thủy trong Bảo Bình",
+    "keywords": [
+      "Rời bỏ vùng sóng gió",
+      "Hành trình chữa lành",
+      "Chuyển tiếp êm đềm",
+      "Tương lai yên bình"
+    ],
+    "upright": "Chiếc thuyền chở hai mẹ con cùng sáu thanh kiếm chèo từ vùng nước gợn sóng sang bờ bến phẳng lặng. Bạn đang bỏ lại giông bão phía sau để đến bến bình yên.",
+    "reversed": "Mắc kẹt giữa dòng nước xiết, quá khứ đeo bám dai dẳng không cho bạn thoát ra.",
+    "love": {
+      "upright": "Cùng nhau vượt qua giai đoạn khó khăn; hoặc bình thản bước ra khỏi một mối tình độc hại.",
+      "reversed": "Vẫn mang theo những ấm ức tổn thương cũ vào mối quan hệ mới; khó buông bỏ."
+    },
+    "work": {
+      "upright": "Chuyển sang vị trí làm việc mới dễ thở hơn; công việc dần đi vào quỹ đạo ổn định.",
+      "reversed": "Quá trình chuyển đổi công việc gặp nhiều trục trặc phát sinh ngoài dự kiến."
+    },
+    "finance": {
+      "upright": "Tài chính dần hồi phục sau chuỗi ngày khủng hoảng; chi tiêu bớt áp lực hơn.",
+      "reversed": "Các khoản nợ cũ vẫn tiếp tục đè nặng, chưa thể thoát khỏi cảnh túng thiếu."
+    },
+    "study": {
+      "upright": "Vượt qua giai đoạn thi cử căng thẳng; môi trường học tập mới đem lại cảm hứng nhẹ nhàng.",
+      "reversed": "Khó thích nghi với chương trình học mới; cảm giác hụt hẫng khi đổi trường."
+    },
+    "advice": {
+      "general": "Hãy dựa trên rời bỏ vùng sóng gió và hành trình chữa lành làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Six of Swords (Sáu Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Six of Swords (Sáu Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-6",
+    "suitElement": "Khí",
+    "archetype_story": "Người chèo đò chở hai mẹ con cùng sáu thanh kiếm cắm trên mạn thuyền rời vùng nước xoáy tiến sang vùng nước êm đềm phía trước. Hành trình chữa lành và thoát khỏi gian truân.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Chiếc thuyền đang chèo qua vùng nước động để hướng về bờ bến bình yên; giông bão sắp lùi lại phía sau.",
+    "time_prediction": "6 tuần hoặc thời điểm chuyển mùa (khoảng 30/1 - 8/2)."
+  },
+  {
+    "id": "swords-7",
+    "nameEn": "Seven of Swords",
+    "nameVi": "Seven of Swords (Bảy Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 7,
+    "image": "assets/cards/swords_07.jpg",
+    "element": "Khí",
+    "astrology": "Mặt Trăng trong Bảo Bình",
+    "keywords": [
+      "Hành động lén lút",
+      "Chiến thuật bí mật",
+      "Cảnh giác lừa dối",
+      "Tự làm tự chịu"
+    ],
+    "upright": "Kẻ trộm nhón chân ôm năm thanh kiếm chuồn khỏi doanh trại trong khi hai thanh kiếm vẫn cắm tại chỗ. Cảnh báo sự dối trá, lén lút hoặc hành động đơn độc.",
+    "reversed": "Lương tâm thức tỉnh, thú nhận sai lầm, hoặc vạch trần âm mưu gian lận kịp thời.",
+    "love": {
+      "upright": "Sự lén lút che giấu, tin nhắn mờ ám hoặc cảm giác đối phương không hoàn toàn thành thật.",
+      "reversed": "Lời nói dối bị phơi bày; quyết định thú nhận mọi chuyện để mong được tha thứ."
+    },
+    "work": {
+      "upright": "Cần dùng chiến thuật khéo léo để lách luật; cảnh giác bí mật kinh doanh bị rò rỉ.",
+      "reversed": "Bị bắt quả tang gian lận hoặc vi phạm quy định công ty; uy tín sụp đổ."
+    },
+    "finance": {
+      "upright": "Cảnh giác trước các chiêu trò trộm cắp, lừa đảo thẻ tín dụng hoặc rút ruột công trình.",
+      "reversed": "May mắn phát hiện kịp thời lỗ hổng tài chính trước khi bị kẻ gian trục lợi."
+    },
+    "study": {
+      "upright": "Gian lận thi cử hoặc sao chép luận văn; học theo kiểu mánh khóe đối phó.",
+      "reversed": "Bị phát hiện quay cóp; cảm giác hối hận vì hành vi thiếu trung thực."
+    },
+    "advice": {
+      "general": "Hãy dựa trên hành động lén lút và chiến thuật bí mật làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Seven of Swords (Bảy Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Seven of Swords (Bảy Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-7",
+    "suitElement": "Khí",
+    "archetype_story": "Kẻ trộm lén lút ôm năm thanh kiếm chuồn khỏi trại lính trong khi hai thanh kiếm vẫn cắm lại sau lưng. Hành vi vụng trộm, sự thiếu minh bạch và chiến thuật né tránh đối đầu trực diện.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Cảnh báo về sự gian dối, trốn tránh trách nhiệm hoặc những mưu mô thiếu minh bạch phía sau lưng.",
+    "time_prediction": "7 tuần hoặc thời điểm bí mật bị phơi bày (khoảng 9/2 - 18/2)."
+  },
+  {
+    "id": "swords-8",
+    "nameEn": "Eight of Swords",
+    "nameVi": "Eight of Swords (Tám Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 8,
+    "image": "assets/cards/swords_08.jpg",
+    "element": "Khí",
+    "astrology": "Sao Mộc trong Song Tử",
+    "keywords": [
+      "Bế tắc tự tạo",
+      "Trói buộc tâm lý",
+      "Ảo tưởng bất lực",
+      "Tìm lối thoát"
+    ],
+    "upright": "Người phụ nữ bị bịt mắt và trói lỏng lẻo đứng giữa tám thanh kiếm cắm xung quanh trên bãi bùn lầy. Xiềng xích thực chất nằm ở chính nỗi sợ hãi trong tâm trí bạn!",
+    "reversed": "Tự cởi trói cho bản thân, mở mắt nhìn thấy lối thoát và dũng cảm bước ra khỏi sự giam cầm.",
+    "love": {
+      "upright": "Cảm giác nghẹt thở và bất lực trong mối quan hệ; tự huyễn hoặc rằng mình không thể rời đi.",
+      "reversed": "Nhận ra mình hoàn toàn có quyền tự quyết; dũng cảm giải thoát cho bản thân."
+    },
+    "work": {
+      "upright": "Cảm giác bế tắc với công việc hiện tại, tự ti nghĩ rằng mình không đủ năng lực đổi việc.",
+      "reversed": "Tìm thấy cơ hội mới và vượt qua rào cản tâm lý để ứng tuyển."
+    },
+    "finance": {
+      "upright": "Cảm thấy bất lực trước các khoản nợ; nỗi sợ khiến bạn không dám đối diện với ngân hàng.",
+      "reversed": "Bắt đầu tìm kiếm sự trợ giúp chuyên môn để lập kế hoạch trả nợ từng bước."
+    },
+    "study": {
+      "upright": "Ám ảnh tâm lý thi cử khiến đầu óc trống rỗng; tự kỷ ám thị rằng mình học dốt.",
+      "reversed": "Giải tỏa được gánh nặng tâm lý, lấy lại sự tự tin khi bước vào phòng thi."
+    },
+    "advice": {
+      "general": "Hãy dựa trên bế tắc tự tạo và trói buộc tâm lý làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Eight of Swords (Tám Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Eight of Swords (Tám Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-8",
+    "suitElement": "Khí",
+    "archetype_story": "Người phụ nữ bị bịt mắt, trói tay đứng giữa tám thanh kiếm cắm xung quanh trên bãi đất lầy lội. Sự bất lực giả tạo khi tâm trí tự dựng nên rào cản giam cầm chính mình.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Nhà tù tâm trí do chính nỗi sợ hãi tự thắt chặt; hãy nhận ra sợi dây trói vốn rất lỏng lẻo và tự bước ra.",
+    "time_prediction": "8 tuần hoặc giai đoạn cần tự cởi trói tâm lý (Song Tử: 21/5 - 31/5)."
+  },
+  {
+    "id": "swords-9",
+    "nameEn": "Nine of Swords",
+    "nameVi": "Nine of Swords (Chín Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 9,
+    "image": "assets/cards/swords_09.jpg",
+    "element": "Khí",
+    "astrology": "Sao Hỏa trong Song Tử",
+    "keywords": [
+      "Mất ngủ lo âu",
+      "Cơn ác mộng dằn vặt",
+      "Suy nghĩ quá mức",
+      "Cần buông lỏng"
+    ],
+    "upright": "Người ngồi ôm mặt khóc trên giường giữa đêm đen, chín thanh kiếm treo lơ lửng phía trên. Cơn ác mộng của sự âu lo, dằn vặt và nỗi sợ hãi phóng đại quá mức.",
+    "reversed": "Ánh bình minh xua tan cơn ác mộng; tìm kiếm sự giúp đỡ tâm lý, nhận ra thực tế không tệ như mình nghĩ.",
+    "love": {
+      "upright": "Mất ngủ vì ghen tuông hoặc lo sợ bị bỏ rơi; tâm lý bất an giày vò ngày đêm.",
+      "reversed": "Nói ra được nỗi lòng với người yêu; nhận ra bản thân đã suy diễn quá nhiều."
+    },
+    "work": {
+      "upright": "Áp lực deadline và nỗi sợ thất bại khiến bạn kiệt quệ thần kinh; stress tột độ.",
+      "reversed": "Học cách buông bỏ áp lực không cần thiết; giấc ngủ dần được cải thiện."
+    },
+    "finance": {
+      "upright": "Hoảng loạn vì vấn đề tiền bạc; lo sợ viễn cảnh phá sản dù chưa đến mức đó.",
+      "reversed": "Nhìn nhận các con số tài chính một cách khách quan, tìm lại sự bình tĩnh."
+    },
+    "study": {
+      "upright": "Thức trắng đêm ôn thi trong trạng thái hoảng loạn; lo sợ đề thi quá khó.",
+      "reversed": "Lấy lại sự cân bằng, nghỉ ngơi hợp lý để não bộ minh mẫn nhất."
+    },
+    "advice": {
+      "general": "Phần lớn những điều bạn lo sợ vào lúc nửa đêm sẽ không bao giờ xảy ra. Hãy bước ra ánh sáng và hành động thực tế.",
+      "upright": "Đừng để tâm trí bi kịch hóa vấn đề; hãy hít thở sâu, chia sẻ nỗi lòng và tập trung vào những gì làm được ngay.",
+      "reversed": "Bạn đang dần vượt qua cơn ác mộng; hãy tiếp tục duy trì lối sống lành mạnh và suy nghĩ tích cực."
+    },
+    "iconSymbol": "swords-9",
+    "suitElement": "Khí",
+    "archetype_story": "Người ôm mặt khóc than trên giường ngủ giữa đêm đen u tối với chín thanh kiếm treo trên tường đầu giường. Cơn ác mộng nửa đêm, sự ân hận và nỗi dằn vặt tâm can quá mức.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Cơn ác mộng nửa đêm và nỗi lo lắng bi kịch hóa; thực tế không tồi tệ như tâm trí bạn thêu dệt, hãy bật đèn thức dậy.",
+    "time_prediction": "9 tuần hoặc trong những đêm mất ngủ (khoảng 1/6 - 10/6)."
+  },
+  {
+    "id": "swords-10",
+    "nameEn": "Ten of Swords",
+    "nameVi": "Ten of Swords (Mười Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 10,
+    "image": "assets/cards/swords_10.jpg",
+    "element": "Khí",
+    "astrology": "Mặt Trời trong Song Tử",
+    "keywords": [
+      "Chạm đáy nỗi đau",
+      "Chấm dứt hoàn toàn",
+      "Bình minh sau đêm đen",
+      "Không thể tệ hơn"
+    ],
+    "upright": "Người nằm úp trên bờ biển với mười thanh kiếm cắm trên lưng dưới bầu trời đen kịt. Nhưng nhìn kìa, chân trời phía xa ánh vàng bình minh đang ló rạng. Mọi chuyện không thể tệ hơn được nữa!",
+    "reversed": "Sự hồi sinh kỳ diệu từ cõi chết; bắt đầu quá trình chữa lành sau thảm họa tồi tệ nhất.",
+    "love": {
+      "upright": "Cuộc chia tay cay đắng chấm dứt hoàn toàn mối quan hệ; vết thương chạm đáy.",
+      "reversed": "Chấp nhận sự thật rằng mọi chuyện đã kết thúc; bắt đầu chu kỳ chữa lành."
+    },
+    "work": {
+      "upright": "Dự án sụp đổ hoàn toàn hoặc bị sa thải cay đắng; một cánh cửa đóng chặt.",
+      "reversed": "Đứng dậy từ đống tro tàn của thất bại cũ; chuẩn bị cho khởi đầu mới tinh khôi."
+    },
+    "finance": {
+      "upright": "Chạm đáy khủng hoảng tài chính; mất trắng khoản đầu tư mạo hiểm.",
+      "reversed": "Thoát khỏi cảnh tồi tệ nhất; dòng tiền bắt đầu có dấu hiệu hồi phục yếu ớt."
+    },
+    "study": {
+      "upright": "Nhận kết quả thi trượt ê chề; cảm giác như cả thế giới sụp đổ dưới chân.",
+      "reversed": "Vượt qua cú sốc trượt điểm; bình tĩnh lên kế hoạch ôn thi lại từ đầu."
+    },
+    "advice": {
+      "general": "Điểm chạm đáy của chu kỳ cũ đã đến; từ đây trở đi, mọi bước chân đều sẽ đưa bạn đi lên ánh bình minh.",
+      "upright": "Chấp nhận buông bỏ hoàn toàn dĩ vãng; không thể rơi sâu hơn được nữa, tương lai đang rộng mở trước mắt.",
+      "reversed": "Vết thương cũ đang dần khép miệng; đừng ngoảnh đầu nhìn lại đống tro tàn, hãy tiến bước về phía trước."
+    },
+    "iconSymbol": "swords-10",
+    "suitElement": "Khí",
+    "archetype_story": "Người đàn ông gục ngã trên bờ biển với mười thanh kiếm đâm dọc sống lưng, nhưng phía chân trời xa mây đen đang tan và ánh bình minh vàng hé lộ. Điểm chạm đáy của đau thương và sự tái sinh.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Đã chạm đáy nỗi đau cũ; không thể rơi sâu hơn được nữa, chu kỳ cũ đã chết và ánh bình minh tái sinh đang ló rạng.",
+    "time_prediction": "10 tuần hoặc thời điểm kết thúc triệt để chu kỳ cũ (khoảng 11/6 - 20/6)."
+  },
+  {
+    "id": "swords-11",
+    "nameEn": "Page of Swords",
+    "nameVi": "Page of Swords (Tiểu Đồng Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 11,
+    "image": "assets/cards/swords_11.jpg",
+    "element": "Khí",
+    "astrology": "Đất của Khí (Cung Khí)",
+    "keywords": [
+      "Hiếu kỳ tò mò",
+      "Trí tuệ nhanh nhạy",
+      "Cảnh giác thu thập tin tức",
+      "Ăn nói sắc bén"
+    ],
+    "upright": "Chàng trai trẻ cầm kiếm đứng trên gò đất lộng gió, mắt liếc nhìn xung quanh cảnh giác. Trí tò mò cao độ, ham học hỏi và theo dõi tin tức nhạy bén.",
+    "reversed": "Nói nhiều làm ít, hay soi mói chuyện người khác, buôn chuyện đưa tin thất thiệt.",
+    "love": {
+      "upright": "Tò mò tìm hiểu về đối phương; theo dõi trang cá nhân (stalk) của người mình thầm thích.",
+      "reversed": "Săm soi lỗi lầm của người yêu; cãi cọ vì những lời nói móc mỉa thiếu chín chắn."
+    },
+    "work": {
+      "upright": "Nắm bắt thông tin thị trường cực nhanh; sẵn sàng học hỏi công nghệ và kỹ năng mới.",
+      "reversed": "Hay tọc mạch chuyện đồng nghiệp; phát ngôn bừa bãi gây xích mích nội bộ."
+    },
+    "finance": {
+      "upright": "Chăm chỉ tìm kiếm các bản tin tài chính và báo cáo phân tích thị trường.",
+      "reversed": "Bị nhiễu loạn bởi tin đồn trên mạng xã hội; đầu tư theo tin đồn thất thiệt."
+    },
+    "study": {
+      "upright": "Tư duy phản biện tốt, hay đặt câu hỏi hóc búa cho thầy cô giáo.",
+      "reversed": "Bảo thủ, thích cãi lý cùn hơn là nghiêm túc tiếp thu kiến thức chuẩn mực."
+    },
+    "advice": {
+      "general": "Hãy dựa trên hiếu kỳ tò mò và trí tuệ nhanh nhạy làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Page of Swords (Tiểu Đồng Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Page of Swords (Tiểu Đồng Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-page",
+    "suitElement": "Khí",
+    "archetype_story": "Chàng trai đứng trên đỉnh đồi lộng gió cầm kiếm giương cao với ánh mắt sắc lạnh cảnh giác. Tinh thần tò mò, trí tuệ sắc sảo, thích khám phá sự thật nhưng cần cẩn trọng lời ăn tiếng nói.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Tính tò mò, thăm dò thông tin và sự sắc sảo nhưng còn thiếu trải nghiệm thực tế; cần thận trọng phát ngôn.",
+    "time_prediction": "Vài ngày đến 1 tuần hoặc mùa Khí."
+  },
+  {
+    "id": "swords-12",
+    "nameEn": "Knight of Swords",
+    "nameVi": "Knight of Swords (Hiệp Sĩ Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 12,
+    "image": "assets/cards/swords_12.jpg",
+    "element": "Khí",
+    "astrology": "Khí của Khí (Song Tử / Thiên Bình)",
+    "keywords": [
+      "Lao về phía trước",
+      "Quyết liệt thẳng thắn",
+      "Tư duy thần tốc",
+      "Không khoan nhượng"
+    ],
+    "upright": "Kỵ sĩ vung kiếm thúc ngựa phi như bay giữa cơn bão táp. Hành động quyết liệt, tư duy sắc bén như dao và không ngại va chạm để đạt mục tiêu.",
+    "reversed": "Hung hăng, nóng nảy, nói năng xúc phạm người khác, hành động bất chấp hậu quả.",
+    "love": {
+      "upright": "Thẳng thắn bộc lộ quan điểm; không ngần ngại nói thẳng sự thật.",
+      "reversed": "Thô lỗ, xúc phạm người yêu bằng những lời cay độc; thiếu sự kiên nhẫn lắng nghe."
+    },
+    "work": {
+      "upright": "Giải quyết công việc với tốc độ thần tốc; đập tan mọi chướng ngại vật cản đường.",
+      "reversed": "Đốt cháy giai đoạn dẫn đến sai sót ngớ ngẩn; gây thù chuốc oán khắp nơi."
+    },
+    "finance": {
+      "upright": "Chớp lấy cơ hội đầu tư chớp nhoáng với tính toán sắc sảo.",
+      "reversed": "Đưa ra quyết định tài chính hấp tấp vì quá tự tin vào suy đoán của mình."
+    },
+    "study": {
+      "upright": "Khả năng hoàn thành bài thi với tốc độ cực nhanh; tranh luận sắc bén trong các cuộc thi hùng biện.",
+      "reversed": "Đọc đề lướt qua loa rồi làm bài vội vàng dẫn đến nhầm lẫn đáng tiếc."
+    },
+    "advice": {
+      "general": "Hãy dựa trên lao về phía trước và quyết liệt thẳng thắn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Knight of Swords (Hiệp Sĩ Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Knight of Swords (Hiệp Sĩ Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-knight",
+    "suitElement": "Khí",
+    "archetype_story": "Kỵ sĩ cưỡi ngựa chiến phi như gió lốc giữa bầu trời mây rách, vung kiếm lao thẳng vào kẻ thù. Đại diện cho sự quyết liệt, thông minh vượt trội nhưng dễ rơi vào hiếu chiến và tàn nhẫn.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Tốc độ lao đi như bão táp nhưng quá nóng nảy và thiếu suy tính; cẩn thận va chạm gây tổn thương đôi bên.",
+    "time_prediction": "Cực kỳ nhanh chóng trong vài ngày tới."
+  },
+  {
+    "id": "swords-13",
+    "nameEn": "Queen of Swords",
+    "nameVi": "Queen of Swords (Hoàng Hậu Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 13,
+    "image": "assets/cards/swords_13.jpg",
+    "element": "Khí",
+    "astrology": "Nước của Khí (Thiên Bình)",
+    "keywords": [
+      "Lý trí sắc sảo",
+      "Độc lập tự chủ",
+      "Minh bạch công tâm",
+      "Kinh nghiệm từng trải"
+    ],
+    "upright": "Người phụ nữ ngồi thẳng trên ngai vàng giơ cao thanh kiếm, tay kia giang ra đón nhận sự thật. Bà là hiện thân của trí tuệ sắc bén, sự độc lập và không khoan nhượng với dối trá.",
+    "reversed": "Cay nghiệt, lạnh lùng tàn nhẫn, luôn phán xét người khác và mang nặng hận thù trong lòng.",
+    "love": {
+      "upright": "Tình yêu lý trí, bình đẳng và tôn trọng sự tự do của nhau; không bi lụy mù quáng.",
+      "reversed": "Quá khắt khe và lạnh nhạt khiến đối phương sợ hãi không dám bày tỏ cảm xúc."
+    },
+    "work": {
+      "upright": "Người thẩm định chuyên môn xuất sắc; nhìn thấu mọi chiêu trò và làm việc theo nguyên tắc rõ ràng.",
+      "reversed": "Lãnh đạo độc đoán, chỉ trích nhân viên tàn nhẫn làm triệt tiêu tinh thần làm việc."
+    },
+    "finance": {
+      "upright": "Quản lý tiền bạc bằng cái đầu lạnh; chi tiêu minh bạch và không bao giờ để nợ xấu.",
+      "reversed": "Quá chi ly tính toán từng đồng làm mất đi các mối quan hệ làm ăn tốt đẹp."
+    },
+    "study": {
+      "upright": "Tư duy logic và khả năng viết luận học thuật xuất sắc; điểm số cao nhờ sự chuẩn xác tuyệt đối.",
+      "reversed": "Quá cứng nhắc theo khuôn mẫu lý thuyết, thiếu tính sáng tạo linh hoạt."
+    },
+    "advice": {
+      "general": "Hãy dựa trên lý trí sắc sảo và độc lập tự chủ làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Queen of Swords (Hoàng Hậu Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Queen of Swords (Hoàng Hậu Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-queen",
+    "suitElement": "Khí",
+    "archetype_story": "Hoàng hậu ngồi trên ngai vàng khắc hình bướm và thiên thần, một tay cầm kiếm thẳng đứng, một tay đưa ra phía trước. Sự sáng suốt, từng trải qua đau thương để đạt được lý trí thép và sự độc lập.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Lý trí sắc bén như dao cạo, phân định đúng sai công tâm và sự độc lập kiên cường giúp bạn vượt qua sóng gió.",
+    "time_prediction": "Khoảng 1 tháng hoặc mùa thu se lạnh."
+  },
+  {
+    "id": "swords-14",
+    "nameEn": "King of Swords",
+    "nameVi": "King of Swords (Vua Kiếm)",
+    "arcana": "Minor",
+    "suit": "swords",
+    "number": 14,
+    "image": "assets/cards/swords_14.jpg",
+    "element": "Khí",
+    "astrology": "Lửa của Khí (Bảo Bình)",
+    "keywords": [
+      "Quyền uy trí tuệ",
+      "Chân lý tối thượng",
+      "Phán quyết công minh",
+      "Kỷ luật thép"
+    ],
+    "upright": "Vị vua quyền uy cầm kiếm ngồi trên ngai vàng giữa bầu trời trong vắt. Đại diện cho đỉnh cao của trí tuệ, sự công bằng tuyệt đối và khả năng phán đoán chính xác.",
+    "reversed": "Bạo chúa dùng trí thông minh để thao túng luật lệ, tàn nhẫn và độc đoán không chút tình người.",
+    "love": {
+      "upright": "Mối quan hệ dựa trên sự trung thực và tôn trọng trí tuệ của nhau; người bạn đời chín chắn.",
+      "reversed": "Độc đoán, luôn coi mình đúng và bắt đối phương phải phục tùng lý lẽ của mình."
+    },
+    "work": {
+      "upright": "Chuyên gia đầu ngành, cố vấn pháp lý hoặc nhà lãnh đạo có uy tín học thuật tối cao.",
+      "reversed": "Lạm dụng chức quyền và kiến thức chuyên môn để chèn ép cấp dưới."
+    },
+    "finance": {
+      "upright": "Tư vấn tài chính chuyên nghiệp, đầu tư chuẩn xác dựa trên các thuật toán số liệu khắt khe.",
+      "reversed": "Dính líu đến các tranh chấp pháp lý phức tạp về hợp đồng kinh tế."
+    },
+    "study": {
+      "upright": "Đạt học vị cao, xuất sắc trong các ngành luật, triết học, toán học và khoa học máy tính.",
+      "reversed": "Quá sa đà vào lý thuyết giáo điều mà xa rời thực tế ứng dụng."
+    },
+    "advice": {
+      "general": "Hãy dựa trên quyền uy trí tuệ và chân lý tối thượng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của King of Swords (Vua Kiếm): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của King of Swords (Vua Kiếm) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "swords-king",
+    "suitElement": "Khí",
+    "archetype_story": "Vị vua ngồi trên ngai cao giữa bầu trời trong vắt, tay cầm gươm báu công lý với ánh nhìn uy nghiêm thấu suốt tâm can. Bậc thầy tư duy phân tích, quy chuẩn luật lệ và sự thật tối thượng.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Bậc thầy tư duy chiến lược, sự thật khách quan và uy tín lãnh đạo bằng công lý đưa ra kết luận chuẩn xác.",
+    "time_prediction": "Khoảng 1 - 2 tháng hoặc mùa đông lập thu."
+  },
+  {
+    "id": "pentacles-1",
+    "nameEn": "Ace of Pentacles",
+    "nameVi": "Ace of Pentacles (Ách Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 1,
+    "image": "assets/cards/pentacles_01.jpg",
+    "element": "Đất",
+    "astrology": "Cung Đất (Kim Ngưu, Xử Nữ, Ma Kết)",
+    "keywords": [
+      "Cơ hội tài lộc",
+      "Hạt mầm thịnh vượng",
+      "Thành quả cụ thể",
+      "Nền tảng vững chắc"
+    ],
+    "upright": "Bàn tay từ mây chìa ra đồng tiền vàng khổng lồ lơ lửng trên khu vườn hoa nở rộ. Cơ hội vàng về tài chính, công việc mới và sự khởi sắc về của cải.",
+    "reversed": "Bỏ lỡ cơ hội làm giàu, chi tiêu vượt quá ngân sách, hoặc kế hoạch đầu tư thiếu tính khả thi.",
+    "love": {
+      "upright": "Tình cảm ổn định, có nền tảng kinh tế vững chắc để tính chuyện lâu dài.",
+      "reversed": "Chuyện tiền nong làm ảnh hưởng xấu đến tình cảm hai người; thực dụng quá mức."
+    },
+    "work": {
+      "upright": "Nhận được lời mời làm việc với mức lương hấp dẫn; dự án mới được cấp vốn dồi dào.",
+      "reversed": "Kế hoạch kinh doanh bị từ chối cấp vốn; lương thưởng không như kỳ vọng."
+    },
+    "finance": {
+      "upright": "Tài lộc gõ cửa, nhận được khoản tiền thưởng, sinh lời hoặc cơ hội đầu tư sinh lời cao.",
+      "reversed": "Thua lỗ tài chính do chi tiêu bốc đồng hoặc đầu tư vào dự án bánh vẽ."
+    },
+    "study": {
+      "upright": "Đạt được học bổng giá trị; cơ hội học tập có tính ứng dụng thực tế cao.",
+      "reversed": "Lãng phí tiền bạc vào những khóa học vô bổ không áp dụng được."
+    },
+    "advice": {
+      "general": "Hãy dựa trên cơ hội tài lộc và hạt mầm thịnh vượng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ace of Pentacles (Ách Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ace of Pentacles (Ách Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-ace",
+    "suitElement": "Đất",
+    "archetype_story": "Bàn tay vũ trụ chìa đồng tiền vàng lấp lánh ra từ đám mây trên khu vườn sum suê hoa cỏ dẫn lối qua cổng vòm. Hạt mầm vật chất màu mỡ, cơ hội đầu tư tài chính và phước lành thực tế.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Hạt mầm tài chính, cơ hội đầu tư và sự thịnh vượng thực tế đang được vũ trụ trao tận tay bạn; hãy đón nhận.",
+    "time_prediction": "1 năm hoặc mùa đông (Ma Kết)."
+  },
+  {
+    "id": "pentacles-2",
+    "nameEn": "Two of Pentacles",
+    "nameVi": "Two of Pentacles (Hai Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 2,
+    "image": "assets/cards/pentacles_02.jpg",
+    "element": "Đất",
+    "astrology": "Sao Mộc trong Ma Kết",
+    "keywords": [
+      "Tung hứng linh hoạt",
+      "Cân bằng tài chính",
+      "Thích nghi hoàn cảnh",
+      "Dòng tiền xoay vần"
+    ],
+    "upright": "Chàng trai vừa nhảy múa vừa tung hứng hai đồng tiền vàng trong vòng vô cực bên bờ biển sóng dập dồn. Khả năng xoay xở linh hoạt với nhiều nguồn lực cùng lúc.",
+    "reversed": "Quá tải tài chính, mất cân bằng thu chi, xoay xở không kịp dẫn đến nợ nần chồng chất.",
+    "love": {
+      "upright": "Khéo léo sắp xếp thời gian giữa công việc và người yêu để giữ lửa hạnh phúc.",
+      "reversed": "Quá bận rộn kiếm tiền khiến đối phương cảm thấy bị bỏ bê và cô đơn."
+    },
+    "work": {
+      "upright": "Làm nhiều dự án cùng lúc vẫn đảm bảo tiến độ nhờ kỹ năng quản lý thời gian tốt.",
+      "reversed": "Ôm đồm nhiều việc dẫn đến trễ hạn deadline và chất lượng giảm sút."
+    },
+    "finance": {
+      "upright": "Xoay vòng vốn linh hoạt; cân đối thu chi khéo léo dù tài chính còn eo hẹp.",
+      "reversed": "Vay nợ chỗ này đắp chỗ kia; nguy cơ vỡ kế hoạch tài chính nếu không siết chi tiêu."
+    },
+    "study": {
+      "upright": "Biết cân bằng giữa việc học tập và đi làm thêm kiếm thêm thu nhập.",
+      "reversed": "Mải mê làm thêm kiếm tiền khiến kết quả học tập sa sút nghiêm trọng."
+    },
+    "advice": {
+      "general": "Hãy dựa trên tung hứng linh hoạt và cân bằng tài chính làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Two of Pentacles (Hai Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Two of Pentacles (Hai Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-2",
+    "suitElement": "Đất",
+    "archetype_story": "Chàng trai nhún nhảy trên bờ biển tung hứng hai đồng tiền vàng trong vòng vô cực (Lemniscate) trong khi tàu bè chao đảo trên sóng dữ. Khả năng thích ứng linh hoạt và giữ thăng bằng giữa biến động.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Bạn đang tung hứng giữa hai dòng tiền hoặc hai trách nhiệm; cần linh hoạt thích ứng giữ thăng bằng thay vì phân tâm.",
+    "time_prediction": "2 năm hoặc giai đoạn biến động tài chính ngắn hạn (khoảng 22/12 - 31/12)."
+  },
+  {
+    "id": "pentacles-3",
+    "nameEn": "Three of Pentacles",
+    "nameVi": "Three of Pentacles (Ba Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 3,
+    "image": "assets/cards/pentacles_03.jpg",
+    "element": "Đất",
+    "astrology": "Sao Hỏa trong Ma Kết",
+    "keywords": [
+      "Làm việc nhóm ăn ý",
+      "Tay nghề bậc thầy",
+      "Xây dựng công trình",
+      "Được công nhận kỹ năng"
+    ],
+    "upright": "Người thợ điêu khắc trẻ đang bàn bạc bản thiết kế nhà thờ cùng một tu sĩ và kiến trúc sư. Tinh thần hợp tác nhóm tuyệt vời, kỹ năng chuyên môn được đánh giá cao.",
+    "reversed": "Làm việc nhóm rời rạc, bất đồng quan điểm chuyên môn, tay nghề kém cỏi gây hỏng việc.",
+    "love": {
+      "upright": "Cùng nhau chung tay vun đắp cho tương lai chung; cùng nhau xây dựng tổ ấm hạnh phúc.",
+      "reversed": "Thiếu sự hợp tác, một bên cố gắng vun vén trong khi bên kia thờ ơ."
+    },
+    "work": {
+      "upright": "Hợp tác dự án thành công mỹ mãn; kỹ năng chuyên môn được đồng nghiệp và sếp nể phục.",
+      "reversed": "Xung đột trong nhóm làm việc; mỗi người một ý khiến dự án dậm chân tại chỗ."
+    },
+    "finance": {
+      "upright": "Đầu tư vào phát triển kỹ năng bản thân mang lại thu nhập ngày càng cao.",
+      "reversed": "Tổn thất tài chính do thuê phải đội ngũ thi công tay nghề kém."
+    },
+    "study": {
+      "upright": "Học nhóm cực kỳ hiệu quả; đồ án môn học được chấm điểm tối đa.",
+      "reversed": "Gánh 'team' một mình trong bài tập nhóm; các thành viên khác đùn đẩy trách nhiệm."
+    },
+    "advice": {
+      "general": "Hãy dựa trên làm việc nhóm ăn ý và tay nghề bậc thầy làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Three of Pentacles (Ba Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Three of Pentacles (Ba Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-3",
+    "suitElement": "Đất",
+    "archetype_story": "Người thợ điêu khắc chăm chú hoàn thiện thánh đường dưới sự bàn bạc của nhà sư và kiến trúc sư cầm bản vẽ. Tinh thần hợp tác chuyên môn, rèn luyện tay nghề bậc thầy và xây dựng công trình vĩ đại.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Sự hợp tác nhóm ăn ý, tay nghề chuyên môn cao được công nhận và công trình xây dựng đạt chuẩn mực vững bền.",
+    "time_prediction": "3 năm hoặc mùa xuân/thu hoạch công trình (khoảng 1/1 - 10/1)."
+  },
+  {
+    "id": "pentacles-4",
+    "nameEn": "Four of Pentacles",
+    "nameVi": "Four of Pentacles (Bốn Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 4,
+    "image": "assets/cards/pentacles_04.jpg",
+    "element": "Đất",
+    "astrology": "Mặt Trời trong Ma Kết",
+    "keywords": [
+      "Giữ của khư khư",
+      "Kiểm soát an toàn",
+      "Bảo thủ keo kiệt",
+      "Nỗi sợ mất mát"
+    ],
+    "upright": "Người đàn ông ôm chặt đồng tiền trước ngực, hai chân dẫm lên hai đồng và một đồng đội trên đầu. Cảm giác bất an khiến bạn giữ khư khư tài sản và sợ hãi thay đổi.",
+    "reversed": "Học cách buông bỏ bớt kiểm soát, mở hầu bao chi tiêu hào phóng hơn, hoặc nguy cơ mất của vì sơ suất.",
+    "love": {
+      "upright": "Kiểm soát người yêu quá chặt chẽ; ghen tuông vô cớ vì sợ mất người ấy.",
+      "reversed": "Thả lỏng sự kiểm soát, cho đối phương không gian riêng để thở."
+    },
+    "work": {
+      "upright": "Bám víu lấy vị trí cũ an toàn dù không có cơ hội thăng tiến vì sợ rủi ro.",
+      "reversed": "Dám chấp nhận rủi ro bước ra thử thách trong môi trường kinh doanh mới."
+    },
+    "finance": {
+      "upright": "Tiết kiệm nghiêm ngặt, tích lũy tài sản an toàn nhưng đôi khi bị coi là bủn xỉn.",
+      "reversed": "Tiêu tiền hoang phí sau thời gian dài thắt lưng buộc bụng; hoặc bị mất tiền do trộm cắp."
+    },
+    "study": {
+      "upright": "Giữ khư khư tài liệu ôn thi không muốn chia sẻ cho bạn bè vì sợ người khác điểm cao hơn.",
+      "reversed": "Cởi mở chia sẻ kiến thức, cùng bạn bè trao đổi tài liệu học tập."
+    },
+    "advice": {
+      "general": "Hãy dựa trên giữ của khư khư và kiểm soát an toàn làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Four of Pentacles (Bốn Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Four of Pentacles (Bốn Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-4",
+    "suitElement": "Đất",
+    "archetype_story": "Người đàn ông ngồi ôm chặt đồng tiền trước ngực, hai đồng tiền dưới chân và một đồng trên vương miện, phía sau là thành phố sầm uất. Nỗi sợ mất mát của cải dẫn đến sự bo bo giữ của và bế tắc.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Bám víu quá mức vào tiền bạc và an toàn ảo giác; sự keo kiệt sẽ chặn đứng dòng chảy thịnh vượng mới.",
+    "time_prediction": "4 năm hoặc giai đoạn tích lũy phòng thủ (khoảng 11/1 - 19/1)."
+  },
+  {
+    "id": "pentacles-5",
+    "nameEn": "Five of Pentacles",
+    "nameVi": "Five of Pentacles (Năm Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 5,
+    "image": "assets/cards/pentacles_05.jpg",
+    "element": "Đất",
+    "astrology": "Sao Thủy trong Kim Ngưu",
+    "keywords": [
+      "Khó khăn thiếu thốn",
+      "Cảm giác bị bỏ rơi",
+      "Tổn thương thể xác",
+      "Ánh sáng nhà thờ"
+    ],
+    "upright": "Hai người ăn xin tàn tật lê bước trong tuyết lạnh ngoài ô cửa sổ kính màu ấm áp của nhà thờ. Giai đoạn khó khăn về vật chất, cảm giác cô đơn và bị bỏ rơi.",
+    "reversed": "Vượt qua cơn bĩ cực, tìm thấy nơi nương tựa ấm áp, tài chính dần phục hồi sau khủng hoảng.",
+    "love": {
+      "upright": "Cảm giác lạnh lẽo, cô độc trong mối quan hệ; cùng nhau trải qua giai đoạn nghèo khó thử thách tình yêu.",
+      "reversed": "Hàn gắn tình cảm sau chuỗi ngày rạn nứt; nhận ra ai mới là người đồng cam cộng khổ cùng mình."
+    },
+    "work": {
+      "upright": "Mất việc, bị cô lập chốn công sở, công ty cắt giảm lương thưởng nghiêm trọng.",
+      "reversed": "Tìm được công việc mới sau chuỗi ngày thất nghiệp gian nan; khó khăn dần qua đi."
+    },
+    "finance": {
+      "upright": "Túng quẫn tiền bạc, túng thiếu chi tiêu; cần sự hỗ trợ khẩn cấp từ các quỹ từ thiện hoặc người thân.",
+      "reversed": "Thoát khỏi cảnh nợ nần túng thiếu; bắt đầu có nguồn thu nhập ổn định trở lại."
+    },
+    "study": {
+      "upright": "Gặp khó khăn về học phí hoặc điều kiện sinh hoạt ảnh hưởng trực tiếp đến việc học tập.",
+      "reversed": "Nhận được học bổng trợ cấp khó khăn giúp tiếp tục con đường đến trường."
+    },
+    "advice": {
+      "general": "Hãy dựa trên khó khăn thiếu thốn và cảm giác bị bỏ rơi làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Five of Pentacles (Năm Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Five of Pentacles (Năm Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-5",
+    "suitElement": "Đất",
+    "archetype_story": "Hai kẻ hành khất tàn tật lầm lũi bước qua bão tuyết bên ngoài cửa sổ kính màu ấm áp của thánh đường. Cảm giác bị bỏ rơi, nghèo đói và mù quáng không nhận ra sự giúp đỡ ngay bên cạnh.",
+    "yes_no_result": "NO",
+    "yes_no_reason": "Cảm giác thiếu thốn, cô độc trong đêm đông giá rét; hãy nhìn lên cửa sổ thánh đường ấm áp đón nhận sự trợ giúp.",
+    "time_prediction": "5 năm hoặc đỉnh điểm mùa đông giá rét (Kim Ngưu: 20/4 - 30/4)."
+  },
+  {
+    "id": "pentacles-6",
+    "nameEn": "Six of Pentacles",
+    "nameVi": "Six of Pentacles (Sáu Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 6,
+    "image": "assets/cards/pentacles_06.jpg",
+    "element": "Đất",
+    "astrology": "Mặt Trăng trong Kim Ngưu",
+    "keywords": [
+      "Hào phóng sẻ chia",
+      "Cân bằng cho và nhận",
+      "Nhận được tài trợ",
+      "Lòng từ thiện"
+    ],
+    "upright": "Thương gia giàu có cầm cán cân công lý một tay ban phát tiền vàng cho hai người nghèo khó. Sự hào phóng, sẻ chia phúc lành và cán cân cân bằng giữa cho và nhận.",
+    "reversed": "Bố thí với thái độ kẻ cả ban ơn, cho vay tiền nhưng bị quỵt, hoặc nợ nần vì quá hào phóng.",
+    "love": {
+      "upright": "Mối quan hệ có sự cân bằng lành mạnh giữa cho đi và nhận lại sự quan tâm săn sóc.",
+      "reversed": "Một bên cho đi quá nhiều trong khi bên kia chỉ biết hưởng thụ mà không biết ơn."
+    },
+    "work": {
+      "upright": "Được sếp thưởng xứng đáng, hoặc được nhà đầu tư rót vốn hỗ trợ dự án.",
+      "reversed": "Lương thưởng không tương xứng với công sức bỏ ra; bị chèn ép tiền hoa hồng."
+    },
+    "finance": {
+      "upright": "Tài chính rủng rỉnh để làm từ thiện, hoặc nhận được sự trợ cấp tài chính đúng lúc.",
+      "reversed": "Cho người khác vay tiền vì cả nể nhưng sau đó không đòi lại được."
+    },
+    "study": {
+      "upright": "Được gia sư giỏi chỉ dạy tận tình; nhận được học bổng khuyến khích học tập.",
+      "reversed": "Bị phụ thuộc vào sự chỉ bảo của người khác mà lười tự nghiên cứu độc lập."
+    },
+    "advice": {
+      "general": "Hãy dựa trên hào phóng sẻ chia và cân bằng cho và nhận làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Six of Pentacles (Sáu Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Six of Pentacles (Sáu Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-6",
+    "suitElement": "Đất",
+    "archetype_story": "Thương nhân giàu có cầm chiếc cân công lý ban phát tiền bạc cho hai người khốn khó dưới chân. Quy luật lưu thông của tiền bạc, sự hào phóng chính trực và luật nhân quả về vật chất.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Dòng chảy cho và nhận hào phóng, sự bảo trợ từ quý nhân và sự cân bằng tài chính công bằng.",
+    "time_prediction": "6 năm hoặc thời điểm nhận được khoản hỗ trợ/thưởng (khoảng 1/5 - 10/5)."
+  },
+  {
+    "id": "pentacles-7",
+    "nameEn": "Seven of Pentacles",
+    "nameVi": "Seven of Pentacles (Bảy Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 7,
+    "image": "assets/cards/pentacles_07.jpg",
+    "element": "Đất",
+    "astrology": "Sao Thổ trong Kim Ngưu",
+    "keywords": [
+      "Chờ đợi mùa màng",
+      "Đánh giá kết quả",
+      "Kiên nhẫn nuôi dưỡng",
+      "Đầu tư đường dài"
+    ],
+    "upright": "Người nông dân chống cuốc đứng ngắm nhìn giàn nho đã đơm bảy đồng tiền vàng trĩu quả. Giai đoạn kiên nhẫn chờ đợi thành quả sau chuỗi ngày lao động miệt mài.",
+    "reversed": "Sốt ruột muốn hái quả non, nản lòng vì kết quả đến quá chậm, hoặc đầu tư công sức vào mảnh đất cằn cỗi.",
+    "love": {
+      "upright": "Tình yêu được vun đắp bền bỉ qua năm tháng; cùng nhau kiên nhẫn chờ thời điểm chín muồi để kết hôn.",
+      "reversed": "Mất kiên nhẫn với đối phương; hoài nghi liệu sự hy sinh của mình có đem lại kết quả hay không."
+    },
+    "work": {
+      "upright": "Đánh giá lại hiệu quả công việc sau một chu kỳ; chuẩn bị thu hoạch thành quả từ dự án dài hơi.",
+      "reversed": "Dự án chậm tiến độ khiến nhà đầu tư sốt ruột; công sức bỏ ra nhiều nhưng thu về chẳng bao nhiêu."
+    },
+    "finance": {
+      "upright": "Các khoản đầu tư dài hạn đang sinh trưởng tốt; kiên nhẫn chờ lãi kép phát huy tác dụng.",
+      "reversed": "Rút vốn quá sớm khi chưa sinh lời; đầu tư sai chỗ dẫn đến chôn vốn lâu ngày."
+    },
+    "study": {
+      "upright": "Ôn luyện bền bỉ từng ngày; kết quả tích lũy kiến thức sẽ tỏa sáng trong kỳ thi lớn sắp tới.",
+      "reversed": "Chán nản muốn bỏ cuộc vì học mãi chưa thấy tiến bộ rõ rệt; thiếu tính kiên trì."
+    },
+    "advice": {
+      "general": "Hãy dựa trên chờ đợi mùa màng và đánh giá kết quả làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Seven of Pentacles (Bảy Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Seven of Pentacles (Bảy Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-7",
+    "suitElement": "Đất",
+    "archetype_story": "Người nông dân dừng cuốc ngắm nhìn giàn nho trĩu bảy đồng tiền vàng với ánh mắt trầm tư. Giai đoạn kiên nhẫn chờ đợi hạt giống sinh sôi, đánh giá tiến độ trước mùa gặt lớn.",
+    "yes_no_result": "MAYBE",
+    "yes_no_reason": "Thời điểm dừng tay đánh giá lại thành quả lao động; kiên nhẫn chờ quả chín, không nên vội vã hái non.",
+    "time_prediction": "7 năm hoặc mùa thu hoạch sau chuỗi ngày vun xới (khoảng 11/5 - 20/5)."
+  },
+  {
+    "id": "pentacles-8",
+    "nameEn": "Eight of Pentacles",
+    "nameVi": "Eight of Pentacles (Tám Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 8,
+    "image": "assets/cards/pentacles_08.jpg",
+    "element": "Đất",
+    "astrology": "Mặt Trời trong Xử Nữ",
+    "keywords": [
+      "Cần cù tỉ mỉ",
+      "Rèn luyện tay nghề",
+      "Tập trung chuyên môn",
+      "Chăm chỉ hoàn thiện"
+    ],
+    "upright": "Người thợ thủ công cần mẫn ngồi gõ từng đồng tiền vàng với sự tập trung tuyệt đối. Tinh thần lao động hăng say, rèn luyện kỹ năng bậc thầy và chăm chút từng chi tiết.",
+    "reversed": "Làm việc cẩu thả qua loa, chán nản vì công việc lặp đi lặp lại tẻ nhạt, hoặc nghiện việc quá mức.",
+    "love": {
+      "upright": "Cần cù vun vén tình cảm từng ngày bằng những hành động quan tâm thực tế và chu đáo.",
+      "reversed": "Thiếu sự lãng mạn vì quá bận rộn với công việc; coi tình yêu như một nghĩa vụ buồn tẻ."
+    },
+    "work": {
+      "upright": "Nâng cao tay nghề và chứng chỉ chuyên môn; sản phẩm tạo ra đạt chất lượng hoàn hảo.",
+      "reversed": "Làm việc đối phó, thiếu nhiệt huyết dẫn đến sản phẩm lỗi bị khách hàng phàn nàn."
+    },
+    "finance": {
+      "upright": "Thu nhập tăng trưởng ổn định từ chính tay nghề và công sức lao động chân chính.",
+      "reversed": "Chi tiêu tiền bạc vào những thứ phù phiếm thay vì tái đầu tư nâng cao kỹ năng nghề nghiệp."
+    },
+    "study": {
+      "upright": "Cần mẫn làm bài tập từng ngày; sự chăm chỉ kỷ luật sẽ mang lại điểm số tuyệt đối.",
+      "reversed": "Lười làm bài tập, học hành đối phó dẫn đến hổng kiến thức căn bản."
+    },
+    "advice": {
+      "general": "Hãy dựa trên cần cù tỉ mỉ và rèn luyện tay nghề làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Eight of Pentacles (Tám Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Eight of Pentacles (Tám Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-8",
+    "suitElement": "Đất",
+    "archetype_story": "Người thợ thủ công trẻ tuổi cần mẫn ngồi đục chạm từng đồng tiền vàng treo thành hàng ngay ngắn trên cột gỗ. Sự kỷ luật thép, tinh thần cầu toàn rèn giũa kỹ năng và đạo đức nghề nghiệp.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Sự cần mẫn mài giũa kỹ năng, chăm chỉ học nghề từng ngày sẽ xây đắp thành công bậc thầy vững chãi.",
+    "time_prediction": "8 năm hoặc quá trình rèn luyện tính bằng nhiều tháng/năm (Xử Nữ: 23/8 - 1/9)."
+  },
+  {
+    "id": "pentacles-9",
+    "nameEn": "Nine of Pentacles",
+    "nameVi": "Nine of Pentacles (Chín Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 9,
+    "image": "assets/cards/pentacles_09.jpg",
+    "element": "Đất",
+    "astrology": "Sao Kim trong Xử Nữ",
+    "keywords": [
+      "Độc lập giàu có",
+      "Tận hưởng thành quả",
+      "Phong thái quý phái",
+      "Tự do tài chính"
+    ],
+    "upright": "Quý bà thanh lịch dạo bước trong vườn nho trĩu quả với chú chim ưng trên tay. Tự do tài chính, độc lập tự chủ và tận hưởng cuộc sống xa hoa do chính tay mình tạo dựng.",
+    "reversed": "Phụ thuộc tài chính vào người khác, khoe mẽ giàu sang ảo, hoặc cô đơn trên đống tài sản.",
+    "love": {
+      "upright": "Bạn hoàn toàn tự tin, quyến rũ và độc lập; không cần phải dựa dẫm vào ai để cảm thấy hạnh phúc.",
+      "reversed": "Quá khép kín hoặc đặt tiêu chuẩn kinh tế quá cao khiến khó tìm được người đồng hành."
+    },
+    "work": {
+      "upright": "Đạt đến đỉnh cao độc lập trong sự nghiệp; kinh doanh tự do hoặc chức vụ cao với thu nhập khủng.",
+      "reversed": "Kinh doanh gặp trục trặc do quản lý chi phí kém; bề ngoài hào nhoáng nhưng bên trong nợ nần."
+    },
+    "finance": {
+      "upright": "Tài sản dồi dào, tự do chi tiêu cho những sở thích tao nhã và bất động sản cao cấp.",
+      "reversed": "Vung tay quá trán cho những món hàng hiệu vượt quá khả năng tài chính thực tế."
+    },
+    "study": {
+      "upright": "Tự học xuất sắc, đạt được thành tích học tập đáng tự hào bằng chính nỗ lực cá nhân.",
+      "reversed": "Tự mãn với điểm số hiện tại mà lơ là rèn luyện thêm kỹ năng mềm."
+    },
+    "advice": {
+      "general": "Hãy dựa trên độc lập giàu có và tận hưởng thành quả làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Nine of Pentacles (Chín Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Nine of Pentacles (Chín Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-9",
+    "suitElement": "Đất",
+    "archetype_story": "Quý bà thanh lịch dạo bước trong vườn nho trĩu quả với chú chim ưng đậu trên tay và chú ốc sên dưới chân. Đỉnh cao của sự độc lập tự chủ, thành tựu tài chính cá nhân và cuộc sống an nhàn quý phái.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Tự do tài chính, độc lập tự chủ và phong thái quý phái tận hưởng khu vườn thành quả của chính mình.",
+    "time_prediction": "9 năm hoặc mùa thu hoạch thịnh vượng (khoảng 2/9 - 11/9)."
+  },
+  {
+    "id": "pentacles-10",
+    "nameEn": "Ten of Pentacles",
+    "nameVi": "Ten of Pentacles (Mười Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 10,
+    "image": "assets/cards/pentacles_10.jpg",
+    "element": "Đất",
+    "astrology": "Sao Thủy trong Xử Nữ",
+    "keywords": [
+      "Gia tộc thịnh vượng",
+      "Thừa kế gia sản",
+      "Nền móng bền vững",
+      "Viên mãn nhiều đời"
+    ],
+    "upright": "Đại gia đình nhiều thế hệ sum vầy trước cổng dinh thự cổ kính cùng hai chú chó cưng, mười đồng tiền vàng kết thành cây sự sống. Thịnh vượng dài lâu và gia đình giàu có viên mãn.",
+    "reversed": "Tranh chấp tài sản thừa kế trong dòng họ, công việc kinh doanh gia đình gặp rủi ro, hoặc truyền thống gò bó.",
+    "love": {
+      "upright": "Mối quan hệ được hai bên gia tộc ủng hộ môn đăng hộ đối; tình cảm gắn liền với sự an cư lạc nghiệp.",
+      "reversed": "Áp lực môn đăng hộ đối từ gia đình ngăn cấm; tranh cãi chuyện tiền nong giữa hai bên nội ngoại."
+    },
+    "work": {
+      "upright": "Doanh nghiệp gia đình phát triển hưng thịnh; xây dựng được đế chế sự nghiệp vững chắc cho nhiều thế hệ.",
+      "reversed": "Gia đình can thiệp quá sâu vào sự nghiệp riêng của bạn; mâu thuẫn quản trị gia tộc."
+    },
+    "finance": {
+      "upright": "Nhận được quyền thừa kế lớn, bất động sản gia tăng giá trị vượt bậc; nền tảng tài chính không thể lung lay.",
+      "reversed": "Rủi ro kiện tụng chia tài sản thừa kế; thua lỗ trong các khoản đầu tư bất động sản gia đình."
+    },
+    "study": {
+      "upright": "Được gia đình chu cấp mọi điều kiện học tập tốt nhất tại các trường danh giá hàng đầu.",
+      "reversed": "Bị ép học ngành nghề gia truyền mà bản thân hoàn toàn không có chút hứng thú nào."
+    },
+    "advice": {
+      "general": "Hãy dựa trên gia tộc thịnh vượng và thừa kế gia sản làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Ten of Pentacles (Mười Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Ten of Pentacles (Mười Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-10",
+    "suitElement": "Đất",
+    "archetype_story": "Ba thế hệ gia tộc sum vầy trước cổng dinh thự cổ kính cùng hai chú chó cưng dưới vòm cây sự sống kết bằng mười đồng tiền vàng. Sự hưng thịnh vững bền của gia tộc và di sản truyền đời.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Gia tộc hưng vượng, nền móng vững chắc qua nhiều thế hệ và di sản vật chất viên mãn dài lâu.",
+    "time_prediction": "10 năm hoặc mục tiêu lâu dài nhiều thế hệ (khoảng 12/9 - 22/9)."
+  },
+  {
+    "id": "pentacles-11",
+    "nameEn": "Page of Pentacles",
+    "nameVi": "Page of Pentacles (Tiểu Đồng Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 11,
+    "image": "assets/cards/pentacles_11.jpg",
+    "element": "Đất",
+    "astrology": "Đất của Đất (Cung Đất)",
+    "keywords": [
+      "Khát khao học hỏi",
+      "Cơ hội thực tế",
+      "Học nghề chăm chỉ",
+      "Tin tức tài chính tốt"
+    ],
+    "upright": "Chàng trai trẻ chăm chú nâng niu đồng tiền vàng giữa cánh đồng xanh mướt. Tinh thần học hỏi thực tế, chăm chỉ học nghề và nhận được tin vui về công việc hoặc tiền bạc.",
+    "reversed": "Lười biếng, thiếu tập trung, lãng phí cơ hội học tập thực tế, chi tiêu tiền bạc thiếu suy nghĩ.",
+    "love": {
+      "upright": "Tình cảm chân thành, giản dị và thiết thực; không màu mè nhưng đáng tin cậy.",
+      "reversed": "Mối quan hệ trở nên khô khan vì quá thực dụng; thiếu đi sự lãng mạn cần thiết."
+    },
+    "work": {
+      "upright": "Nhận được vị trí thực tập sinh triển vọng; cơ hội học hỏi kỹ năng nghề nghiệp quý giá.",
+      "reversed": "Thiếu trách nhiệm với công việc được giao; hay mắc lỗi do bất cẩn."
+    },
+    "finance": {
+      "upright": "Nhận được khoản tiền lương đầu tiên hoặc tin vui về học bổng, tiền trợ cấp.",
+      "reversed": "Tiêu sạch tiền lương vào những món đồ chơi công nghệ không thật sự cần thiết."
+    },
+    "study": {
+      "upright": "Phương pháp học tập khoa học, ghi chép cẩn thận và đạt điểm số ổn định.",
+      "reversed": "Trì hoãn ôn bài, để dồn đến sát ngày thi mới cuống cuồng mở sách vở."
+    },
+    "advice": {
+      "general": "Hãy dựa trên khát khao học hỏi và cơ hội thực tế làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Page of Pentacles (Tiểu Đồng Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Page of Pentacles (Tiểu Đồng Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-page",
+    "suitElement": "Đất",
+    "archetype_story": "Chàng thiếu niên chăm chú nâng niu đồng tiền vàng giữa cánh đồng xanh mướt dưới trời quang đãng. Tinh thần học nghề thực tế, tính cẩn trọng và khát khao tích lũy tri thức ứng dụng.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Khát khao học hỏi thực tế, sự chăm chỉ tích lũy và tin vui khởi sắc về công việc/tiền bạc.",
+    "time_prediction": "Vài tuần đến vài tháng hoặc mùa Đất."
+  },
+  {
+    "id": "pentacles-12",
+    "nameEn": "Knight of Pentacles",
+    "nameVi": "Knight of Pentacles (Hiệp Sĩ Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 12,
+    "image": "assets/cards/pentacles_12.jpg",
+    "element": "Đất",
+    "astrology": "Khí của Đất (Kim Ngưu)",
+    "keywords": [
+      "Bền bỉ kiên định",
+      "Chăm chỉ đáng tin",
+      "Trách nhiệm chu đáo",
+      "Chậm mà chắc"
+    ],
+    "upright": "Kỵ sĩ ngồi trên lưng ngựa đen đứng vững chãi trên cánh đồng cày xới, tay cầm đồng tiền vàng với sự cẩn trọng tuyệt đối. Biểu tượng của sự kiên định, chậm mà chắc và đáng tin cậy bậc nhất.",
+    "reversed": "Bảo thủ cứng nhắc, lười biếng ì ạch, chán ngắt trong cuộc sống thường nhật, sợ hãi thay đổi.",
+    "love": {
+      "upright": "Người yêu chân thành, chung thủy và có trách nhiệm; chỗ dựa bình yên vững như bàn thạch.",
+      "reversed": "Mối quan hệ trở nên đơn điệu, nhàm chán như một thói quen không còn cảm xúc."
+    },
+    "work": {
+      "upright": "Nhân viên mẫn cán, hoàn thành công việc tỉ mỉ không tì vết; được cấp trên tin cậy giao phó việc lớn.",
+      "reversed": "Làm việc quá chậm chạp làm trễ nải tiến độ chung; cứng nhắc không chịu cải tiến quy trình."
+    },
+    "finance": {
+      "upright": "Kế hoạch tích lũy tiền bạc bền bỉ 'tích tiểu thành đại'; không bao giờ rơi vào cảnh túng thiếu.",
+      "reversed": "Quá an toàn khiến đồng tiền nằm im không sinh lời; lỡ mất những cơ hội đầu tư tốt."
+    },
+    "study": {
+      "upright": "Cần cù bù thông minh, kiên trì học bài đều đặn mỗi ngày để đạt điểm số cao vững chắc.",
+      "reversed": "Học vẹt thụ động, thiếu sự nhạy bén và linh hoạt khi gặp dạng bài tập mới."
+    },
+    "advice": {
+      "general": "Hãy dựa trên bền bỉ kiên định và chăm chỉ đáng tin làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Knight of Pentacles (Hiệp Sĩ Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Knight of Pentacles (Hiệp Sĩ Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-knight",
+    "suitElement": "Đất",
+    "archetype_story": "Kỵ sĩ ngồi trên lưng chiến mã đen đứng trầm mặc giữa cánh đồng cày xới, tay cầm đồng tiền với sự kiên định tối thượng. Đại diện cho sự bền bỉ phi thường, phương châm chậm mà chắc và sự trung thành tuyệt đối.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Chậm mà chắc, tính kiên định và trách nhiệm chu đáo tuyệt đối; thành quả bền vững như bàn thạch.",
+    "time_prediction": "Diễn tiến chậm rãi trong vài tháng đến 1 năm."
+  },
+  {
+    "id": "pentacles-13",
+    "nameEn": "Queen of Pentacles",
+    "nameVi": "Queen of Pentacles (Hoàng Hậu Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 13,
+    "image": "assets/cards/pentacles_13.jpg",
+    "element": "Đất",
+    "astrology": "Nước của Đất (Xử Nữ)",
+    "keywords": [
+      "Người mẹ nuôi dưỡng",
+      "Đảm đang khéo léo",
+      "Thực tế ấm áp",
+      "Thịnh vượng an vui"
+    ],
+    "upright": "Hoàng hậu ngồi trên ngai vàng trạm trổ giữa thiên nhiên xanh tốt ôm đồng tiền vàng với ánh mắt trìu mến. Người phụ nữ đảm đang, biết quản lý tài chính và chăm sóc gia đình chu đáo ấm êm.",
+    "reversed": "Bỏ bê bản thân, lo lắng thái quá về tiền bạc, hoặc dùng vật chất để kiểm soát tình cảm gia đình.",
+    "love": {
+      "upright": "Tình yêu ấm áp, chăm sóc đối phương từng bữa ăn giấc ngủ; người bạn đời lý tưởng để xây dựng tổ ấm.",
+      "reversed": "Quá bận rộn việc nhà và kiếm tiền đến mức kiệt sức, không còn thời gian chăm chút cho tình cảm lứa đôi."
+    },
+    "work": {
+      "upright": "Khéo léo cân bằng giữa sự nghiệp và cuộc sống gia đình; quản lý tài nguyên công ty cực kỳ hiệu quả.",
+      "reversed": "Quá tải việc nhà việc nước; cảm giác công sức hy sinh không được ai công nhận."
+    },
+    "finance": {
+      "upright": "Bậc thầy tay hòm chìa khóa; dòng tiền gia đình luôn dư dả và sinh lời an toàn.",
+      "reversed": "Bất an về tài chính dù tiền không hề thiếu; tiếc tiền không dám chi tiêu cho nhu cầu sức khỏe bản thân."
+    },
+    "study": {
+      "upright": "Tạo dựng môi trường học tập ngăn nắp, thoải mái giúp tiếp thu kiến thức hiệu quả nhất.",
+      "reversed": "Bị chi phối bởi các việc vặt gia đình làm xao nhãng việc ôn thi."
+    },
+    "advice": {
+      "general": "Hãy dựa trên người mẹ nuôi dưỡng và đảm đang khéo léo làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của Queen of Pentacles (Hoàng Hậu Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của Queen of Pentacles (Hoàng Hậu Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-queen",
+    "suitElement": "Đất",
+    "archetype_story": "Hoàng hậu ngồi trên ngai vàng trạm trổ giữa cỏ hoa sum suê ôm đồng tiền vàng với tình thương bao la, bên cạnh là chú thỏ hoang dã. Biểu tượng của người phụ nữ đảm đang, thịnh vượng và nuôi dưỡng gia đình sung túc.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Người mẹ đảm đang nuôi dưỡng, quản lý tài chính khéo léo và mang lại sự sung túc ấm êm cho tổ ấm.",
+    "time_prediction": "Khoảng vài tháng đến 1 năm hoặc mùa đông ấm áp."
+  },
+  {
+    "id": "pentacles-14",
+    "nameEn": "King of Pentacles",
+    "nameVi": "King of Pentacles (Vua Tiền)",
+    "arcana": "Minor",
+    "suit": "pentacles",
+    "number": 14,
+    "image": "assets/cards/pentacles_14.jpg",
+    "element": "Đất",
+    "astrology": "Lửa của Đất (Ma Kết)",
+    "keywords": [
+      "Đế chế tài chính",
+      "Bậc thầy thịnh vượng",
+      "Đáng tin cậy vững chãi",
+      "Thành công vật chất"
+    ],
+    "upright": "Vị vua ngồi trên ngai vàng khắc hình đầu bò đực giữa lâu đài nguy nga và vườn nho sum suê. Đỉnh cao của sự thành đạt, giàu có, uy tín vững chắc và bản lĩnh làm chủ đồng tiền.",
+    "reversed": "Thực dụng đến tàn nhẫn, hám lợi bất chấp đạo đức, tham nhũng hoặc phá sản vì đầu tư liều lĩnh.",
+    "love": {
+      "upright": "Người đàn ông thành đạt, hào phóng, có thể lo cho bạn một cuộc sống sung túc trọn đời.",
+      "reversed": "Đem tiền ra để cân đo đong đếm tình cảm; lạnh nhạt coi nhẹ giá trị tinh thần."
+    },
+    "work": {
+      "upright": "Lãnh đạo doanh nghiệp lớn, ông trùm kinh doanh uy tín lừng lẫy trên thương trường.",
+      "reversed": "Kinh doanh bất chấp đạo đức; nguy cơ vướng vào sai phạm tài chính nghiêm trọng."
+    },
+    "finance": {
+      "upright": "Tài sản kếch xù, đa dạng hóa đầu tư thành công rực rỡ, vị thế tài chính bất khả xâm phạm.",
+      "reversed": "Đầu tư tham lam vào các dự án mờ ám dẫn đến nguy cơ mất trắng tài sản lớn."
+    },
+    "study": {
+      "upright": "Học tập để phục vụ mục tiêu kinh doanh thực tế; áp dụng xuất sắc kiến thức vào việc kiếm tiền.",
+      "reversed": "Coi thường kiến thức hàn lâm, chỉ chú trọng vào những mánh lới ngắn hạn."
+    },
+    "advice": {
+      "general": "Hãy dựa trên đế chế tài chính và bậc thầy thịnh vượng làm kim chỉ nam để đưa ra quyết định vững vàng.",
+      "upright": "Phát huy tối đa năng lượng tích cực của King of Pentacles (Vua Tiền): tin tưởng vào bản thân và chủ động hiện thực hóa mục tiêu.",
+      "reversed": "Lắng nghe tiếng nói nội tâm, tháo gỡ điểm nghẽn của King of Pentacles (Vua Tiền) và kiên nhẫn điều chỉnh từng bước nhỏ."
+    },
+    "iconSymbol": "pentacles-king",
+    "suitElement": "Đất",
+    "archetype_story": "Vị vua ngồi trên ngai khắc hình đầu bò đực giữa lâu đài nguy nga và vườn nho vàng óng, áo choàng thêu chùm nho trù phú. Bậc thầy làm chủ vật chất, đỉnh cao thành đạt kinh doanh và sự thịnh vượng vững chắc.",
+    "yes_no_result": "YES",
+    "yes_no_reason": "Đế chế tài chính hùng mạnh, bậc thầy làm chủ đồng tiền và uy tín kinh doanh vững chãi tối thượng.",
+    "time_prediction": "Khoảng 1 năm hoặc thời điểm chốt sổ gặt hái thành công lớn."
+  }
+];
